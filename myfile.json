@@ -1,0 +1,1722 @@
+{
+      "data": [
+            {
+                  "public_metrics": {
+                        "retweet_count": 14787,
+                        "reply_count": 11465,
+                        "like_count": 139533,
+                        "quote_count": 1490,
+                        "impression_count": 9030683
+                  },
+                  "text": "Twitter is arguably already the least wrong source of truth on the Internet, but we obviously still have a long way to go.\n\nEnabling @CommunityNotes to operate at very large scale and providing maximum transparency about how Twitter works are fundamental to building trust.",
+                  "created_at": "2023-01-19T21:01:35.000Z",
+                  "id": "1616179085507702785",
+                  "conversation_id": "1616179085507702785",
+                  "lang": "en",
+                  "reply_settings": "everyone",
+                  "possibly_sensitive": false,
+                  "context_annotations": [
+                        {
+                              "domain": {
+                                    "id": "46",
+                                    "name": "Business Taxonomy",
+                                    "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                              },
+                              "entity": {
+                                    "id": "1557696848252391426",
+                                    "name": "Financial Services Business",
+                                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks "
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "46",
+                                    "name": "Business Taxonomy",
+                                    "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                              },
+                              "entity": {
+                                    "id": "1557697333571112960",
+                                    "name": "Technology Business",
+                                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to softwares, apps, communication equipments, hardwares"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "10",
+                                    "name": "Person",
+                                    "description": "Named people in the world like Nelson Mandela"
+                              },
+                              "entity": {
+                                    "id": "808713037230157824",
+                                    "name": "Elon Musk",
+                                    "description": "Elon Musk"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "30",
+                                    "name": "Entities [Entity Service]",
+                                    "description": "Entity Service top level domain, every item that is in Entity Service should be in this domain"
+                              },
+                              "entity": {
+                                    "id": "781974596752842752",
+                                    "name": "Services"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "47",
+                                    "name": "Brand",
+                                    "description": "Brands and Companies"
+                              },
+                              "entity": {
+                                    "id": "10045225402",
+                                    "name": "Twitter"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "65",
+                                    "name": "Interests and Hobbies Vertical",
+                                    "description": "Top level interests and hobbies groupings, like Food or Travel"
+                              },
+                              "entity": {
+                                    "id": "781974596148793345",
+                                    "name": "Business & finance"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "66",
+                                    "name": "Interests and Hobbies Category",
+                                    "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+                              },
+                              "entity": {
+                                    "id": "857878777191211008",
+                                    "name": "Leadership",
+                                    "description": "Leadership"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "808713037230157824",
+                                    "name": "Elon Musk",
+                                    "description": "Elon Musk"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "1091420346660470784",
+                                    "name": "Tech personalities",
+                                    "description": "Tech Professionals"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "1166406108623163392",
+                                    "name": "Business personalities"
+                              }
+                        }
+                  ],
+                  "entities": {
+                        "mentions": [
+                              {
+                                    "start": 133,
+                                    "end": 148,
+                                    "username": "CommunityNotes",
+                                    "id": "1319036828964454402"
+                              }
+                        ]
+                  },
+                  "author_id": "44196397",
+                  "edit_history_tweet_ids": [
+                        "1616179085507702785"
+                  ]
+            },
+            {
+                  "entities": {
+                        "urls": [
+                              {
+                                    "start": 114,
+                                    "end": 137,
+                                    "url": "https://t.co/uBSjJxV7Ww",
+                                    "expanded_url": "https://twitter.com/communitynotes/status/1616146692663037952",
+                                    "display_url": "twitter.com/communitynotes\u2026"
+                              }
+                        ]
+                  },
+                  "public_metrics": {
+                        "retweet_count": 4063,
+                        "reply_count": 3336,
+                        "like_count": 36174,
+                        "quote_count": 545,
+                        "impression_count": 6352661
+                  },
+                  "text": "Coming soon are notifications if you\u2019ve replied, liked or retweeted something subsequently corrected by community https://t.co/uBSjJxV7Ww",
+                  "created_at": "2023-01-19T20:39:50.000Z",
+                  "id": "1616173610259083264",
+                  "conversation_id": "1616173610259083264",
+                  "lang": "en",
+                  "reply_settings": "everyone",
+                  "referenced_tweets": [
+                        {
+                              "type": "quoted",
+                              "id": "1616146692663037952"
+                        }
+                  ],
+                  "possibly_sensitive": false,
+                  "context_annotations": [
+                        {
+                              "domain": {
+                                    "id": "46",
+                                    "name": "Business Taxonomy",
+                                    "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                              },
+                              "entity": {
+                                    "id": "1557696848252391426",
+                                    "name": "Financial Services Business",
+                                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks "
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "46",
+                                    "name": "Business Taxonomy",
+                                    "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                              },
+                              "entity": {
+                                    "id": "1557697333571112960",
+                                    "name": "Technology Business",
+                                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to softwares, apps, communication equipments, hardwares"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "47",
+                                    "name": "Brand",
+                                    "description": "Brands and Companies"
+                              },
+                              "entity": {
+                                    "id": "10026364281",
+                                    "name": "Apple"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "10026364281",
+                                    "name": "Apple"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "10",
+                                    "name": "Person",
+                                    "description": "Named people in the world like Nelson Mandela"
+                              },
+                              "entity": {
+                                    "id": "808713037230157824",
+                                    "name": "Elon Musk",
+                                    "description": "Elon Musk"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "30",
+                                    "name": "Entities [Entity Service]",
+                                    "description": "Entity Service top level domain, every item that is in Entity Service should be in this domain"
+                              },
+                              "entity": {
+                                    "id": "781974596752842752",
+                                    "name": "Services"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "47",
+                                    "name": "Brand",
+                                    "description": "Brands and Companies"
+                              },
+                              "entity": {
+                                    "id": "10026364281",
+                                    "name": "Apple"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "47",
+                                    "name": "Brand",
+                                    "description": "Brands and Companies"
+                              },
+                              "entity": {
+                                    "id": "10026820777",
+                                    "name": "Android"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "47",
+                                    "name": "Brand",
+                                    "description": "Brands and Companies"
+                              },
+                              "entity": {
+                                    "id": "10045225402",
+                                    "name": "Twitter"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "48",
+                                    "name": "Product",
+                                    "description": "Products created by Brands.  Examples: Ford Explorer, Apple iPhone."
+                              },
+                              "entity": {
+                                    "id": "10044903039",
+                                    "name": "Apple - iOS"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "65",
+                                    "name": "Interests and Hobbies Vertical",
+                                    "description": "Top level interests and hobbies groupings, like Food or Travel"
+                              },
+                              "entity": {
+                                    "id": "781974596148793345",
+                                    "name": "Business & finance"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "30",
+                                    "name": "Entities [Entity Service]",
+                                    "description": "Entity Service top level domain, every item that is in Entity Service should be in this domain"
+                              },
+                              "entity": {
+                                    "id": "848920371311001600",
+                                    "name": "Technology",
+                                    "description": "Technology and computing"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "30",
+                                    "name": "Entities [Entity Service]",
+                                    "description": "Entity Service top level domain, every item that is in Entity Service should be in this domain"
+                              },
+                              "entity": {
+                                    "id": "848985956778561538",
+                                    "name": "Mobile",
+                                    "description": "Mobile"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "66",
+                                    "name": "Interests and Hobbies Category",
+                                    "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+                              },
+                              "entity": {
+                                    "id": "857878777191211008",
+                                    "name": "Leadership",
+                                    "description": "Leadership"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "10026820777",
+                                    "name": "Android"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "808713037230157824",
+                                    "name": "Elon Musk",
+                                    "description": "Elon Musk"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "1091420346660470784",
+                                    "name": "Tech personalities",
+                                    "description": "Tech Professionals"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "1166406108623163392",
+                                    "name": "Business personalities"
+                              }
+                        }
+                  ],
+                  "author_id": "44196397",
+                  "edit_history_tweet_ids": [
+                        "1616173610259083264"
+                  ]
+            },
+            {
+                  "public_metrics": {
+                        "retweet_count": 19755,
+                        "reply_count": 13526,
+                        "like_count": 229102,
+                        "quote_count": 2292,
+                        "impression_count": 37591484
+                  },
+                  "text": "\ud83d\udee1\ufe0f VE RI TAS \ud83d\udee1\ufe0f",
+                  "created_at": "2023-01-19T10:54:51.000Z",
+                  "id": "1616026394240356352",
+                  "conversation_id": "1616026394240356352",
+                  "lang": "et",
+                  "reply_settings": "everyone",
+                  "possibly_sensitive": false,
+                  "context_annotations": [
+                        {
+                              "domain": {
+                                    "id": "46",
+                                    "name": "Business Taxonomy",
+                                    "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                              },
+                              "entity": {
+                                    "id": "1557696848252391426",
+                                    "name": "Financial Services Business",
+                                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks "
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "46",
+                                    "name": "Business Taxonomy",
+                                    "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                              },
+                              "entity": {
+                                    "id": "1557697333571112960",
+                                    "name": "Technology Business",
+                                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to softwares, apps, communication equipments, hardwares"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "10",
+                                    "name": "Person",
+                                    "description": "Named people in the world like Nelson Mandela"
+                              },
+                              "entity": {
+                                    "id": "808713037230157824",
+                                    "name": "Elon Musk",
+                                    "description": "Elon Musk"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "65",
+                                    "name": "Interests and Hobbies Vertical",
+                                    "description": "Top level interests and hobbies groupings, like Food or Travel"
+                              },
+                              "entity": {
+                                    "id": "781974596148793345",
+                                    "name": "Business & finance"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "66",
+                                    "name": "Interests and Hobbies Category",
+                                    "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+                              },
+                              "entity": {
+                                    "id": "857878777191211008",
+                                    "name": "Leadership",
+                                    "description": "Leadership"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "808713037230157824",
+                                    "name": "Elon Musk",
+                                    "description": "Elon Musk"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "1091420346660470784",
+                                    "name": "Tech personalities",
+                                    "description": "Tech Professionals"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "1166406108623163392",
+                                    "name": "Business personalities"
+                              }
+                        }
+                  ],
+                  "author_id": "44196397",
+                  "edit_history_tweet_ids": [
+                        "1616026394240356352"
+                  ]
+            },
+            {
+                  "entities": {
+                        "urls": [
+                              {
+                                    "start": 26,
+                                    "end": 49,
+                                    "url": "https://t.co/aTu71lNuCl",
+                                    "expanded_url": "https://twitter.com/teslaownerssv/status/1615547782043160576",
+                                    "display_url": "twitter.com/teslaownerssv/\u2026"
+                              }
+                        ],
+                        "annotations": [
+                              {
+                                    "start": 14,
+                                    "end": 23,
+                                    "probability": 0.7512,
+                                    "type": "Organization",
+                                    "normalized_text": "Tesla Team"
+                              }
+                        ]
+                  },
+                  "public_metrics": {
+                        "retweet_count": 3983,
+                        "reply_count": 2995,
+                        "like_count": 42853,
+                        "quote_count": 202,
+                        "impression_count": 8500613
+                  },
+                  "text": "Great work by Tesla Team! https://t.co/aTu71lNuCl",
+                  "created_at": "2023-01-18T20:19:00.000Z",
+                  "id": "1615805981723889665",
+                  "conversation_id": "1615805981723889665",
+                  "lang": "en",
+                  "reply_settings": "everyone",
+                  "referenced_tweets": [
+                        {
+                              "type": "quoted",
+                              "id": "1615547782043160576"
+                        }
+                  ],
+                  "possibly_sensitive": false,
+                  "context_annotations": [
+                        {
+                              "domain": {
+                                    "id": "45",
+                                    "name": "Brand Vertical",
+                                    "description": "Top level entities that describe a Brands industry"
+                              },
+                              "entity": {
+                                    "id": "781974597302226944",
+                                    "name": "Transportation"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "46",
+                                    "name": "Business Taxonomy",
+                                    "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                              },
+                              "entity": {
+                                    "id": "1557696420500541440",
+                                    "name": "Automotive, Aircraft & Boat Business",
+                                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to automobile, spacecraft, aircraft and boat manufacturing"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "46",
+                                    "name": "Business Taxonomy",
+                                    "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                              },
+                              "entity": {
+                                    "id": "1557696848252391426",
+                                    "name": "Financial Services Business",
+                                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks "
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "46",
+                                    "name": "Business Taxonomy",
+                                    "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                              },
+                              "entity": {
+                                    "id": "1557697333571112960",
+                                    "name": "Technology Business",
+                                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to softwares, apps, communication equipments, hardwares"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "46",
+                                    "name": "Business Taxonomy",
+                                    "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                              },
+                              "entity": {
+                                    "id": "1557697439489880065",
+                                    "name": "Travel & Transportation Business",
+                                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to travel as airlines, travel agencies, hotels"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "30",
+                                    "name": "Entities [Entity Service]",
+                                    "description": "Entity Service top level domain, every item that is in Entity Service should be in this domain"
+                              },
+                              "entity": {
+                                    "id": "848920371311001600",
+                                    "name": "Technology",
+                                    "description": "Technology and computing"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "781974597302226944",
+                                    "name": "Transportation"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "839159814991167489",
+                                    "name": "Travel",
+                                    "description": "Travel"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "847528391163092993",
+                                    "name": "Automotive",
+                                    "description": "Car culture"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "1196845866138533888",
+                                    "name": "Automobile Brands"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "1362135345043673092",
+                                    "name": "Electric vehicles"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "165",
+                                    "name": "Technology",
+                                    "description": "for individual and types of technology, e.g., food technology, 3D printing"
+                              },
+                              "entity": {
+                                    "id": "848920371311001600",
+                                    "name": "Technology",
+                                    "description": "Technology and computing"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "10",
+                                    "name": "Person",
+                                    "description": "Named people in the world like Nelson Mandela"
+                              },
+                              "entity": {
+                                    "id": "808713037230157824",
+                                    "name": "Elon Musk",
+                                    "description": "Elon Musk"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "30",
+                                    "name": "Entities [Entity Service]",
+                                    "description": "Entity Service top level domain, every item that is in Entity Service should be in this domain"
+                              },
+                              "entity": {
+                                    "id": "781972125179518977",
+                                    "name": "Auto Manufacturer - Auto"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "47",
+                                    "name": "Brand",
+                                    "description": "Brands and Companies"
+                              },
+                              "entity": {
+                                    "id": "10044199219",
+                                    "name": "Tesla Motors"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "65",
+                                    "name": "Interests and Hobbies Vertical",
+                                    "description": "Top level interests and hobbies groupings, like Food or Travel"
+                              },
+                              "entity": {
+                                    "id": "781974596148793345",
+                                    "name": "Business & finance"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "65",
+                                    "name": "Interests and Hobbies Vertical",
+                                    "description": "Top level interests and hobbies groupings, like Food or Travel"
+                              },
+                              "entity": {
+                                    "id": "847528391163092993",
+                                    "name": "Automotive",
+                                    "description": "Car culture"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "66",
+                                    "name": "Interests and Hobbies Category",
+                                    "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+                              },
+                              "entity": {
+                                    "id": "847528576551337984",
+                                    "name": "Hybrid and electric vehicles",
+                                    "description": "Hybrid and electric vehicles"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "66",
+                                    "name": "Interests and Hobbies Category",
+                                    "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+                              },
+                              "entity": {
+                                    "id": "847528646185070592",
+                                    "name": "Luxury Cars",
+                                    "description": "Luxury"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "66",
+                                    "name": "Interests and Hobbies Category",
+                                    "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+                              },
+                              "entity": {
+                                    "id": "857878777191211008",
+                                    "name": "Leadership",
+                                    "description": "Leadership"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "10044199219",
+                                    "name": "Tesla Motors"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "808713037230157824",
+                                    "name": "Elon Musk",
+                                    "description": "Elon Musk"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "847528391163092993",
+                                    "name": "Automotive",
+                                    "description": "Car culture"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "1091420346660470784",
+                                    "name": "Tech personalities",
+                                    "description": "Tech Professionals"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "1166406108623163392",
+                                    "name": "Business personalities"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "1196845866138533888",
+                                    "name": "Automobile Brands"
+                              }
+                        }
+                  ],
+                  "author_id": "44196397",
+                  "edit_history_tweet_ids": [
+                        "1615805981723889665"
+                  ]
+            },
+            {
+                  "public_metrics": {
+                        "retweet_count": 13724,
+                        "reply_count": 7065,
+                        "like_count": 136606,
+                        "quote_count": 756,
+                        "impression_count": 5314777
+                  },
+                  "text": "To be clear, I\u2019m not someone who thinks lots of government agencies should be abolished (maybe a few), but we should always question our institutions, as this strengthens the bedrock of democracy.",
+                  "created_at": "2023-01-18T18:34:59.000Z",
+                  "id": "1615779802543443969",
+                  "conversation_id": "1615777094281334784",
+                  "lang": "en",
+                  "reply_settings": "everyone",
+                  "referenced_tweets": [
+                        {
+                              "type": "replied_to",
+                              "id": "1615777094281334784"
+                        }
+                  ],
+                  "possibly_sensitive": false,
+                  "context_annotations": [
+                        {
+                              "domain": {
+                                    "id": "46",
+                                    "name": "Business Taxonomy",
+                                    "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                              },
+                              "entity": {
+                                    "id": "1557696848252391426",
+                                    "name": "Financial Services Business",
+                                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks "
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "46",
+                                    "name": "Business Taxonomy",
+                                    "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                              },
+                              "entity": {
+                                    "id": "1557697333571112960",
+                                    "name": "Technology Business",
+                                    "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to softwares, apps, communication equipments, hardwares"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "10",
+                                    "name": "Person",
+                                    "description": "Named people in the world like Nelson Mandela"
+                              },
+                              "entity": {
+                                    "id": "808713037230157824",
+                                    "name": "Elon Musk",
+                                    "description": "Elon Musk"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "65",
+                                    "name": "Interests and Hobbies Vertical",
+                                    "description": "Top level interests and hobbies groupings, like Food or Travel"
+                              },
+                              "entity": {
+                                    "id": "781974596148793345",
+                                    "name": "Business & finance"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "66",
+                                    "name": "Interests and Hobbies Category",
+                                    "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+                              },
+                              "entity": {
+                                    "id": "857878777191211008",
+                                    "name": "Leadership",
+                                    "description": "Leadership"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "808713037230157824",
+                                    "name": "Elon Musk",
+                                    "description": "Elon Musk"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "1091420346660470784",
+                                    "name": "Tech personalities",
+                                    "description": "Tech Professionals"
+                              }
+                        },
+                        {
+                              "domain": {
+                                    "id": "131",
+                                    "name": "Unified Twitter Taxonomy",
+                                    "description": "A taxonomy of user interests. "
+                              },
+                              "entity": {
+                                    "id": "1166406108623163392",
+                                    "name": "Business personalities"
+                              }
+                        }
+                  ],
+                  "in_reply_to_user_id": "44196397",
+                  "author_id": "44196397",
+                  "edit_history_tweet_ids": [
+                        "1615779802543443969"
+                  ]
+            }
+      ],
+      "includes": {
+            "users": [
+                  {
+                        "created_at": "2009-06-02T20:12:29.000Z",
+                        "id": "44196397",
+                        "public_metrics": {
+                              "followers_count": 126589750,
+                              "following_count": 168,
+                              "tweet_count": 22205,
+                              "listed_count": 107239
+                        },
+                        "protected": false,
+                        "profile_image_url": "https://pbs.twimg.com/profile_images/1590968738358079488/IY9Gx6Ok_normal.jpg",
+                        "verified": true,
+                        "description": "",
+                        "name": "Elon Musk",
+                        "username": "elonmusk"
+                  },
+                  {
+                        "created_at": "2020-10-21T22:04:47.000Z",
+                        "id": "1319036828964454402",
+                        "public_metrics": {
+                              "followers_count": 189822,
+                              "following_count": 0,
+                              "tweet_count": 292,
+                              "listed_count": 554
+                        },
+                        "protected": false,
+                        "profile_image_url": "https://pbs.twimg.com/profile_images/1590766786122653696/dNjmIGfn_normal.jpg",
+                        "entities": {
+                              "url": {
+                                    "urls": [
+                                          {
+                                                "start": 0,
+                                                "end": 23,
+                                                "url": "https://t.co/VqutklmXl7",
+                                                "expanded_url": "https://twitter.com/i/communitynotes/rated_helpful",
+                                                "display_url": "twitter.com/i/communitynot\u2026"
+                                          }
+                                    ]
+                              },
+                              "description": {
+                                    "urls": [
+                                          {
+                                                "start": 115,
+                                                "end": 138,
+                                                "url": "https://t.co/CGdR4wF5wn",
+                                                "expanded_url": "http://twitter.github.io/communitynotes",
+                                                "display_url": "twitter.github.io/communitynotes"
+                                          }
+                                    ]
+                              }
+                        },
+                        "verified": true,
+                        "description": "Empowering people on Twitter to create a better-informed world.\n\nWe're open source and data is publicly available: https://t.co/CGdR4wF5wn\n\nQ? Tweet/DM",
+                        "name": "Community Notes",
+                        "username": "CommunityNotes",
+                        "url": "https://t.co/VqutklmXl7"
+                  },
+                  {
+                        "created_at": "2018-07-08T20:42:31.000Z",
+                        "id": "1016059981907386368",
+                        "public_metrics": {
+                              "followers_count": 646576,
+                              "following_count": 508,
+                              "tweet_count": 111133,
+                              "listed_count": 1302
+                        },
+                        "location": "Silicon Valley",
+                        "protected": false,
+                        "profile_image_url": "https://pbs.twimg.com/profile_images/1581464502746238978/88EWeHhx_normal.jpg",
+                        "entities": {
+                              "url": {
+                                    "urls": [
+                                          {
+                                                "start": 0,
+                                                "end": 23,
+                                                "url": "https://t.co/jL2WrOcJqz",
+                                                "expanded_url": "https://linktr.ee/Teslaownerssv",
+                                                "display_url": "linktr.ee/Teslaownerssv"
+                                          }
+                                    ]
+                              }
+                        },
+                        "verified": false,
+                        "description": "Account follows: The most Notorious Tesla Owners Club in the world & the founders journey as an owner. We aren\u2019t Tesla",
+                        "name": "Tesla Owners Silicon Valley",
+                        "username": "teslaownersSV",
+                        "pinned_tweet_id": "1613976429112487936",
+                        "url": "https://t.co/jL2WrOcJqz"
+                  }
+            ],
+            "tweets": [
+                  {
+                        "entities": {
+                              "urls": [
+                                    {
+                                          "start": 234,
+                                          "end": 257,
+                                          "url": "https://t.co/HEUe73m9PU",
+                                          "expanded_url": "https://twitter.com/CommunityNotes/status/1616146692663037952/photo/1",
+                                          "display_url": "pic.twitter.com/HEUe73m9PU",
+                                          "media_key": "3_1616146682823192576"
+                                    }
+                              ]
+                        },
+                        "public_metrics": {
+                              "retweet_count": 406,
+                              "reply_count": 231,
+                              "like_count": 2461,
+                              "quote_count": 93,
+                              "impression_count": 6856096
+                        },
+                        "text": "Community Notes are now also shown on Quote Tweets \ud83c\udf89 This change boosts the impact of contributors\u2019 efforts, and helps ensure context is shown everywhere it can be helpful. Live now in the web app, and coming soon to iOS and Android. https://t.co/HEUe73m9PU",
+                        "created_at": "2023-01-19T18:52:52.000Z",
+                        "id": "1616146692663037952",
+                        "conversation_id": "1616146692663037952",
+                        "lang": "en",
+                        "attachments": {
+                              "media_keys": [
+                                    "3_1616146682823192576"
+                              ]
+                        },
+                        "reply_settings": "everyone",
+                        "possibly_sensitive": false,
+                        "context_annotations": [
+                              {
+                                    "domain": {
+                                          "id": "46",
+                                          "name": "Business Taxonomy",
+                                          "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                                    },
+                                    "entity": {
+                                          "id": "1557697333571112960",
+                                          "name": "Technology Business",
+                                          "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to softwares, apps, communication equipments, hardwares"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "47",
+                                          "name": "Brand",
+                                          "description": "Brands and Companies"
+                                    },
+                                    "entity": {
+                                          "id": "10026364281",
+                                          "name": "Apple"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "131",
+                                          "name": "Unified Twitter Taxonomy",
+                                          "description": "A taxonomy of user interests. "
+                                    },
+                                    "entity": {
+                                          "id": "10026364281",
+                                          "name": "Apple"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "30",
+                                          "name": "Entities [Entity Service]",
+                                          "description": "Entity Service top level domain, every item that is in Entity Service should be in this domain"
+                                    },
+                                    "entity": {
+                                          "id": "781974596752842752",
+                                          "name": "Services"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "47",
+                                          "name": "Brand",
+                                          "description": "Brands and Companies"
+                                    },
+                                    "entity": {
+                                          "id": "10026364281",
+                                          "name": "Apple"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "47",
+                                          "name": "Brand",
+                                          "description": "Brands and Companies"
+                                    },
+                                    "entity": {
+                                          "id": "10026820777",
+                                          "name": "Android"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "47",
+                                          "name": "Brand",
+                                          "description": "Brands and Companies"
+                                    },
+                                    "entity": {
+                                          "id": "10045225402",
+                                          "name": "Twitter"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "48",
+                                          "name": "Product",
+                                          "description": "Products created by Brands.  Examples: Ford Explorer, Apple iPhone."
+                                    },
+                                    "entity": {
+                                          "id": "10044903039",
+                                          "name": "Apple - iOS"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "30",
+                                          "name": "Entities [Entity Service]",
+                                          "description": "Entity Service top level domain, every item that is in Entity Service should be in this domain"
+                                    },
+                                    "entity": {
+                                          "id": "848920371311001600",
+                                          "name": "Technology",
+                                          "description": "Technology and computing"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "30",
+                                          "name": "Entities [Entity Service]",
+                                          "description": "Entity Service top level domain, every item that is in Entity Service should be in this domain"
+                                    },
+                                    "entity": {
+                                          "id": "848985956778561538",
+                                          "name": "Mobile",
+                                          "description": "Mobile"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "131",
+                                          "name": "Unified Twitter Taxonomy",
+                                          "description": "A taxonomy of user interests. "
+                                    },
+                                    "entity": {
+                                          "id": "10026820777",
+                                          "name": "Android"
+                                    }
+                              }
+                        ],
+                        "author_id": "1319036828964454402",
+                        "edit_history_tweet_ids": [
+                              "1616146692663037952"
+                        ]
+                  },
+                  {
+                        "entities": {
+                              "urls": [
+                                    {
+                                          "start": 164,
+                                          "end": 187,
+                                          "url": "https://t.co/crHgXLMQhV",
+                                          "expanded_url": "https://twitter.com/CNN/status/1615368425479577603/video/1",
+                                          "display_url": "pic.twitter.com/crHgXLMQhV",
+                                          "media_key": "13_1615328448381075456"
+                                    }
+                              ],
+                              "mentions": [
+                                    {
+                                          "start": 95,
+                                          "end": 101,
+                                          "username": "Tesla",
+                                          "id": "13298072"
+                                    },
+                                    {
+                                          "start": 102,
+                                          "end": 111,
+                                          "username": "elonmusk",
+                                          "id": "44196397"
+                                    }
+                              ]
+                        },
+                        "public_metrics": {
+                              "retweet_count": 360,
+                              "reply_count": 205,
+                              "like_count": 2193,
+                              "quote_count": 65,
+                              "impression_count": 8503914
+                        },
+                        "text": "Electric vehicles make up 10% of car sales and EVs are up 68% y/y on volume. Huge shout out to @tesla @elonmusk for making this happen and leading this revolution  https://t.co/crHgXLMQhV",
+                        "created_at": "2023-01-18T03:13:01.000Z",
+                        "id": "1615547782043160576",
+                        "conversation_id": "1615547782043160576",
+                        "lang": "en",
+                        "attachments": {
+                              "media_keys": [
+                                    "13_1615328448381075456"
+                              ]
+                        },
+                        "reply_settings": "everyone",
+                        "possibly_sensitive": false,
+                        "context_annotations": [
+                              {
+                                    "domain": {
+                                          "id": "45",
+                                          "name": "Brand Vertical",
+                                          "description": "Top level entities that describe a Brands industry"
+                                    },
+                                    "entity": {
+                                          "id": "781974597302226944",
+                                          "name": "Transportation"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "46",
+                                          "name": "Business Taxonomy",
+                                          "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                                    },
+                                    "entity": {
+                                          "id": "1557696420500541440",
+                                          "name": "Automotive, Aircraft & Boat Business",
+                                          "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to automobile, spacecraft, aircraft and boat manufacturing"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "46",
+                                          "name": "Business Taxonomy",
+                                          "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                                    },
+                                    "entity": {
+                                          "id": "1557696848252391426",
+                                          "name": "Financial Services Business",
+                                          "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks "
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "46",
+                                          "name": "Business Taxonomy",
+                                          "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                                    },
+                                    "entity": {
+                                          "id": "1557696940178935808",
+                                          "name": "Gaming Business",
+                                          "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to offline and online games such as gaming consoles, tabletop games, video game publishers"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "46",
+                                          "name": "Business Taxonomy",
+                                          "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                                    },
+                                    "entity": {
+                                          "id": "1557697333571112960",
+                                          "name": "Technology Business",
+                                          "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to softwares, apps, communication equipments, hardwares"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "46",
+                                          "name": "Business Taxonomy",
+                                          "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                                    },
+                                    "entity": {
+                                          "id": "1557697439489880065",
+                                          "name": "Travel & Transportation Business",
+                                          "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to travel as airlines, travel agencies, hotels"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "30",
+                                          "name": "Entities [Entity Service]",
+                                          "description": "Entity Service top level domain, every item that is in Entity Service should be in this domain"
+                                    },
+                                    "entity": {
+                                          "id": "848920371311001600",
+                                          "name": "Technology",
+                                          "description": "Technology and computing"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "131",
+                                          "name": "Unified Twitter Taxonomy",
+                                          "description": "A taxonomy of user interests. "
+                                    },
+                                    "entity": {
+                                          "id": "781974597302226944",
+                                          "name": "Transportation"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "131",
+                                          "name": "Unified Twitter Taxonomy",
+                                          "description": "A taxonomy of user interests. "
+                                    },
+                                    "entity": {
+                                          "id": "839159814991167489",
+                                          "name": "Travel",
+                                          "description": "Travel"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "131",
+                                          "name": "Unified Twitter Taxonomy",
+                                          "description": "A taxonomy of user interests. "
+                                    },
+                                    "entity": {
+                                          "id": "847528391163092993",
+                                          "name": "Automotive",
+                                          "description": "Car culture"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "131",
+                                          "name": "Unified Twitter Taxonomy",
+                                          "description": "A taxonomy of user interests. "
+                                    },
+                                    "entity": {
+                                          "id": "1362135345043673092",
+                                          "name": "Electric vehicles"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "165",
+                                          "name": "Technology",
+                                          "description": "for individual and types of technology, e.g., food technology, 3D printing"
+                                    },
+                                    "entity": {
+                                          "id": "848920371311001600",
+                                          "name": "Technology",
+                                          "description": "Technology and computing"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "10",
+                                          "name": "Person",
+                                          "description": "Named people in the world like Nelson Mandela"
+                                    },
+                                    "entity": {
+                                          "id": "808713037230157824",
+                                          "name": "Elon Musk",
+                                          "description": "Elon Musk"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "30",
+                                          "name": "Entities [Entity Service]",
+                                          "description": "Entity Service top level domain, every item that is in Entity Service should be in this domain"
+                                    },
+                                    "entity": {
+                                          "id": "781972125179518977",
+                                          "name": "Auto Manufacturer - Auto"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "47",
+                                          "name": "Brand",
+                                          "description": "Brands and Companies"
+                                    },
+                                    "entity": {
+                                          "id": "10044199219",
+                                          "name": "Tesla Motors"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "65",
+                                          "name": "Interests and Hobbies Vertical",
+                                          "description": "Top level interests and hobbies groupings, like Food or Travel"
+                                    },
+                                    "entity": {
+                                          "id": "781974596148793345",
+                                          "name": "Business & finance"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "65",
+                                          "name": "Interests and Hobbies Vertical",
+                                          "description": "Top level interests and hobbies groupings, like Food or Travel"
+                                    },
+                                    "entity": {
+                                          "id": "847528391163092993",
+                                          "name": "Automotive",
+                                          "description": "Car culture"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "66",
+                                          "name": "Interests and Hobbies Category",
+                                          "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+                                    },
+                                    "entity": {
+                                          "id": "847528576551337984",
+                                          "name": "Hybrid and electric vehicles",
+                                          "description": "Hybrid and electric vehicles"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "66",
+                                          "name": "Interests and Hobbies Category",
+                                          "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+                                    },
+                                    "entity": {
+                                          "id": "847528646185070592",
+                                          "name": "Luxury Cars",
+                                          "description": "Luxury"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "66",
+                                          "name": "Interests and Hobbies Category",
+                                          "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+                                    },
+                                    "entity": {
+                                          "id": "857878777191211008",
+                                          "name": "Leadership",
+                                          "description": "Leadership"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "131",
+                                          "name": "Unified Twitter Taxonomy",
+                                          "description": "A taxonomy of user interests. "
+                                    },
+                                    "entity": {
+                                          "id": "10044199219",
+                                          "name": "Tesla Motors"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "131",
+                                          "name": "Unified Twitter Taxonomy",
+                                          "description": "A taxonomy of user interests. "
+                                    },
+                                    "entity": {
+                                          "id": "808713037230157824",
+                                          "name": "Elon Musk",
+                                          "description": "Elon Musk"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "131",
+                                          "name": "Unified Twitter Taxonomy",
+                                          "description": "A taxonomy of user interests. "
+                                    },
+                                    "entity": {
+                                          "id": "847528391163092993",
+                                          "name": "Automotive",
+                                          "description": "Car culture"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "131",
+                                          "name": "Unified Twitter Taxonomy",
+                                          "description": "A taxonomy of user interests. "
+                                    },
+                                    "entity": {
+                                          "id": "1091420346660470784",
+                                          "name": "Tech personalities",
+                                          "description": "Tech Professionals"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "131",
+                                          "name": "Unified Twitter Taxonomy",
+                                          "description": "A taxonomy of user interests. "
+                                    },
+                                    "entity": {
+                                          "id": "1166406108623163392",
+                                          "name": "Business personalities"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "131",
+                                          "name": "Unified Twitter Taxonomy",
+                                          "description": "A taxonomy of user interests. "
+                                    },
+                                    "entity": {
+                                          "id": "1196845866138533888",
+                                          "name": "Automobile Brands"
+                                    }
+                              }
+                        ],
+                        "author_id": "1016059981907386368",
+                        "edit_history_tweet_ids": [
+                              "1615547782043160576"
+                        ]
+                  },
+                  {
+                        "public_metrics": {
+                              "retweet_count": 38616,
+                              "reply_count": 33874,
+                              "like_count": 294806,
+                              "quote_count": 3556,
+                              "impression_count": 27825020
+                        },
+                        "text": "Why did American media go from questioning the State and \u201cspeaking truth to power\u201d to doing their bidding?",
+                        "created_at": "2023-01-18T18:24:13.000Z",
+                        "id": "1615777094281334784",
+                        "conversation_id": "1615777094281334784",
+                        "lang": "en",
+                        "reply_settings": "everyone",
+                        "possibly_sensitive": false,
+                        "context_annotations": [
+                              {
+                                    "domain": {
+                                          "id": "46",
+                                          "name": "Business Taxonomy",
+                                          "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                                    },
+                                    "entity": {
+                                          "id": "1557696848252391426",
+                                          "name": "Financial Services Business",
+                                          "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks "
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "46",
+                                          "name": "Business Taxonomy",
+                                          "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+                                    },
+                                    "entity": {
+                                          "id": "1557697333571112960",
+                                          "name": "Technology Business",
+                                          "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to softwares, apps, communication equipments, hardwares"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "10",
+                                          "name": "Person",
+                                          "description": "Named people in the world like Nelson Mandela"
+                                    },
+                                    "entity": {
+                                          "id": "808713037230157824",
+                                          "name": "Elon Musk",
+                                          "description": "Elon Musk"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "65",
+                                          "name": "Interests and Hobbies Vertical",
+                                          "description": "Top level interests and hobbies groupings, like Food or Travel"
+                                    },
+                                    "entity": {
+                                          "id": "781974596148793345",
+                                          "name": "Business & finance"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "66",
+                                          "name": "Interests and Hobbies Category",
+                                          "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+                                    },
+                                    "entity": {
+                                          "id": "857878777191211008",
+                                          "name": "Leadership",
+                                          "description": "Leadership"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "131",
+                                          "name": "Unified Twitter Taxonomy",
+                                          "description": "A taxonomy of user interests. "
+                                    },
+                                    "entity": {
+                                          "id": "808713037230157824",
+                                          "name": "Elon Musk",
+                                          "description": "Elon Musk"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "131",
+                                          "name": "Unified Twitter Taxonomy",
+                                          "description": "A taxonomy of user interests. "
+                                    },
+                                    "entity": {
+                                          "id": "1091420346660470784",
+                                          "name": "Tech personalities",
+                                          "description": "Tech Professionals"
+                                    }
+                              },
+                              {
+                                    "domain": {
+                                          "id": "131",
+                                          "name": "Unified Twitter Taxonomy",
+                                          "description": "A taxonomy of user interests. "
+                                    },
+                                    "entity": {
+                                          "id": "1166406108623163392",
+                                          "name": "Business personalities"
+                                    }
+                              }
+                        ],
+                        "author_id": "44196397",
+                        "edit_history_tweet_ids": [
+                              "1615777094281334784"
+                        ]
+                  }
+            ]
+      },
+      "meta": {
+            "next_token": "7140dibdnow9c7btw450qvsx1p935znk3v749hxe3figp",
+            "result_count": 5,
+            "newest_id": "1616179085507702785",
+            "oldest_id": "1615779802543443969"
+      }
+}
