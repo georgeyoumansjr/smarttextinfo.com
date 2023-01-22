@@ -1,42 +1,50 @@
 [
       {
-            "tweet": "Twitter is arguably already the least wrong source of truth on the Internet, but we obviously still have a long way to go.\n\nEnabling @CommunityNotes to operate at very large scale and providing maximum transparency about how Twitter works are fundamental to building trust.",
-            "likes": 142104,
-            "retweet_count": 15009,
-            "reply": 11685,
-            "quote_count": 1526,
-            "impression_count": 9288428
+            "tweet": "(Tweets will be translated before being recommended)",
+            "likes": 20788,
+            "retweet_count": 1155,
+            "reply": 1220,
+            "quote_count": 128,
+            "impression_count": 1458159
       },
       {
-            "tweet": "Coming soon are notifications if you\u2019ve replied, liked or retweeted something subsequently corrected by community https://t.co/uBSjJxV7Ww",
-            "likes": 36744,
-            "retweet_count": 4123,
-            "reply": 3375,
-            "quote_count": 556,
-            "impression_count": 6506612
+            "tweet": "There are epic tweets in other countries every day (Japan especially)",
+            "likes": 29702,
+            "retweet_count": 2892,
+            "reply": 1388,
+            "quote_count": 762,
+            "impression_count": 2216947
       },
       {
-            "tweet": "\ud83d\udee1\ufe0f VE RI TAS \ud83d\udee1\ufe0f",
-            "likes": 230003,
-            "retweet_count": 19813,
-            "reply": 13566,
-            "quote_count": 2295,
-            "impression_count": 37806712
+            "tweet": "Next Twitter update will remember whether you were on For You (ie recommended), Following or list you made &amp; stop switching you back to recommended tweets",
+            "likes": 35878,
+            "retweet_count": 3414,
+            "reply": 3374,
+            "quote_count": 946,
+            "impression_count": 3605787
       },
       {
-            "tweet": "Great work by Tesla Team! https://t.co/aTu71lNuCl",
-            "likes": 42928,
-            "retweet_count": 3990,
-            "reply": 2997,
-            "quote_count": 202,
-            "impression_count": 8522075
+            "tweet": "In coming months, Twitter will translate &amp; recommend amazing tweets from people in other countries &amp; cultures",
+            "likes": 119702,
+            "retweet_count": 10971,
+            "reply": 9570,
+            "quote_count": 2850,
+            "impression_count": 7944550
       },
       {
-            "tweet": "To be clear, I\u2019m not someone who thinks lots of government agencies should be abolished (maybe a few), but we should always question our institutions, as this strengthens the bedrock of democracy.",
-            "likes": 136837,
-            "retweet_count": 13745,
-            "reply": 7083,
-            "quote_count": 759,
-            "impression_count": 5329708
+            "tweet": "Exactly! If companies post interesting or entertaining content, they will gain an audience rapidly. https://t.co/0leAmqueHM",
+            "likes": 16786,
+            "retweet_count": 1597,
+            "reply": 1337,
+            "quote_count": 165,
+            "impression_count": 3214978
+      },
+      {
+            "tweet": "Major Twitter improvement we just released is that you can now bookmark tweets from tweet details page.\n\nImportantly, bookmarks are *private*, unlike likes. No one other than you can see your bookmarks.",
+            "likes": 88304,
+            "retweet_count": 7769,
+            "reply": 6185,
+            "quote_count": 1115,
+            "impression_count": 9760466
       }
 ]

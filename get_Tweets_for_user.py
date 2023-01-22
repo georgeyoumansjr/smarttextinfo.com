@@ -79,7 +79,39 @@ def main(username, tweet_count):
 #   putting the response in json file
     json.dump(tweet_data, out_file_2, indent = 6)
     out_file_2.close()
+# copying above function to be used separately in Django
+def fetch_user_Tweets_data(username, tweet_count):
 
+    
+    global user_id, max_results
+    # Getting user id from username:
+    user_id = get_user_id(username)[0]['id']
+    max_results = tweet_count
+    # Sending the request to the specified url
+    json_response = connect_to_endpoint()
+    print("response : ", len(json_response['data']))
+    tweet_data = []
+    for data in json_response['data']:
+        # Getting tweet language, if present
+        language = ''
+        try:
+            language = data['lang']
+        except:
+            pass
+        # preparing data for tweets 
+        tweet_data.append({
+            'tweet' : data['text'],
+            'likes' : data['public_metrics']['like_count'],
+            'retweets' : data['public_metrics']['retweet_count'],
+            'reply' : data['public_metrics']['reply_count'],
+            'quotes' : data['public_metrics']['quote_count'],
+            'impressions' : data['public_metrics']['impression_count'],
+            'language' : language
+
+        })
+
+    return tweet_data
+    
 if __name__ == "__main__":
     # Sending username and number of tweets to get
     main('elonmusk', 5)
