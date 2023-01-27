@@ -13,7 +13,9 @@ user_id = ''
 # The number of tweets we'd like to get in our response
 max_results = 0
 
-
+# Dates during which we'll search for tweets
+start_date = None
+end_date = None
 
 def bearer_oauth(r):
     """
@@ -28,9 +30,13 @@ def connect_to_endpoint():
     """
     This function makes the get request to get the tweets, if it doesn't get a 200 status response, it raises an error
     """
-
+    # start_date = '2023-01-01T00:00:00Z'
+    # end_date = '2023-01-24T23:59:59Z'
     # The url to get tweets from user id, it gets info for every option avaialable, and excludes retweets and replies
     url =f'https://api.twitter.com/2/users/{user_id}/tweets?expansions=attachments.poll_ids,attachments.media_keys,author_id,entities.mentions.username,geo.place_id,in_reply_to_user_id,referenced_tweets.id,referenced_tweets.id.author_id&tweet.fields=attachments,author_id,context_annotations,conversation_id,created_at,entities,geo,id,in_reply_to_user_id,lang,possibly_sensitive,public_metrics,referenced_tweets,reply_settings,source,text,withheld&user.fields=created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,public_metrics,url,username,verified,withheld&place.fields=contained_within,country,country_code,full_name,geo,id,name,place_type&poll.fields=duration_minutes,end_datetime,id,options,voting_status&media.fields=duration_ms,height,media_key,preview_image_url,type,url,width,public_metrics,non_public_metrics,organic_metrics,promoted_metrics&max_results={max_results}&exclude=replies,retweets'
+    
+    if start_date != None and end_date != None:
+       url+= f'&start_time={start_date}&end_time={end_date}' 
 
 
     response = requests.request("GET", url, auth=bearer_oauth,)
@@ -51,12 +57,15 @@ def main(username, tweet_count):
     # Sending the request to the specified url
     json_response = connect_to_endpoint()
     # Naming a file in which we will save the response
-    out_file = open("myfileNew.json", "w")
+    out_file = open("myfileNew2023.json", "w")
 #   putting the response in json file
     json.dump(json_response, out_file, indent = 6)
     out_file.close()
     # Separating data of tweets into a new file
-    tweet_data = []
+    tweet_data = {}
+    tweet_data['tweets'] = []
+    tweet_data['users'] = []
+    
     for data in json_response['data']:
         # Getting tweet language, if present
         language = ''
@@ -65,7 +74,7 @@ def main(username, tweet_count):
         except:
             pass
         # preparing data for tweets file
-        tweet_data.append({
+        tweet_data['tweets'].append({
             'tweet' : data['text'],
             'likes' : data['public_metrics']['like_count'],
             'retweets' : data['public_metrics']['retweet_count'],
@@ -75,22 +84,41 @@ def main(username, tweet_count):
             'language' : language
 
         })
-    out_file_2 = open("tweets2.json", "w")
+    try:
+        for data in json_response['includes']['users']:
+            tweet_data['users'].append({
+                'created_at' : data['created_at'],
+                'followers' : data['public_metrics']['followers_count'],
+                'following' : data['public_metrics']['following_count'],
+                'tweets' : data['public_metrics']['tweet_count'],
+                'listed' : data['public_metrics']['listed_count'],
+                'profile_Picture' : data['profile_image_url'],
+                'name' : data['name'],
+                'username' : data['username'],        
+            })
+    except:
+        pass
+    out_file_2 = open("tweets22023.json", "w")
 #   putting the response in json file
     json.dump(tweet_data, out_file_2, indent = 6)
     out_file_2.close()
 # copying above function to be used separately in Django
-def fetch_user_Tweets_data(username, tweet_count):
+def fetch_user_Tweets_data(username, tweet_count, tweet_start_date = None, tweet_end_date = None):
 
-    
-    global user_id, max_results
+    global user_id, max_results,start_date,end_date
     # Getting user id from username:
     user_id = get_user_id(username)[0]['id']
     max_results = tweet_count
+
+    start_date=tweet_start_date
+    end_date=tweet_end_date
     # Sending the request to the specified url
     json_response = connect_to_endpoint()
-    print("response : ", len(json_response['data']))
-    tweet_data = []
+
+    tweet_data = {}
+    tweet_data['tweets'] = []
+    tweet_data['users'] = []
+    
     for data in json_response['data']:
         # Getting tweet language, if present
         language = ''
@@ -98,8 +126,8 @@ def fetch_user_Tweets_data(username, tweet_count):
             language = data['lang']
         except:
             pass
-        # preparing data for tweets 
-        tweet_data.append({
+        # preparing data for tweets file
+        tweet_data['tweets'].append({
             'tweet' : data['text'],
             'likes' : data['public_metrics']['like_count'],
             'retweets' : data['public_metrics']['retweet_count'],
@@ -109,9 +137,21 @@ def fetch_user_Tweets_data(username, tweet_count):
             'language' : language
 
         })
-
-    return tweet_data
-    
+    try:
+        for data in json_response['includes']['users']:
+            tweet_data['users'].append({
+                'created_at' : data['created_at'],
+                'followers' : data['public_metrics']['followers_count'],
+                'following' : data['public_metrics']['following_count'],
+                'tweets' : data['public_metrics']['tweet_count'],
+                'listed' : data['public_metrics']['listed_count'],
+                'profile_Picture' : data['profile_image_url'],
+                'name' : data['name'],
+                'username' : data['username'],        
+            })
+    except:
+        pass
+    return tweet_data    
 if __name__ == "__main__":
     # Sending username and number of tweets to get
-    main('elonmusk', 5)
+    main('elonmusk', 20)
