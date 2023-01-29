@@ -15,7 +15,6 @@ class UserTweets(APIView):
                 pass
             if tweets_count == None:
                 tweets_count = 10
-            print("tweet count : ", tweets_count )
 
             tweets = fetch_user_Tweets_data(username, tweets_count)
             return Response({'data' :tweets}, status=status.HTTP_200_OK)

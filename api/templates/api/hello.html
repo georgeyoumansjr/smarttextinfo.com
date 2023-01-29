@@ -4,18 +4,66 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
-{% if latest_question_list %}
-    <ul class="pl-5 text-center">
-    {% for question in latest_question_list %}
-        <li><a href="/polls/{{ question.id }}/">{{ question.name }}</a></li>
+{% if tweets %}
+    <h1>Tweets : </h1>
+<ol class="pl-5">
+{% for tweet in tweets %}
+    
+        <li>
+            <ul>
+                <li><strong>Tweet : </strong>{{ tweet.tweet }}</li>
+                <li><strong>Likes : </strong>{{ tweet.likes }}</li>
+                <li><strong>Retweets : </strong>{{ tweet.retweets }}</li>
+                <li><strong>Replies : </strong>{{ tweet.reply }}</li>
+                <li><strong>Quotes : </strong>{{ tweet.quotes }}</li>
+                <li><strong>Language : </strong>{{ tweet.language }}</li>
+            </ul>
+        </li>
+    
+            
+        
     {% endfor %}
-    </ul>
-{% else %}
-    <p>No Data available !.</p>
+</ol>    
+    
+{% endif %}
+
+{% if users %}
+    <h1>Users Mentioned in these tweets : </h1>
+<ol class="pl-5">
+{% for user in users %}
+    
+        <li>
+            <ul>
+                <li><strong>Name : </strong>{{ user.name }}</li>
+                <li><strong>Username : </strong>{{ user.username }}</li>
+                <li><strong>Followers : </strong>{{ user.followers }}</li>
+                <li><strong>Following : </strong>{{ user.following }}</li>
+                <li><strong>Number of Tweets : </strong>{{ user.tweets }}</li>
+                <li><strong>Listed : </strong>{{ user.listed }}</li>
+                <li><img src="{{ user.profile_Picture }}"  alt="profile image"/></li>
+                
+                
+            </ul>
+        </li>
+    
+            
+        
+    {% endfor %}
+</ol>    
+    
+{% endif %}
+
+{% if errors %}
+<div class="text-center">
+    <h1>Unable to display tweets ! : </h1>
+    <h3>{{errors}}</h3>
+</div>
 {% endif %}
 <br/>
 <form method="post" action="{% url 'index' %}">
     {% csrf_token %}
     <input type="text" name="username" placeholder="enter twitter username"/>
+    <br/>
+    <input type="number" name="tweetsCount" placeholder="enter number of tweets to fetch" min="1" max="100" />
     <input type="submit" value="Get Tweets !">
 </form>
