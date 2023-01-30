@@ -4,8 +4,53 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
+
+<!-- <script>
+
+    // document.querySelector('#my-form').addEventListener('submit', function(event) {
+    //     console.log("QUERY FUNCTION RAN : ");
+    //     event.preventDefault();
+    //   console.log("event prevent : ");
+    //   console.log("selected : ", document.querySelector('input[name="sort_by"]:checked').value;)
+    //   // Perform some custom action instead of submitting the form
+    // });
+    
+    document.querySelector('#submit-btn').addEventListener('onclick', function(event) {
+        console.log("QUERY FUNCTION RAN : ");
+        event.preventDefault();
+      console.log("event prevent : ");
+      console.log("selected : ", document.querySelector('input[name="sort_by"]:checked').value;)
+      // Perform some custom action instead of submitting the form
+    });
+    
+//    function sortTweets{
+//         console.log("Sort FUnction Ran");
+
+//     }
+  </script> -->
 {% if tweets %}
-    <h1>Tweets : </h1>
+<div class="container pt-2">
+    <div class="row">
+      <div class="col-md">
+        <h1>Tweets : </h1>
+      </div>
+      <div class="col-md">
+        <h2>Sort By : </h2> 
+        <!-- <form method="put" action="{% url 'index' %}"> -->
+        <!-- <form id="my-form"> -->
+            <!-- {% csrf_token %} -->
+            <input type="radio" name="sort_by" value="Likes" id="sort_by_likes">
+            <label for="sort_by_name">Sort by Likes</label>
+          
+            <input type="radio" name="sort_by" value="Retweets" id="sort_by_retweets">
+            <label for="sort_by_age">Sort by Retweets</label>
+            <button type="button" value="Sort Tweets !" id="submit-btn" >Sort Tweets !</button>
+          <!-- </form> -->
+      </div>
+      
+    </div>
+  </div>
+    
 <ol class="pl-5">
 {% for tweet in tweets %}
     
@@ -67,3 +112,10 @@
     <input type="number" name="tweetsCount" placeholder="enter number of tweets to fetch" min="1" max="100" />
     <input type="submit" value="Get Tweets !">
 </form>
+
+<script>
+document.querySelector('#submit-btn').addEventListener('click', function() {
+    // Run the function when the button is clicked
+      console.log("selected : ", document.querySelector('input[name="sort_by"]:checked').value);
+  });
+</script>
