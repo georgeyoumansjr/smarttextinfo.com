@@ -34,9 +34,13 @@ def Index(request):
                 else:
                     tweets_count = int(tweets_count)
                 try:
+                    print("username : ", username)
                     tweets = fetch_user_Tweets_data(username, tweets_count)
                 except Exception as e:
                     print("Error : ", e.__str__())
+                    if e.__str__() == 'data':
+                        errors = "Access denied for Twitter API ! "
+
                     
         
     if tweets != None:

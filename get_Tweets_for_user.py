@@ -33,7 +33,8 @@ def connect_to_endpoint():
     # start_date = '2023-01-01T00:00:00Z'
     # end_date = '2023-01-24T23:59:59Z'
     # The url to get tweets from user id, it gets info for every option avaialable, and excludes retweets and replies
-    url =f'https://api.twitter.com/2/users/{user_id}/tweets?expansions=attachments.poll_ids,attachments.media_keys,author_id,entities.mentions.username,geo.place_id,in_reply_to_user_id,referenced_tweets.id,referenced_tweets.id.author_id&tweet.fields=attachments,author_id,context_annotations,conversation_id,created_at,entities,geo,id,in_reply_to_user_id,lang,possibly_sensitive,public_metrics,referenced_tweets,reply_settings,source,text,withheld&user.fields=created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,public_metrics,url,username,verified,withheld&place.fields=contained_within,country,country_code,full_name,geo,id,name,place_type&poll.fields=duration_minutes,end_datetime,id,options,voting_status&media.fields=duration_ms,height,media_key,preview_image_url,type,url,width,public_metrics,non_public_metrics,organic_metrics,promoted_metrics&max_results={max_results}&exclude=replies,retweets'
+    url =f'https://api.twitter.com/2/users/{user_id}/tweets?expansions=attachments.poll_ids,attachments.media_keys,author_id,entities.mentions.username,geo.place_id,in_reply_to_user_id,referenced_tweets.id,referenced_tweets.id.author_id&tweet.fields=attachments,author_id,context_annotations,conversation_id,created_at,entities,geo,id,in_reply_to_user_id,lang,possibly_sensitive,public_metrics,referenced_tweets,reply_settings,source,text,withheld&user.fields=created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,public_metrics,url,username,verified,withheld&place.fields=contained_within,country,country_code,full_name,geo,id,name,place_type&poll.fields=duration_minutes,end_datetime,id,options,voting_status&media.fields=duration_ms,height,media_key,preview_image_url,type,url,width,public_metrics,non_public_metrics,organic_metrics,promoted_metrics&max_results={max_results}'
+    # &exclude=replies,retweets
     
     if start_date != None and end_date != None:
        url+= f'&start_time={start_date}&end_time={end_date}' 
@@ -118,14 +119,23 @@ def fetch_user_Tweets_data(username, tweet_count, tweet_start_date = None, tweet
     tweet_data = {}
     tweet_data['tweets'] = []
     tweet_data['users'] = []
-    
     for data in json_response['data']:
         # Getting tweet language, if present
         language = ''
+        hashtags = ''
         try:
             language = data['lang']
         except:
             pass
+        try:
+            hashtags_arr = data['hashtags']
+            for hash in hashtags_arr:
+                hashtags += hash['tag']
+                hashtags += ' , '
+
+        except:
+            pass
+
         # preparing data for tweets file
         tweet_data['tweets'].append({
             'tweet' : data['text'],
@@ -154,4 +164,4 @@ def fetch_user_Tweets_data(username, tweet_count, tweet_start_date = None, tweet
     return tweet_data    
 if __name__ == "__main__":
     # Sending username and number of tweets to get
-    main('elonmusk', 20)
+    main('kyliejenner', 20)
