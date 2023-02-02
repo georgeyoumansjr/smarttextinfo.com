@@ -128,13 +128,34 @@ def fetch_user_Tweets_data(username, tweet_count, tweet_start_date = None, tweet
         except:
             pass
         try:
-            hashtags_arr = data['hashtags']
+            hashtags_arr = data['entities']['hashtags']
             for hash in hashtags_arr:
                 hashtags += hash['tag']
                 hashtags += ' , '
 
         except:
             pass
+        media_List = []
+        try:
+            media_arr = data['attachments']
+            for media in media_arr['media_keys']:
+                media_List.append(media)
+        except:
+            pass
+        media_data = []
+        
+        for media_id in media_List:
+        
+            try:
+
+                matching_dict = [d for d in json_response['includes']['media'] if d['media_key'] == media_id][0]
+                media_data.append({
+                    'url' : matching_dict['url'],
+                    'type' : matching_dict['type'],
+
+                })
+            except Exception as e:
+                pass
 
         # preparing data for tweets file
         tweet_data['tweets'].append({
@@ -144,7 +165,9 @@ def fetch_user_Tweets_data(username, tweet_count, tweet_start_date = None, tweet
             'reply' : data['public_metrics']['reply_count'],
             'quotes' : data['public_metrics']['quote_count'],
             'impressions' : data['public_metrics']['impression_count'],
-            'language' : language
+            'language' : language,
+            'media' : media_data,
+            'hashtags' : hashtags
 
         })
     try:

@@ -64,6 +64,16 @@
                 <li><strong>Replies : </strong>{{ tweet.reply }}</li>
                 <li><strong>Quotes : </strong>{{ tweet.quotes }}</li>
                 <li><strong>Language : </strong>{{ tweet.language }}</li>
+                <li><strong>Hashtags : </strong>{{ tweet.hashtags }}</li>
+                <li><strong>Media : </strong>
+                    <ul>
+                        {% for media_data in tweet.media %}
+                        <li><strong>URL : </strong>{{media_data.url}}</li>
+                        <li><strong>Media Type : </strong>{{media_data.type}}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                
             </ul>
         </li>
     
