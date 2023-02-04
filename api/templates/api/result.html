@@ -5,7 +5,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
-<!-- 
+
 {% if tweets %}
 <div class="container pt-2">
     <div class="row">
@@ -15,7 +15,7 @@
       <div class="col-md">
         <h2>Sort By : </h2> 
         <form method="post" action="{% url 'index' %}">
-        
+        <!-- <form id="my-form"> -->
             {% csrf_token %}
             <input type="radio" name="sort_by" value="Likes" id="sort_by_likes">
             <label for="sort_by_name">Sort by Likes</label>
@@ -93,55 +93,4 @@
     <h1>Unable to display tweets ! : </h1>
     <h3>{{errors}}</h3>
 </div>
-{% endif %} -->
-<!-- <br/>
-
-
-
-
-
-
-     <form class="form-signin" method="post" action="{% url 'index' %}"> -->
-      <div class="text-center d-flex justify-content-center align-items-center container shadow-lg p-3 mb-5 bg-white rounded" style="background-color: #ccd4dd;" >
-    <form class="form-signin" method="post" action="{% url 'result' %}">
-      <img class="mb-4" src="https://about.twitter.com/content/dam/about-twitter/en/brand-toolkit/brand-download-img-1.jpg.twimg.1920.jpg" alt="" width="72" height="72">
-      {% csrf_token %}
-      <h1 class="h3 m-3 font-weight-normal"><strong>Do Analysis and Gain Ideas from your Competitors and Influencers in your niche !</strong></h1>
-      <div class="input-group-prepend h5 shadow-lg p-3 mb-3 bg-white rounded" >
-        <span class="input-group-text" id="basic-addon1">@</span>
-        <input type="text" class="form-control" placeholder="Enter Twitter Username" aria-label="Username" name="username" aria-describedby="basic-addon1" >
-      </div>
-      <div class="input-group-prepend h5 shadow-lg p-3 mb-3 bg-white rounded">
-        <span class="input-group-text" id="basic-addon1"># of Tweets</span>
-        <input type="number" class="form-control" placeholder="Number of tweets" aria-label="tweets Count" name="tweetsCount" aria-describedby="basic-addon1"  min="1" max="100">
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Get Tweets !</button>
-      <div class="h3" style="position: absolute;bottom: 0;">
-        <span id="copyright" class="text-center pl-5" style="left:80;">
-            &copy; &nbsp;  Powered by SEAnalytics &nbsp;<script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
-        </span>
-    </div>
-    </form>
-  
-
-</div>
-
-<script>
-document.querySelector('#submit-btn').addEventListener('click', function() {
-    // Run the function when the button is clicked
-      console.log("selected : ", document.querySelector('input[name="sort_by"]:checked').value);
-    //   const xhr = new XMLHttpRequest();
-    //   xhr.open('PUT', '/sort-people/?sort_by=' + sortBy);
-    //   xhr.onload = function() {
-    //     if (xhr.status === 200) {
-    //       const sortedPeople = JSON.parse(xhr.responseText).people;
-    //       const peopleList = document.querySelector('#people-list');
-    //       peopleList.innerHTML = '';
-    //       sortedPeople.forEach(person => {
-    //         const li = document.createElement('li');
-    //         li.textContent = `${person.name}, ${person.age}`;
-    //         peopleList.appendChild(li);
-    //       });
-    //     }
-  });
-</script>
+{% endif %}
