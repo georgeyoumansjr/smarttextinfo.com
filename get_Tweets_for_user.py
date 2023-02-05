@@ -197,6 +197,8 @@ def fetch_user_Tweets_data(username, tweet_count, tweet_start_date = None, tweet
         created_at = None
         try:
             created_at = data['created_at']
+            created_at = created_at.replace('T', " ")
+            created_at = created_at.replace('.000Z', "")
         except:
             pass
         # preparing data for tweets file
@@ -215,8 +217,15 @@ def fetch_user_Tweets_data(username, tweet_count, tweet_start_date = None, tweet
         })
     try:
         for data in json_response['includes']['users']:
+            created_at = None
+            try:
+                created_at = data['created_at']
+                created_at = created_at.replace('T', " ")
+                created_at = created_at.replace('.000Z', "")
+            except:
+                pass
             tweet_data['users'].append({
-                'created_at' : data['created_at'],
+                'created_at' : created_at,
                 'followers' : data['public_metrics']['followers_count'],
                 'following' : data['public_metrics']['following_count'],
                 'tweets' : data['public_metrics']['tweet_count'],
