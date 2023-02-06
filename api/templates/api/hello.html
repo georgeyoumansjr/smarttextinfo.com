@@ -1,107 +1,11 @@
-<head>
+<!-- <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</head>
-
-<!-- 
-{% if tweets %}
-<div class="container pt-2">
-    <div class="row">
-      <div class="col-md">
-        <h1>Tweets : </h1>
-      </div>
-      <div class="col-md">
-        <h2>Sort By : </h2> 
-        <form method="post" action="{% url 'index' %}">
-        
-            {% csrf_token %}
-            <input type="radio" name="sort_by" value="Likes" id="sort_by_likes">
-            <label for="sort_by_name">Sort by Likes</label>
-            <input type="text" value="{{tweets}}" name="tweets" style="display:none;"></input>
-            <input type="text" value="{{users}}" name="users" style="display:none;"></input>
-          
-            <input type="radio" name="sort_by" value="Retweets" id="sort_by_retweets">
-            <label for="sort_by_age">Sort by Retweets</label>
-            <input type="submit" value="Sort Tweets !">
-          </form>
-      </div>
-      
-    </div>
-  </div>
-    
-<ol class="pl-5">
-{% for tweet in tweets %}
-    
-        <li>
-            <ul>
-                <li><strong>Tweet : </strong>{{ tweet.tweet }}</li>
-                <li><strong>Likes : </strong>{{ tweet.likes }}</li>
-                <li><strong>Retweets : </strong>{{ tweet.retweets }}</li>
-                <li><strong>Replies : </strong>{{ tweet.reply }}</li>
-                <li><strong>Quotes : </strong>{{ tweet.quotes }}</li>
-                <li><strong>Language : </strong>{{ tweet.language }}</li>
-                <li><strong>Hashtags : </strong>{{ tweet.hashtags }}</li>
-                <li><strong>Media : </strong>
-                    <ul>
-                        {% for media_data in tweet.media %}
-                        <li><strong>URL : </strong>{{media_data.url}}</li>
-                        <li><strong>Media Type : </strong>{{media_data.type}}</li>
-                        {% endfor %}
-                    </ul>
-                </li>
-                
-            </ul>
-        </li>
-    
-            
-        
-    {% endfor %}
-</ol>    
-    
-{% endif %}
-
-{% if users %}
-    <h1>Users Mentioned in these tweets : </h1>
-<ol class="pl-5">
-{% for user in users %}
-    
-        <li>
-            <ul>
-                <li><strong>Name : </strong>{{ user.name }}</li>
-                <li><strong>Username : </strong>{{ user.username }}</li>
-                <li><strong>Followers : </strong>{{ user.followers }}</li>
-                <li><strong>Following : </strong>{{ user.following }}</li>
-                <li><strong>Number of Tweets : </strong>{{ user.tweets }}</li>
-                <li><strong>Listed : </strong>{{ user.listed }}</li>
-                <li><img src="{{ user.profile_Picture }}"  alt="profile image"/></li>
-                
-                
-            </ul>
-        </li>
-    
-            
-        
-    {% endfor %}
-</ol>    
-    
-{% endif %}
-
-{% if errors %}
-<div class="text-center">
-    <h1>Unable to display tweets ! : </h1>
-    <h3>{{errors}}</h3>
-</div>
-{% endif %} -->
-<!-- <br/>
-
-
-
-
-
-
-     <form class="form-signin" method="post" action="{% url 'index' %}"> -->
+</head> -->
+{% extends "./navbar.html" %}
+{% block content %}
       <div class="text-center d-flex justify-content-center align-items-center container shadow-lg p-3 mb-5 bg-white rounded" style="background-color: #ccd4dd;" >
     <form class="form-signin" method="post" action="{% url 'result' %}">
       <img class="mb-4" src="https://about.twitter.com/content/dam/about-twitter/en/brand-toolkit/brand-download-img-1.jpg.twimg.1920.jpg" alt="" width="72" height="72">
@@ -125,11 +29,11 @@
   
 
 </div>
-
-<script>
+{% endblock %}
+<!-- <script>
 document.querySelector('#submit-btn').addEventListener('click', function() {
     // Run the function when the button is clicked
-      console.log("selected : ", document.querySelector('input[name="sort_by"]:checked').value);
+      // console.log("selected : ", document.querySelector('input[name="sort_by"]:checked').value);
     //   const xhr = new XMLHttpRequest();
     //   xhr.open('PUT', '/sort-people/?sort_by=' + sortBy);
     //   xhr.onload = function() {
@@ -144,4 +48,4 @@ document.querySelector('#submit-btn').addEventListener('click', function() {
     //       });
     //     }
   });
-</script>
+</script> -->

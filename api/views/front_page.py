@@ -110,3 +110,7 @@ def DataPage(request):
     }
 
     return render(request, 'api/result.html', context)
+
+
+def HashtagMain(request):
+    return render(request, 'api/hashtagMain.html')
