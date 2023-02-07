@@ -1,7 +1,7 @@
 {% extends "./navbar.html" %}
 {% block content %}
 <div class="text-center d-flex justify-content-center align-items-center container shadow-lg p-3 mb-5 bg-white rounded" style="background-color: #ccd4dd;" >
-    <form class="form-signin" method="post" action="{% url 'result' %}">
+    <form class="form-signin" method="post" action="{% url 'hashtagResult' %}">
       <img class="mb-4" src="https://about.twitter.com/content/dam/about-twitter/en/brand-toolkit/brand-download-img-1.jpg.twimg.1920.jpg" alt="" width="72" height="72">
       {% csrf_token %}
       <h1 class="h3 m-3 font-weight-normal"><strong>Do Analysis and Gain Ideas from your Competitors and Influencers in your niche !</strong></h1>
@@ -10,7 +10,11 @@
       <h3>Search Tweets by Hashtag !</h3>
       <div class="input-group-prepend h5 shadow-lg p-3 mb-3 bg-white rounded" >
         <span class="input-group-text" id="basic-addon1">#</span>
-        <input type="text" class="form-control" placeholder="Enter Hashtag" aria-label="Username" name="username" aria-describedby="basic-addon1" >
+        <input type="text" class="form-control" placeholder="Enter Hashtag" aria-label="hashtag" name="hashtag" aria-describedby="basic-addon1" >
+      </div>
+      <div class="input-group-prepend h5 shadow-lg p-3 mb-3 bg-white rounded">
+        <span class="input-group-text" id="basic-addon1"># of Tweets</span>
+        <input type="number" class="form-control" placeholder="Number of tweets" aria-label="tweets Count" name="tweetsCount" aria-describedby="basic-addon1"  min="1" max="100">
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Get Tweets !</button>
       <div class="h3" style="position: absolute;bottom: 0;">
