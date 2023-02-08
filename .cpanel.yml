@@ -1,0 +1,15 @@
+---
+deployment:
+ tasks:
+ - export DEPLOYPATH=/home/tnhlabsc/smarttextinfo.com/
+ - /bin/cp -R api $DEPLOYPATH
+ - /bin/cp -R TwitterDjango $DEPLOYPATH
+ - /bin/cp get_Tweets_for_user.py $DEPLOYPATH
+ - /bin/cp hashtagSearch.json $DEPLOYPATH
+ - /bin/cp manage.py $DEPLOYPATH
+ - /bin/cp myfile.json $DEPLOYPATH
+ - /bin/cp myfileNew.json $DEPLOYPATH
+ - /bin/cp myfileNew2023.json $DEPLOYPATH
+ - /bin/cp tweets.json $DEPLOYPATH
+ - /bin/cp tweets2.json $DEPLOYPATH
+ - /bin/cp util.py $DEPLOYPATH
