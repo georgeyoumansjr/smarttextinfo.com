@@ -6,14 +6,17 @@
 </head>
 
 
-<nav class="navbar navbar-expand-sm sticky-top navbar-light bg-dark w-100" >
-    <div class="container" >
-        <div class="row" >
-            <div class="col-6">
-                <a class="navbar-brand" href="{% url 'index' %}" style="color: white;"><h1 class="text-left">Home</h1></a>
+<nav class="navbar  sticky-top navbar-light bg-dark w-100" >
+    <div class="container w-100" >
+        <div class="row  w-100" >
+            <div class="column text-left pl-2 pr-2">
+                <a class="navbar-brand" href="{% url 'index' %}" style="color: white;"><h1 >Home</h1></a>
             </div>
-            <div class="col-6">
-                <a class="navbar-brand" href="{% url 'hashtag' %}" style="color: white;"><h1 class="text-center">Search by hashtags</h1></a>
+            <div class="column text-center  pl-2 pr-2">
+                <a class="navbar-brand" href="{% url 'hashtag' %}" style="color: white;"><h1 >Search by hashtags</h1></a>
+            </div>
+            <div class="column  text-right  pl-2 pr-2">
+                <a class="navbar-brand" href="{% url 'keyword' %}" style="color: white;"><h1 >Search by Keywords</h1></a>
             </div>
             </div>
         
@@ -21,6 +24,17 @@
         </div>
     </div>
 </nav>
+<div class="h3 text-center d-flex justify-content-center align-items-center container shadow-lg  bg-white rounded" style="background-color: #ccd4dd;position: absolute;bottom: 0;left:10%" >
+    <span id="copyright" class="text-center pl-5" style="left:80;">
+        &copy; &nbsp;  Powered by SEAnalytics &nbsp;<script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+    </span>
+</div>
+
+<style>
+    html, body{ 
+  width:100%;
+}
+</style>
 
 {% block content %}
 {% endblock %}

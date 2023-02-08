@@ -1,0 +1,98 @@
+
+{% extends "./navbar.html" %}
+{% block content %}
+<div class="w-100 text-center">
+    <h1>Tweets for Keyword : <strong><u>{{keyword}}</u></strong></h1>
+</div>
+
+{% if tweets %}
+<div class="container pt-2">
+    <div class="row">
+      <div class="col-md">
+        <h1>Tweets : </h1>
+      </div>
+      <div class="col-md">
+        <h2>Sort By : </h2> 
+        <form method="post" action="{% url 'hashtagResult' %}">
+        <!-- <form id="my-form"> -->
+            {% csrf_token %}
+            <input type="radio" name="sort_by" value="Likes" id="sort_by_likes">
+            <label for="sort_by_name">Sort by Likes</label>
+            <input type="text" value="{{tweets}}" name="tweets" style="display:none;"></input>
+            <input type="text" value="{{users}}" name="users" style="display:none;"></input>
+            <input type="text" value="{{hashtag}}" name="hashtag" style="display:none;"></input>
+          
+            <input type="radio" name="sort_by" value="Retweets" id="sort_by_retweets">
+            <label for="sort_by_age">Sort by Retweets</label>
+            <input type="submit" value="Sort Tweets !">
+          </form>
+      </div>
+      
+    </div>
+  </div>
+    
+<ol class="pl-5">
+{% for tweet in tweets %}
+    
+        <li>
+            <ul>
+                <li><strong>Tweet : </strong>{{ tweet.tweet }}</li>
+                <li><strong>Likes : </strong>{{ tweet.likes }}</li>
+                <li><strong>Date & Time : </strong>{{ tweet.created_at }}</li>
+                <li><strong>Retweets : </strong>{{ tweet.retweets }}</li>
+                <li><strong>Replies : </strong>{{ tweet.reply }}</li>
+                <li><strong>Quotes : </strong>{{ tweet.quotes }}</li>
+                <li><strong>Language : </strong>{{ tweet.language }}</li>
+                <li><strong>Hashtags : </strong>{{ tweet.hashtags }}</li>
+                <li><strong>Media : </strong>
+                    <ul>
+                        {% for media_data in tweet.media %}
+                        <li><strong>URL : </strong>{{media_data.url}}</li>
+                        <li><strong>Media Type : </strong>{{media_data.type}}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                
+            </ul>
+        </li>
+    
+            
+        
+    {% endfor %}
+</ol>    
+    
+{% endif %}
+
+{% if users %}
+    <h1>Users Mentioned in these tweets : </h1>
+<ol class="pl-5">
+{% for user in users %}
+    
+        <li>
+            <ul>
+                <li><strong>Name : </strong>{{ user.name }}</li>
+                <li><strong>Username : </strong>{{ user.username }}</li>
+                <li><strong>Followers : </strong>{{ user.followers }}</li>
+                <li><strong>Following : </strong>{{ user.following }}</li>
+                <li><strong>Number of Tweets : </strong>{{ user.tweets }}</li>
+                <li><strong>Listed : </strong>{{ user.listed }}</li>
+                <li><img src="{{ user.profile_Picture }}"  alt="profile image"/></li>
+                
+                
+            </ul>
+        </li>
+    
+            
+        
+    {% endfor %}
+</ol>    
+    
+{% endif %}
+
+{% if errors %}
+<div class="text-center">
+    <h1>Unable to display tweets ! : </h1>
+    <h3>{{errors}}</h3>
+</div>
+{% endif %}
+{% endblock %}

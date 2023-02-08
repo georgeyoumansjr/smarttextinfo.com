@@ -50,15 +50,19 @@ def connect_to_endpoint():
         )
     return response.json()
 
-def connect_to_endpoint_for_search_endpoint(hashtag, tweets_count=10):
+def connect_to_endpoint_for_search_endpoint(hashtag, tweets_count=10, is_hashtag=True):
     """
     This function makes the get request to get the tweets based on query params provided
     """
     try:
         if tweets_count == None or tweets_count == '':
             tweets_count = 10
-
-        url =f'https://api.twitter.com/2/tweets/search/recent?query=%23{hashtag}&expansions=attachments.poll_ids,attachments.media_keys,author_id,entities.mentions.username,geo.place_id,in_reply_to_user_id,referenced_tweets.id,referenced_tweets.id.author_id&tweet.fields=attachments,author_id,context_annotations,conversation_id,created_at,entities,geo,id,in_reply_to_user_id,lang,possibly_sensitive,public_metrics,referenced_tweets,reply_settings,source,text,withheld&user.fields=created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,public_metrics,url,username,verified,withheld&place.fields=contained_within,country,country_code,full_name,geo,id,name,place_type&poll.fields=duration_minutes,end_datetime,id,options,voting_status&media.fields=duration_ms,height,media_key,preview_image_url,type,url,width,public_metrics,non_public_metrics,organic_metrics,promoted_metrics&max_results={tweets_count}'
+        url = f'https://api.twitter.com/2/tweets/search/recent?'
+        if is_hashtag:
+            url += f'query=%23{hashtag}'
+        else:
+            url += f'query={hashtag}'
+        url += f'&expansions=attachments.poll_ids,attachments.media_keys,author_id,entities.mentions.username,geo.place_id,in_reply_to_user_id,referenced_tweets.id,referenced_tweets.id.author_id&tweet.fields=attachments,author_id,context_annotations,conversation_id,created_at,entities,geo,id,in_reply_to_user_id,lang,possibly_sensitive,public_metrics,referenced_tweets,reply_settings,source,text,withheld&user.fields=created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,public_metrics,url,username,verified,withheld&place.fields=contained_within,country,country_code,full_name,geo,id,name,place_type&poll.fields=duration_minutes,end_datetime,id,options,voting_status&media.fields=duration_ms,height,media_key,preview_image_url,type,url,width,public_metrics,non_public_metrics,organic_metrics,promoted_metrics&max_results={tweets_count}'
         
         # if start_date != None and end_date != None:
         #    url+= f'&start_time={start_date}&end_time={end_date}' 
@@ -130,10 +134,10 @@ def main(username, tweet_count):
     json.dump(tweet_data, out_file_2, indent = 6)
     out_file_2.close()
 
-def search_by_hashtag(hashtag, tweets_count):
+def search_by_hashtag(hashtag, tweets_count,is_hashtag = True):
     
     # Sending the request to the specified url
-    json_response = connect_to_endpoint_for_search_endpoint(hashtag, tweets_count)
+    json_response = connect_to_endpoint_for_search_endpoint(hashtag, tweets_count, is_hashtag = is_hashtag)
     
     tweet_data = {}
     tweet_data['tweets'] = []

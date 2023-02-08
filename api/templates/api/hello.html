@@ -1,5 +1,6 @@
 
 {% extends "./navbar.html" %}
+
 {% block content %}
       <div class="text-center d-flex justify-content-center align-items-center container shadow-lg p-3 mb-5 bg-white rounded" style="background-color: #ccd4dd;" >
     <form class="form-signin" method="post" action="{% url 'result' %}">
@@ -15,11 +16,7 @@
         <input type="number" class="form-control" placeholder="Number of tweets" aria-label="tweets Count" name="tweetsCount" aria-describedby="basic-addon1"  min="1" max="100">
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Get Tweets !</button>
-      <div class="h3" style="position: absolute;bottom: 0;">
-        <span id="copyright" class="text-center pl-5" style="left:80;">
-            &copy; &nbsp;  Powered by SEAnalytics &nbsp;<script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
-        </span>
-    </div>
+      
     </form>
   
 
