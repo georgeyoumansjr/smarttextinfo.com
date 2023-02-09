@@ -24,11 +24,7 @@
         </div>
     </div>
 </nav>
-<div class="h3 text-center d-flex justify-content-center align-items-center container shadow-lg  bg-white rounded" style="background-color: #ccd4dd;position: absolute;bottom: 0;left:10%" >
-    <span id="copyright" class="text-center pl-5" style="left:80;">
-        &copy; &nbsp;  Powered by SEAnalytics &nbsp;<script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
-    </span>
-</div>
+
 
 <style>
     html, body{ 
@@ -38,3 +34,9 @@
 
 {% block content %}
 {% endblock %}
+
+<div class="h3 text-center d-flex justify-content-center align-items-center container shadow-lg  bg-white rounded" style="background-color: #ccd4dd;position: relative;bottom: 0;" >
+    <span id="copyright" class="text-center pl-5" style="left:80;">
+        &copy; &nbsp;  Powered by SEAnalytics &nbsp;<script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+    </span>
+</div>
