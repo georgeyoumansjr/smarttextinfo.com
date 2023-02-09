@@ -13,14 +13,14 @@
       </div>
       <div class="col-md">
         <h2>Sort By : </h2> 
-        <form method="post" action="{% url 'hashtagResult' %}">
+        <form method="post" action="{% url 'keywordResult' %}">
         <!-- <form id="my-form"> -->
             {% csrf_token %}
             <input type="radio" name="sort_by" value="Likes" id="sort_by_likes">
             <label for="sort_by_name">Sort by Likes</label>
             <input type="text" value="{{tweets}}" name="tweets" style="display:none;"></input>
             <input type="text" value="{{users}}" name="users" style="display:none;"></input>
-            <input type="text" value="{{hashtag}}" name="hashtag" style="display:none;"></input>
+            <input type="text" value="{{keyword}}" name="keyword" style="display:none;"></input>
           
             <input type="radio" name="sort_by" value="Retweets" id="sort_by_retweets">
             <label for="sort_by_age">Sort by Retweets</label>
