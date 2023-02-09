@@ -29,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'smarttextinfo.com',
+    '127.0.0.1',
 ]
 
 
