@@ -1,8 +1,9 @@
 {% extends "./navbar.html" %}
+{% load static %}
 {% block content %}
 <div class="text-center d-flex justify-content-center align-items-center container shadow-lg p-3 mb-5 bg-white rounded" style="background-color: #ccd4dd;" >
     <form class="form-signin" method="post" action="{% url 'hashtagResult' %}">
-      <img class="mb-2"  src="{% static '../../../static/new-logo.png' %}" alt="" width="95" height="95">
+      <img class="mb-2"  src="{% static '/new-logo.png' %}" alt="" width="95" height="95">
       {% csrf_token %}
       <h1 class="h3 m-3 font-weight-normal"><strong>Do Analysis and Gain Ideas from your Competitors and Influencers in your niche !</strong></h1>
       <hr/>
