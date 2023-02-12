@@ -1,47 +1,186 @@
 [
       {
+            "tweet": "\ud83e\udd17 https://t.co/9q0ZOUa1ZY",
+            "likes": 177816,
+            "retweets": 10818,
+            "reply": 10632,
+            "quotes": 726,
+            "impressions": 18888314,
+            "language": "art"
+      },
+      {
+            "tweet": "Also, there will be a higher priced subscription that allows zero ads",
+            "likes": 60706,
+            "retweets": 3524,
+            "reply": 5591,
+            "quotes": 1197,
+            "impressions": 7831098,
+            "language": "en"
+      },
+      {
+            "tweet": "Ads are too frequent on Twitter and too big. Taking steps to address both in coming weeks.",
+            "likes": 249566,
+            "retweets": 15220,
+            "reply": 14609,
+            "quotes": 2577,
+            "impressions": 25242908,
+            "language": "en"
+      },
+      {
             "tweet": "Je me souviens Pluto \ud83e\udd79",
-            "likes": 71167,
-            "retweets": 4587,
-            "reply": 7808,
-            "quotes": 903,
-            "impressions": 12976254,
+            "likes": 155649,
+            "retweets": 8980,
+            "reply": 13456,
+            "quotes": 1647,
+            "impressions": 35535045,
             "language": "fr"
       },
       {
             "tweet": "(Tweets will be translated before being recommended)",
-            "likes": 37517,
-            "retweets": 2134,
-            "reply": 1749,
-            "quotes": 210,
-            "impressions": 2992268,
+            "likes": 53904,
+            "retweets": 2994,
+            "reply": 2258,
+            "quotes": 288,
+            "impressions": 5061891,
             "language": "en"
       },
       {
             "tweet": "There are epic tweets in other countries every day (Japan especially)",
-            "likes": 54740,
-            "retweets": 5625,
-            "reply": 2061,
-            "quotes": 1326,
-            "impressions": 4739841,
+            "likes": 77538,
+            "retweets": 7370,
+            "reply": 2638,
+            "quotes": 1755,
+            "impressions": 7606080,
             "language": "en"
       },
       {
             "tweet": "Next Twitter update will remember whether you were on For You (ie recommended), Following or list you made &amp; stop switching you back to recommended tweets",
-            "likes": 56551,
-            "retweets": 5205,
-            "reply": 4495,
-            "quotes": 1433,
-            "impressions": 6681443,
+            "likes": 73722,
+            "retweets": 6602,
+            "reply": 5483,
+            "quotes": 2033,
+            "impressions": 10177923,
             "language": "en"
       },
       {
             "tweet": "In coming months, Twitter will translate &amp; recommend amazing tweets from people in other countries &amp; cultures",
-            "likes": 217591,
-            "retweets": 19876,
-            "reply": 15138,
-            "quotes": 4941,
-            "impressions": 19201593,
+            "likes": 286921,
+            "retweets": 25146,
+            "reply": 18904,
+            "quotes": 6434,
+            "impressions": 29206948,
+            "language": "en"
+      },
+      {
+            "tweet": "Exactly! If companies post interesting or entertaining content, they will gain an audience rapidly. https://t.co/0leAmqueHM",
+            "likes": 33477,
+            "retweets": 3135,
+            "reply": 2054,
+            "quotes": 248,
+            "impressions": 7600974,
+            "language": "en"
+      },
+      {
+            "tweet": "Major Twitter improvement we just released is that you can now bookmark tweets from tweet details page.\n\nImportantly, bookmarks are *private*, unlike likes. No one other than you can see your bookmarks.",
+            "likes": 130533,
+            "retweets": 11114,
+            "reply": 7764,
+            "quotes": 1503,
+            "impressions": 17155338,
+            "language": "en"
+      },
+      {
+            "tweet": "Twitter app update now available on App Store",
+            "likes": 136638,
+            "retweets": 10433,
+            "reply": 7938,
+            "quotes": 1179,
+            "impressions": 17644866,
+            "language": "en"
+      },
+      {
+            "tweet": "Use pinned Lists to improve your Twitter experience!\n\n1. Tap Lists on your profile page.\n2. Create list of accounts to follow.\n3. Tap pin icon. \n\nThis allows you to swipe left/right between For You, Following and Lists.",
+            "likes": 60821,
+            "retweets": 8901,
+            "reply": 10036,
+            "quotes": 1516,
+            "impressions": 10048623,
+            "language": "en"
+      },
+      {
+            "tweet": "Twitter is arguably already the least wrong source of truth on the Internet, but we obviously still have a long way to go.\n\nEnabling @CommunityNotes to operate at very large scale and providing maximum transparency about how Twitter works are fundamental to building trust.",
+            "likes": 166292,
+            "retweets": 17399,
+            "reply": 14274,
+            "quotes": 1874,
+            "impressions": 12812800,
+            "language": "en"
+      },
+      {
+            "tweet": "Coming soon are notifications if you\u2019ve replied, liked or retweeted something subsequently corrected by community https://t.co/uBSjJxV7Ww",
+            "likes": 44089,
+            "retweets": 4902,
+            "reply": 3822,
+            "quotes": 619,
+            "impressions": 8820844,
+            "language": "en"
+      },
+      {
+            "tweet": "\ud83d\udee1\ufe0f VE RI TAS \ud83d\udee1\ufe0f",
+            "likes": 252658,
+            "retweets": 21406,
+            "reply": 14476,
+            "quotes": 2420,
+            "impressions": 43446814,
+            "language": "et"
+      },
+      {
+            "tweet": "Great work by Tesla Team! https://t.co/aTu71lNuCl",
+            "likes": 45197,
+            "retweets": 4200,
+            "reply": 3094,
+            "quotes": 212,
+            "impressions": 9375377,
+            "language": "en"
+      },
+      {
+            "tweet": "To be clear, I\u2019m not someone who thinks lots of government agencies should be abolished (maybe a few), but we should always question our institutions, as this strengthens the bedrock of democracy.",
+            "likes": 144410,
+            "retweets": 14524,
+            "reply": 7319,
+            "quotes": 797,
+            "impressions": 5928700,
+            "language": "en"
+      },
+      {
+            "tweet": "Why did American media go from questioning the State and \u201cspeaking truth to power\u201d to doing their bidding?",
+            "likes": 306399,
+            "retweets": 40133,
+            "reply": 34725,
+            "quotes": 3686,
+            "impressions": 29163312,
+            "language": "en"
+      },
+      {
+            "tweet": "The World Economic Forum should control the world",
+            "likes": 110421,
+            "retweets": 41725,
+            "reply": 40721,
+            "quotes": 6040,
+            "impressions": 26082978,
+            "language": "en"
+      },
+      {
+            "tweet": "Media want to control what you know, which is why citizen journalism is essential https://t.co/cVL6C1VZXm",
+            "likes": 210012,
+            "retweets": 36020,
+            "reply": 10742,
+            "quotes": 2137,
+            "impressions": 17809309,
             "language": "en"
       }
 ]
+
+
+
+
