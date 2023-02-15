@@ -50,6 +50,32 @@ def connect_to_endpoint():
         )
     return response.json()
 
+def connect_to_endpoint_for_tweet_count(keyword1, keyword2):
+    """
+    This function makes the get request to get the trends, if it doesn't get a 200 status response, it raises an error
+    """
+    # start_date = '2023-01-01T00:00:00Z'
+    # end_date = '2023-01-24T23:59:59Z'
+    # The url to get tweets from user id, it gets info for every option avaialable, and excludes retweets and replies
+    url =f'https://api.twitter.com/2/tweets/counts/recent?query=%28{keyword1}%20OR%20{keyword2}%29'
+    # url =f'https://api.twitter.com/2/tweets/counts/recent?query=keyword:({keyword1} OR {keyword2})'
+    print("URL : ", url)
+    # &exclude=replies,retweets
+    
+    # if start_date != None and end_date != None:
+    #    url+= f'&start_time={start_date}&end_time={end_date}' 
+
+
+    response = requests.request("GET", url, auth=bearer_oauth,)
+
+    if response.status_code != 200:
+        raise Exception(
+            "Request returned an error: {} {}".format(
+                response.status_code, response.text
+            )
+        )
+    return response.json()
+
 def connect_to_endpoint_for_search_endpoint(hashtag, tweets_count=10, is_hashtag=True):
     """
     This function makes the get request to get the tweets based on query params provided
@@ -319,6 +345,23 @@ def fetch_user_Tweets_data(username, tweet_count, tweet_start_date = None, tweet
     except:
         pass
     return tweet_data    
+
+def get_tweets_count_data(keyword1, keyword2):
+    json_response = connect_to_endpoint_for_tweet_count(keyword1, keyword2)
+
+    tweet_data = {}
+    tweet_data['tweets'] = []
+    tweet_data['users'] = []
+    # with open("Test.json", 'w') as f:
+    #     f.write(json_response['data'])
+    # f.close()
+    out_file = open("myfile.json", "w")
+  
+    json.dump(json_response['data'], out_file, indent = 6)
+    
+    out_file.close()
+
+    # for data in json_response['data']:
 
 if __name__ == "__main__":
     # Sending username and number of tweets to get

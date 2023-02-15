@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.template import loader
-from get_Tweets_for_user import fetch_user_Tweets_data,search_by_hashtag
+from get_Tweets_for_user import fetch_user_Tweets_data,search_by_hashtag,get_tweets_count_data
 import ast
 
 
@@ -116,6 +116,7 @@ def HashtagMain(request):
     return render(request, 'api/hashtagMain.html')
 
 def KeywordMain(request):
+    get_tweets_count_data('happy', 'sad')
     return render(request, 'api/KeywordMain.html')
 
 def HashtagResult(request):
