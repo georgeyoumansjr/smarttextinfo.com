@@ -115,9 +115,20 @@ def DataPage(request):
 def HashtagMain(request):
     return render(request, 'api/hashtagMain.html')
 
-def KeywordMain(request):
-    get_tweets_count_data('happy', 'sad')
+def KeywordMain(request): 
     return render(request, 'api/KeywordMain.html')
+
+def TweetCountMain(request): 
+    return render(request, 'api/TweetCountMain.html')
+
+
+def TweetCountResult(request):
+    if request.method == 'POST':
+        keyword1 = request.POST.get('keyword1')
+        keyword2 = request.POST.get('keyword2')
+        result = get_tweets_count_data(keyword1,keyword2)
+        print(result)
+        
 
 def HashtagResult(request):
     tweets = None

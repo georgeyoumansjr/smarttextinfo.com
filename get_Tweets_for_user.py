@@ -50,21 +50,17 @@ def connect_to_endpoint():
         )
     return response.json()
 
-def connect_to_endpoint_for_tweet_count(keyword1, keyword2):
+def connect_to_endpoint_for_tweet_count(keyword):
     """
     This function makes the get request to get the trends, if it doesn't get a 200 status response, it raises an error
     """
     # start_date = '2023-01-01T00:00:00Z'
     # end_date = '2023-01-24T23:59:59Z'
-    # The url to get tweets from user id, it gets info for every option avaialable, and excludes retweets and replies
-    url =f'https://api.twitter.com/2/tweets/counts/recent?query=%28{keyword1}%20OR%20{keyword2}%29'
-    # url =f'https://api.twitter.com/2/tweets/counts/recent?query=keyword:({keyword1} OR {keyword2})'
-    print("URL : ", url)
-    # &exclude=replies,retweets
     
-    # if start_date != None and end_date != None:
-    #    url+= f'&start_time={start_date}&end_time={end_date}' 
+    # The url to get tweets from user id, it gets info for every option avaialable, and excludes retweets and replies
+    url =f'https://api.twitter.com/2/tweets/counts/recent?query=%28{keyword}%20OR%20{keyword.capitalize()}%20OR%20{keyword.upper()}%29'
 
+    
 
     response = requests.request("GET", url, auth=bearer_oauth,)
 
@@ -346,22 +342,25 @@ def fetch_user_Tweets_data(username, tweet_count, tweet_start_date = None, tweet
         pass
     return tweet_data    
 
-def get_tweets_count_data(keyword1, keyword2):
-    json_response = connect_to_endpoint_for_tweet_count(keyword1, keyword2)
-
+def get_tweets_count_data(*args):
     tweet_data = {}
-    tweet_data['tweets'] = []
-    tweet_data['users'] = []
-    # with open("Test.json", 'w') as f:
-    #     f.write(json_response['data'])
-    # f.close()
-    out_file = open("myfile.json", "w")
-  
-    json.dump(json_response['data'], out_file, indent = 6)
-    
-    out_file.close()
+    for keyword in args:
+        try:
+            json_response = connect_to_endpoint_for_tweet_count(keyword)
+            tweet_data[keyword] = json_response['data'] 
+        except:
+            tweet_data[keyword] = []
+        return tweet_data
+            
+        
 
-    # for data in json_response['data']:
+    # out_file = open("TestKeyword.json", "w")
+  
+    # json.dump(tweet_data, out_file, indent = 6)
+    
+    # out_file.close()
+
+    
 
 if __name__ == "__main__":
     # Sending username and number of tweets to get
