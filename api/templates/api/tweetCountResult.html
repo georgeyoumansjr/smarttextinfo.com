@@ -1,0 +1,88 @@
+{% extends "./navbar.html" %}
+{% load static %}
+{% block content %}
+{% if data1 and key1 and data2 and key2 %}
+<div class="container text-center d-flex justify-content-center w-100">
+    <div class="row">
+        <div class="col">
+            <h2>Total Tweets : </h2>
+        </div>
+    </div>
+    
+    
+
+</div>
+<div class="container text-center d-flex justify-content-center w-100">
+    <div class="row w-100">
+        <div class="col"><h4><strong>{{key1}}</strong> : {{key_1_tweets_count}}</h4></div>
+        <div class="col"><h4><strong>{{key2}}</strong> : {{key_2_tweets_count}}</h4></div>
+    </div>
+</div>
+
+<div class="container text-center d-flex justify-content-center w-100">
+    {% if key_1_tweets_count > key_2_tweets_count %}
+    <div class="row w-100">
+        <div class="col">
+            <h4><strong>{{key1}}</strong> is used {{keys_percentage_difference}}X more than <strong>{{key2}}</strong></h4>
+        </div>
+
+    </div>
+    {% else %}
+    <div class="row w-100">
+        <div class="col">
+            <h4><strong>{{key2}}</strong> is used {{keys_percentage_difference}} (X) more than <strong>{{key1}}</strong></h4>
+        </div>
+
+    </div>
+    {% endif %}
+</div>
+
+{% endif%}
+{% if data1 and key1 %}
+<h1 class="w-100 text-center">Results for Keyword : {{ key1 }}</h1>
+<table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Start Date & Time</th>
+        <th scope="col">End Date & Time</th>
+        <th scope="col">Tweets Count</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for data_obj in data1%}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{data_obj.start}}</td>
+        <td>{{data_obj.end}}</td>
+        <td>{{data_obj.tweet_count}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endif %}
+<hr/>
+{% if data2 and key2 %}
+<h1 class="w-100 text-center">Results for Keyword : {{ key2 }}</h1>
+<table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Start Date & Time</th>
+        <th scope="col">End Date & Time</th>
+        <th scope="col">Tweets Count</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for data_obj in data2%}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{data_obj.start}}</td>
+        <td>{{data_obj.end}}</td>
+        <td>{{data_obj.tweet_count}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endif %}
+{% endblock %}

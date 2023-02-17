@@ -350,7 +350,7 @@ def get_tweets_count_data(*args):
             tweet_data[keyword] = json_response['data'] 
         except:
             tweet_data[keyword] = []
-        return tweet_data
+    return tweet_data
             
         
 

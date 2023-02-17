@@ -127,7 +127,27 @@ def TweetCountResult(request):
         keyword1 = request.POST.get('keyword1')
         keyword2 = request.POST.get('keyword2')
         result = get_tweets_count_data(keyword1,keyword2)
-        print(result)
+        keys = []
+        for key in result:
+            keys.append(key)
+        key1_count = sum(item['tweet_count'] for item in result[keys[0]])
+        key2_count = sum(item['tweet_count'] for item in result[keys[1]])
+        keys_percentage_difference = 0
+        if key1_count > key2_count:
+            keys_percentage_difference = key1_count/ key2_count
+        else:
+            keys_percentage_difference = key2_count/ key1_count
+        context = {
+        'key1' : keys[0],
+        'key2' : keys[1],
+        'data1' : result[keys[0]],
+        'data2' : result[keys[1]],
+        'key_1_tweets_count' : key1_count,
+        'key_2_tweets_count' : key2_count,
+        'keys_percentage_difference' : round(keys_percentage_difference,2)
+
+    }
+        return render(request, 'api/tweetCountResult.html', context)
         
 
 def HashtagResult(request):
