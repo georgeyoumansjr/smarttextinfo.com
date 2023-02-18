@@ -20,7 +20,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-<nav class="navbar  sticky-top navbar-light bg-dark w-100" >
+<!-- <nav class="navbar  sticky-top navbar-light bg-dark w-100" >
     <div class="container w-100" >
         <div class="row  w-100" >
             <div class="column text-left pl-2 pr-2">
@@ -40,7 +40,23 @@ s0.parentNode.insertBefore(s1,s0);
         
         </div>
     </div>
-</nav>
+</nav> -->
+<ul class="nav nav-pill bg-dark nav-fill">
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'index' %}" style="color: white;">Home</a>
+    
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'hashtag' %}" style="color: white;">Search by hashtags</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'keyword' %}" style="color: white;">Search by Keywords</a>
+
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'tweetCount' %}" style="color: white;">Tweet Keyword Comparison</a>
+  </li>
+</ul>
 
 
 <style>
