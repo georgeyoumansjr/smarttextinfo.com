@@ -1,6 +1,7 @@
 {% extends "./navbar.html" %}
 {% load static %}
 {% block content %}
+<canvas id="myChart"></canvas>
 {% if data1 and key1 and data2 and key2 %}
 <div class="container text-center d-flex justify-content-center w-100">
     <div class="row">
@@ -85,4 +86,82 @@
     </tbody>
   </table>
 {% endif %}
+
+  <script>
+   var data1_obj = '{{ data1|escapejs }}';
+   var data2_obj = '{{ data2|escapejs }}';
+   var key1_obj = '{{ key1|escapejs }}';
+   var key2_obj = '{{ key2|escapejs }}';
+   var daily_data_1_keys = '{{ daily_data_1_keys|escapejs }}';
+   var daily_data_2 = '{{ daily_data_2|escapejs }}';
+   var daily_data_1_values = '{{ daily_data_1_values|escapejs }}';
+   var daily_data_2_values = '{{ daily_data_2_values|escapejs }}';
+   daily_data_1_keys = daily_data_1_keys.replace('[','').replace(']','').split(',');
+   daily_data_1_values = daily_data_1_values.replace('[','').replace(']','').split(',');
+   daily_data_2_values = daily_data_2_values.replace('[','').replace(']','').split(',');
+  
+   var ctx = document.getElementById('myChart').getContext('2d');
+   var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels:daily_data_1_keys,
+        datasets: [
+          {
+            label: key1_obj,
+            data: daily_data_1_values,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                // 'rgba(54, 162, 235, 0.2)',
+                // 'rgba(255, 206, 86, 0.2)',
+                // 'rgba(75, 192, 192, 0.2)',
+                // 'rgba(153, 102, 255, 0.2)',
+                // 'rgba(255, 159, 64, 0.2)',
+                // 'rgba(255, 99, 132, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                // 'rgba(54, 162, 235, 1)',
+                // 'rgba(255, 206, 86, 1)',
+                // 'rgba(75, 192, 192, 1)',
+                // 'rgba(153, 102, 255, 1)',
+                // 'rgba(255, 159, 64, 1)',
+                // 'rgba(255, 99, 132, 1)'
+            ],
+            borderWidth: 1
+        },
+          {
+            label: key2_obj,
+            data: daily_data_2_values,
+            backgroundColor: [
+                // 'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                // 'rgba(255, 206, 86, 0.2)',
+                // 'rgba(75, 192, 192, 0.2)',
+                // 'rgba(153, 102, 255, 0.2)',
+                // 'rgba(255, 159, 64, 0.2)',
+                // 'rgba(255, 99, 132, 0.2)'
+            ],
+            borderColor: [
+                // 'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                // 'rgba(255, 206, 86, 1)',
+                // 'rgba(75, 192, 192, 1)',
+                // 'rgba(153, 102, 255, 1)',
+                // 'rgba(255, 159, 64, 1)',
+                // 'rgba(255, 99, 132, 1)'
+            ],
+            borderWidth: 1
+        },
+      ]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+  
 {% endblock %}

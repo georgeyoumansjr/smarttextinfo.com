@@ -137,6 +137,42 @@ def TweetCountResult(request):
             keys_percentage_difference = key1_count/ key2_count
         else:
             keys_percentage_difference = key2_count/ key1_count
+        daily_data_1 = {} 
+        daily_data_2 = {} 
+        unique_keys = []
+        if len(result[keys[0]]) < len(result[keys[1]]):
+            for data in result[keys[0]]:
+                if data.get('start').split("T")[0] not in unique_keys:
+                    unique_keys.append(data.get('start').split("T")[0])
+        else:
+            for data in result[keys[1]]:
+                if data.get('start').split("T")[0] not in unique_keys:
+                    unique_keys.append(data.get('start').split("T")[0])
+
+        for data in result[keys[0]]:
+            if (data.get('start').split("T")[0] in unique_keys):
+                if(data.get('start').split("T")[0] in daily_data_1.keys()):
+                    daily_data_1[data.get('start').split("T")[0]] += data.get('tweet_count')
+                else:
+                    daily_data_1[data.get('start').split("T")[0]] = data.get('tweet_count')
+            
+        for data in result[keys[1]]:
+            if (data.get('start').split("T")[0] in unique_keys):
+                if(data.get('start').split("T")[0] in daily_data_2.keys()):
+                    daily_data_2[data.get('start').split("T")[0]] += data.get('tweet_count')
+                else:
+                    daily_data_2[data.get('start').split("T")[0]] = data.get('tweet_count')
+
+        daily_data_1_keys= []
+        for data in daily_data_1.keys():
+            daily_data_1_keys.append(int(data.split('-')[2]))
+        daily_data_1_values = []
+        daily_data_2_values = []
+        for data in daily_data_1.values():
+            daily_data_1_values.append(int(data))
+        for data in daily_data_2.values():
+            daily_data_2_values.append(int(data))
+        
         context = {
         'key1' : keys[0],
         'key2' : keys[1],
@@ -144,7 +180,10 @@ def TweetCountResult(request):
         'data2' : result[keys[1]],
         'key_1_tweets_count' : key1_count,
         'key_2_tweets_count' : key2_count,
-        'keys_percentage_difference' : round(keys_percentage_difference,2)
+        'keys_percentage_difference' : round(keys_percentage_difference,2),
+        'daily_data_1_keys' : (daily_data_1_keys),
+        'daily_data_1_values' : (daily_data_1_values),
+        'daily_data_2_values' : (daily_data_2_values),
 
     }
         return render(request, 'api/tweetCountResult.html', context)
