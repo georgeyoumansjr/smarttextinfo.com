@@ -1,4 +1,5 @@
 from pytrends.request import TrendReq
+import pycountry
 # from pytrends import interest_over_time
 
 def get_interest_over_time(*args):
@@ -33,12 +34,21 @@ def get_related_topics(*args):
     interests =    pytrends.related_topics()
     rising_data = []
     top_data = []
-    print(type(interests['Blockchain']['rising']))
-    return interests
-    for index, row in interests.iterrows():
-        data.append({'date' : index.date().strftime('%Y-%m-%d'), 'value' : row['Blockchain']})
-
-    return data
+    # columns : ['value' 'formattedValue' 'link' 'topic_mid' 'topic_title' 'topic_type']
+    for key in kw_list:
+        try:
+            rising_df = interests[key]['rising']
+            # rising_df = rising_df.drop(['formattedValue','link','topic_mid'], axis=1)
+            # rising_data.append({'key' : key , 'data' : rising_df})
+            for index, row in rising_df.iterrows():
+                rising_data.append({'key' : key, 'value' : row['value'], 'topic_title' : row['topic_title'], 'topic_type' : row['topic_type']})
+            top_df = interests[key]['top']
+            for index, row in top_df.iterrows():
+                top_data.append({'key' : key, 'value' : row['value'], 'topic_title' : row['topic_title'], 'topic_type' : row['topic_type']})
+        except Exception as e:
+            print(e)
+    return rising_data, top_data
+    
 
 def get_multirange_interest_over_time(*args):
     pytrends = TrendReq(hl='en-US', tz=360)
@@ -49,7 +59,7 @@ def get_multirange_interest_over_time(*args):
     kw_list = ['Blockchain']
     pytrends.build_payload(kw_list, timeframe=['2022-09-04 2022-09-10', '2022-09-18 2022-09-24'])
     interests = pytrends.multirange_interest_over_time()
-    print(interests)
+    
     
     # # kw_list = ["Blockchain"
     # data = []
@@ -58,5 +68,84 @@ def get_multirange_interest_over_time(*args):
 
     # return data
 
-data = get_related_topics('blockchain')
-print(data)
+
+
+def get_categories(*args):
+    pytrends = TrendReq(hl='en-US', tz=360)
+    
+    kw_list = []
+    for arg in args:
+        kw_list.append(arg.capitalize())
+    # print(kw_list)
+    # return
+    # kw_list = ["Blockchain"]
+    pytrends.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='', gprop='')
+    data = pytrends.categories()
+    
+def get_keyword_suggestions(*args):
+    pytrends = TrendReq(hl='en-US', tz=360)
+    
+    kw_list = []
+    for arg in args:
+        kw_list.append(arg.capitalize())
+    # print(kw_list)
+    # return
+    # kw_list = ["Blockchain"]
+    for keyword in kw_list:
+        data = pytrends.suggestions(keyword)
+        
+        
+def get_yearly_top_charts(year):
+    pytrends = TrendReq(hl='en-US', tz=360)
+    
+    
+    data = pytrends.top_charts(year, hl='en-US', tz=300, geo='GLOBAL')    
+    return(data['title'].tolist())
+        
+def get_related_queries(*args):
+    pytrends = TrendReq(hl='en-US', tz=360)
+    kw_list = []
+    top_data = []
+    rising_data = []
+    for arg in args:
+        kw_list.append(arg.capitalize())
+    pytrends.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='', gprop='')
+    data = pytrends.related_queries()
+    for keyword in kw_list:
+        top_data = []
+        rising_data = []
+        top_data_obj = data[keyword]['top']
+        rising_data_obj = data[keyword]['rising']
+        for index, row in top_data_obj.iterrows():
+            top_data.append({'keyword' : keyword, 'query' : row['query'], 'value' : row['value']})
+        for index, row in rising_data_obj.iterrows():
+            rising_data.append({'keyword' : keyword, 'query' : row['query'], 'value' : row['value']})
+    return rising_data, top_data
+    
+    # return(data['title'].tolist())
+
+def get_realtime_trending_searches(country):
+    country_obj = pycountry.countries.search_fuzzy(country)
+    country_code = (country_obj[0].alpha_2)
+    
+    pytrends = TrendReq(hl='en-US', tz=360)
+    data = pytrends.realtime_trending_searches(pn=country_code)
+    return (data['title'].tolist())
+
+def get_trending_searches(country):
+    # country_obj = pycountry.countries.search_fuzzy(country)
+    # print(country_obj[0])
+    # return
+    country = country.lower()
+    country = country.replace(' ', '_')
+    country_code = country
+    print("country : ", country_code)
+    pytrends = TrendReq(hl='en-US', tz=360)
+    data = pytrends.trending_searches(pn=country_code)
+    return (data)
+    
+# rising_data , top_data = get_related_topics('blockchain')
+# print(data)
+# get_yearly_top_charts(2022)
+rising, top = get_related_queries('Blockchain')
+
