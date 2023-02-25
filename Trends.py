@@ -147,5 +147,6 @@ def get_trending_searches(country):
 # rising_data , top_data = get_related_topics('blockchain')
 # print(data)
 # get_yearly_top_charts(2022)
-rising, top = get_related_queries('Blockchain')
+# data = get_interest_over_time('Blockchain')
+# print(data)
 

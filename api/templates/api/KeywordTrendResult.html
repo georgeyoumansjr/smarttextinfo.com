@@ -1,0 +1,56 @@
+{% extends "./navbar.html" %}
+{% load static %}
+{% block content %}
+<canvas id="myChart"></canvas>
+
+
+  <script>
+//    var x_axis = '{{ x_axis|safe  }}';
+   var x_axis = '{{ x_axis|escapejs }}';
+   var y_axis = '{{ y_axis|escapejs }}';
+   var keyword1 = '{{ keyword|escapejs }}';
+   let x_axis_values = x_axis.replace('[','').replace(']','').replace("'",'').replace("'",'').split(',');
+   let y_axis_values = y_axis.replace('[','').replace(']','').split(',');
+   let y_axis_final = [];
+   for(let data in y_axis_values){
+    y_axis_final.push(Number(y_axis_values[data]))
+   }
+//    console.log("x axis" ,x_axis_values)
+//    console.log("y axis" , y_axis_final)
+
+//    const labels = Utils.months({count: 7});
+// const data = {
+//   labels: labels,
+//   datasets: [{
+//     label: 'My First Dataset',
+//     data: [65, 59, 80, 81, 56, 55, 40],
+//     fill: false,
+//     borderColor: 'rgb(75, 192, 192)',
+//     tension: 0.1
+//   }]
+// }
+
+
+
+
+  
+   var ctx = document.getElementById('myChart').getContext('2d');
+   var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels:x_axis_values,
+        datasets: [
+          {
+            label: keyword1,
+            data: y_axis_final,
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1
+        },
+      ]
+    },
+    
+});
+</script>
+  
+{% endblock %}
