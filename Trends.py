@@ -11,14 +11,60 @@ def get_interest_over_time(*args):
     # print(kw_list)
     # return
     # kw_list = ["Blockchain"]
-    pytrends.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='', gprop='')
+    # pytrends.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='', gprop='')
+    pytrends.build_payload(kw_list=kw_list, timeframe='today 5-y')
 
     interests = pytrends.interest_over_time()
+    # print(interests)
     data = []
-    for index, row in interests.iterrows():
-        data.append({'date' : index.date().strftime('%Y-%m-%d'), 'value' : row['Blockchain']})
+    
+    for keyword in kw_list:
+        data_temp = {}
+        for index, row in interests.iterrows():
+            try:
+                data_temp[index.date().strftime('%Y-%m-%d')] += row[keyword]
+            except:
+                data_temp[index.date().strftime('%Y-%m-%d')] = 0
+        for key, value in data_temp.items():
+            
+            data.append({'date' : key, 'value' :value, 'key' : key})
+            
+
 
     return data
+
+def get_daily_interest_over_time(*args):
+    pytrends = TrendReq(hl='en-US', tz=360)
+    
+    kw_list = []
+    for arg in args:
+        kw_list.append(arg.capitalize())
+    # print(kw_list)
+    # return
+    # kw_list = ["Blockchain"]
+    # pytrends.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='', gprop='')
+    # pytrends.build_payload(kw_list=kw_list, timeframe='now 1-d')
+    pytrends.build_payload(kw_list=kw_list, timeframe='now 1-d')
+
+    interests = pytrends.interest_over_time()
+    # print(interests)
+    data = []
+    
+    for keyword in kw_list:
+        data_temp = {}
+        for index, row in interests.iterrows():
+            try:
+                data_temp[index.date().strftime('%Y-%m-%d')] += row[keyword]
+            except:
+                data_temp[index.date().strftime('%Y-%m-%d')] = 0
+        for key, value in data_temp.items():
+            
+            data.append({'date' : key, 'value' :value, 'key' : keyword})
+            
+
+
+    return data
+
 
 def get_related_topics(*args):
     pytrends = TrendReq(hl='en-US', tz=360)
@@ -29,7 +75,7 @@ def get_related_topics(*args):
     # print(kw_list)
     # return
     # kw_list = ["Blockchain"]
-    pytrends.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='', gprop='')
+    pytrends.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='GLOBAL', gprop='')
 
     interests =    pytrends.related_topics()
     rising_data = []
@@ -79,7 +125,7 @@ def get_categories(*args):
     # print(kw_list)
     # return
     # kw_list = ["Blockchain"]
-    pytrends.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='', gprop='')
+    pytrends.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='GLOBAL', gprop='')
     data = pytrends.categories()
     
 def get_keyword_suggestions(*args):
@@ -109,7 +155,7 @@ def get_related_queries(*args):
     rising_data = []
     for arg in args:
         kw_list.append(arg.capitalize())
-    pytrends.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='', gprop='')
+    pytrends.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='GLOBAL', gprop='')
     data = pytrends.related_queries()
     for keyword in kw_list:
         top_data = []
@@ -139,14 +185,30 @@ def get_trending_searches(country):
     country = country.lower()
     country = country.replace(' ', '_')
     country_code = country
-    print("country : ", country_code)
     pytrends = TrendReq(hl='en-US', tz=360)
     data = pytrends.trending_searches(pn=country_code)
-    return (data)
-    
+    return data[0].tolist()
+
+def get_todays_searches_for_country(country):
+    pytrend = TrendReq()
+
+    #get today's treniding topics
+    trendingtoday = pytrend.today_searches(pn='US')
+    return trendingtoday
+
 # rising_data , top_data = get_related_topics('blockchain')
 # print(data)
 # get_yearly_top_charts(2022)
 # data = get_interest_over_time('Blockchain')
 # print(data)
 
+data = get_trending_searches('United States')
+
+
+
+for key in data:
+    print(get_daily_interest_over_time(key))
+    print()
+    print('..........................................')
+
+# get_todays_searches_for_country('united states')
