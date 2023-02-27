@@ -202,13 +202,13 @@ def get_todays_searches_for_country(country):
 # data = get_interest_over_time('Blockchain')
 # print(data)
 
-data = get_trending_searches('United States')
+# data = get_trending_searches('United States')
 
 
 
-for key in data:
-    print(get_daily_interest_over_time(key))
-    print()
-    print('..........................................')
+# for key in data:
+#     print(get_daily_interest_over_time(key))
+#     print()
+#     print('..........................................')
 
 # get_todays_searches_for_country('united states')
