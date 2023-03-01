@@ -1,5 +1,5 @@
 from django.urls import path,include
-from .views import UserID,UserTweets,Index,DataPage,HashtagMain,HashtagResult,KeywordMain,KeywordResult,TweetCountMain,TweetCountResult,KeywordTrendMain,KeywordTrendResult,DailyCountryTrendSearchView,DailyCountryTrendSearchResultView
+from .views import UserID,UserTweets,Index,DataPage,HashtagMain,HashtagResult,KeywordMain,KeywordResult,TweetCountMain,TweetCountResult,KeywordTrendMain,KeywordTrendResult,DailyCountryTrendSearchView,DailyCountryTrendSearchResultView,yearlyTopChartsView,yearlyTopChartsResultsView
 
 urlpatterns = [
     path('user-id/', UserID.as_view()),
@@ -18,5 +18,7 @@ urlpatterns = [
     path('KeywordTrend/result/', KeywordTrendResult, name= 'keywordTrendResult'),
     path('DailyTrendSearch/', DailyCountryTrendSearchView, name= 'DailyCountryTrendSearch'),
     path('DailyTrendSearch/result/', DailyCountryTrendSearchResultView, name= 'DailyCountryTrendSearchResult'),
+    path('YearlyTopCharts/', yearlyTopChartsView, name= 'YearlyTopCharts'),
+    path('YearlyTopCharts/result/', yearlyTopChartsResultsView, name= 'YearlyTopChartsResult'),
     
 ]

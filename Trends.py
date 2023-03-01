@@ -1,5 +1,6 @@
 from pytrends.request import TrendReq
 import pycountry
+from PyTrendsLocal import TrendReq as TrendReqLocal
 # from pytrends import interest_over_time
 
 def get_interest_over_time(*args):
@@ -145,6 +146,7 @@ def get_yearly_top_charts(year):
     pytrends = TrendReq(hl='en-US', tz=360)
     
     
+    # data = pytrends.top_charts(year, hl='en-US', tz=300, geo='US')    
     data = pytrends.top_charts(year, hl='en-US', tz=300, geo='GLOBAL')    
     return(data['title'].tolist())
         
@@ -196,6 +198,52 @@ def get_todays_searches_for_country(country):
     trendingtoday = pytrend.today_searches(pn='US')
     return trendingtoday
 
+
+def interest_over_time_test():
+    # create pytrends object
+    pytrends = TrendReq()
+
+    # set up payload
+    kw_list = ["python"]
+    cat = 0
+    timeframe = "today 5-y"
+    geo = ""
+    gprop = ""
+
+    # get categories
+    pytrends.build_payload(kw_list=kw_list, cat=cat, timeframe=timeframe, geo=geo, gprop=gprop)
+    categories = pytrends.categories()
+    # print(categories['children'])
+    # print(categories['name'])
+    # print(categories['id'])
+    # for key, value in categories.items():
+    #     print(key)
+    # return
+    # get trends by category for the last 5 years
+    results = []
+    for category in categories['children']:
+        print(f"Getting trends for category: {category['name']}")
+        pytrends.build_payload(kw_list=kw_list, cat=category['id'], timeframe=timeframe, geo=geo, gprop=gprop)
+        category_results = pytrends.interest_over_time()
+        if not category_results.empty:
+            category_results = category_results.drop(columns=["isPartial"])
+            category_results.columns = [category["name"]]
+            results.append(category_results)
+
+    # combine results into single dataframe
+    df = results[0]
+    for i in range(1, len(results)):
+        df = df.join(results[i], how="outer")
+
+    # resample dataframe to yearly frequency and sum values for each year
+    df = df.resample("Y").sum()
+
+    # print results
+    print(df)
+
+
+
+
 # rising_data , top_data = get_related_topics('blockchain')
 # print(data)
 # get_yearly_top_charts(2022)
@@ -212,3 +260,18 @@ def get_todays_searches_for_country(country):
 #     print('..........................................')
 
 # get_todays_searches_for_country('united states')
+
+# print(get_yearly_top_charts(2022))
+
+
+def get_yearly_top_charts_for_all_categories(year, geo='GLOBAL'):
+
+    pytrends = TrendReqLocal(hl='en-US', tz=360)
+
+    # Set the year and location
+
+    
+    
+    
+    return pytrends.top_charts(year, geo = geo)
+    

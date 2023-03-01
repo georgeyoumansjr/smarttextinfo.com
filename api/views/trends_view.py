@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from Trends import get_trending_searches,get_daily_interest_over_time
+from Trends import get_trending_searches,get_daily_interest_over_time, get_yearly_top_charts_for_all_categories
 import pycountry
 
 def DailyCountryTrendSearchView(request): 
@@ -18,11 +18,20 @@ def DailyCountryTrendSearchView(request):
     #     print('..........................................')
 
     return render(request, 'api/DailyCountryTrendSearchMain.html', context=context)
+def yearlyTopChartsView(request): 
+    return render(request, 'api/YearlyTopChartsMain.html')
+
+def yearlyTopChartsResultsView(request): 
+    if request.method == 'POST':
+        year = request.POST.get('year')
+        data = get_yearly_top_charts_for_all_categories(year)
+        context = {'data' : data}
+        print(context)
+    return render(request, 'api/YearlyTopChartsMain.html', context = context)
 
 def DailyCountryTrendSearchResultView(request): 
     if request.method == 'POST':
         country_name = request.POST.get('countryName')
-        print("country Name : " , country_name)
         data = get_trending_searches(country_name)
     
 
