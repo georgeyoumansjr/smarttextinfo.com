@@ -25,9 +25,8 @@ def yearlyTopChartsResultsView(request):
     if request.method == 'POST':
         year = request.POST.get('year')
         data = get_yearly_top_charts_for_all_categories(year)
-        context = {'data' : data}
-        print(context)
-    return render(request, 'api/YearlyTopChartsMain.html', context = context)
+        context = {'data' : data, 'year' : year}
+    return render(request, 'api/yearlyTopChartsResult.html', context = context)
 
 def DailyCountryTrendSearchResultView(request): 
     if request.method == 'POST':
