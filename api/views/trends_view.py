@@ -19,13 +19,41 @@ def DailyCountryTrendSearchView(request):
 
     return render(request, 'api/DailyCountryTrendSearchMain.html', context=context)
 def yearlyTopChartsView(request): 
-    return render(request, 'api/YearlyTopChartsMain.html')
+    countries_list = [
+        {'key' : 'GLOBAL' , 'value' : 'Global'},
+        {'key' : 'US' , 'value' : 'United States'},
+        {'key' : 'IT' , 'value' : 'Italy'},
+        {'key' : 'GB' , 'value' : 'United Kingdom'},
+        {'key' : 'DE' , 'value' : 'Germany'},
+        {'key' : 'FR' , 'value' : 'France'},
+        {'key' : 'RU' , 'value' : 'Russia'},
+        {'key' : 'CA' , 'value' : 'Canada'},
+        
+        ]
+    context={'countries' : countries_list}
+    return render(request, 'api/YearlyTopChartsMain.html', context=context)
 
 def yearlyTopChartsResultsView(request): 
     if request.method == 'POST':
         year = request.POST.get('year')
-        data = get_yearly_top_charts_for_all_categories(year)
-        context = {'data' : data, 'year' : year}
+        country = request.POST.get('country')
+        data = get_yearly_top_charts_for_all_categories(year,geo=country)
+        
+        data_arr = []
+        # {'category': 'Searches', 'keywords': ['Wordle', 'India vs England', 'Ukraine', 'Queen Elizabeth', 'Ind vs SA', 'World Cup', 'India vs West Indies', 'iPhone 14', 'Jeffrey Dahmer', 'Indian Premier League']}
+        for d in data:
+            if d['category'] != 'Passings':
+                if 'Google Lens:' in d['category']:
+                    data_arr.append({'category' : d['category'].replace('Google Lens:', ''), 'keywords' : d['keywords']})
+                elif 'Google Maps:' in d['category']:
+                    data_arr.append({'category' : d['category'].replace('Google Maps:', ''), 'keywords' : d['keywords']})
+                elif 'Hum to Search:' in d['category']:
+                    data_arr.append({'category' : d['category'].replace('Hum to Search:', ''), 'keywords' : d['keywords']})
+                else:
+                    data_arr.append({'category' : d['category'], 'keywords' : d['keywords']})
+        
+        context = {'data' : data_arr, 'year' : year}
+        
     return render(request, 'api/yearlyTopChartsResult.html', context = context)
 
 def DailyCountryTrendSearchResultView(request): 
