@@ -40,7 +40,6 @@ def yearlyTopChartsResultsView(request):
         data = get_yearly_top_charts_for_all_categories(year,geo=country)
         
         data_arr = []
-        # {'category': 'Searches', 'keywords': ['Wordle', 'India vs England', 'Ukraine', 'Queen Elizabeth', 'Ind vs SA', 'World Cup', 'India vs West Indies', 'iPhone 14', 'Jeffrey Dahmer', 'Indian Premier League']}
         for d in data:
             if d['category'] != 'Passings':
                 if 'Google Lens:' in d['category']:
