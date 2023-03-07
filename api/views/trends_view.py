@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from Trends import get_trending_searches,get_daily_interest_over_time, get_yearly_top_charts_for_all_categories
+from Trends import get_trending_searches,get_daily_interest_over_time, get_yearly_top_charts_for_all_categories,get_related_topics,get_related_queries
 import pycountry
 
 def DailyCountryTrendSearchView(request): 
@@ -73,3 +73,29 @@ def DailyCountryTrendSearchResultView(request):
         
         
         return render(request, 'api/DailyCountryTrendSearchResult.html', context=context)
+
+def KeywordResearchView(request): 
+    countries_list = [
+        {'key' : 'GLOBAL' , 'value' : 'Global'},
+        {'key' : 'US' , 'value' : 'United States'},
+        {'key' : 'IT' , 'value' : 'Italy'},
+        {'key' : 'GB' , 'value' : 'United Kingdom'},
+        {'key' : 'DE' , 'value' : 'Germany'},
+        {'key' : 'FR' , 'value' : 'France'},
+        {'key' : 'RU' , 'value' : 'Russia'},
+        {'key' : 'CA' , 'value' : 'Canada'},
+        
+        ]
+    context={'countries' : countries_list}
+    return render(request, 'api/KeywordResearchMain.html', context=context)
+
+def KeywordResearchResultView(request): 
+    if request.method == 'POST':
+        keyword = request.POST.get('keyword')
+        country = request.POST.get('country')
+        related_topics = get_related_topics(keyword_List=keyword , geo=country)
+        # related_queries = get_related_queries(keyword , country)
+        print(related_topics)
+        
+    context={'countries' :[]}
+    return render(request, 'api/KeywordResearchMain.html', context=context)
