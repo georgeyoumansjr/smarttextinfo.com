@@ -4,6 +4,7 @@ deployment:
  - export DEPLOYPATH=/home/tnhlabsc/smarttextinfo.com/
  - /bin/cp -R api $DEPLOYPATH
  - /bin/cp -R assets $DEPLOYPATH
+ - /bin/cp -R PyTrendsLocal $DEPLOYPATH
  - /bin/cp -R static $DEPLOYPATH
  - /bin/cp -R TwitterDjango $DEPLOYPATH
  - /bin/cp get_Tweets_for_user.py $DEPLOYPATH
