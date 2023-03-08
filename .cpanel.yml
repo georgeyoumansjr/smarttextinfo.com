@@ -13,6 +13,7 @@ deployment:
  - /bin/cp myfileNew.json $DEPLOYPATH
  - /bin/cp myfileNew2023.json $DEPLOYPATH
  - /bin/cp requirements.txt $DEPLOYPATH
+ - /bin/cp Trends.py $DEPLOYPATH
  - /bin/cp tweets.json $DEPLOYPATH
  - /bin/cp tweets2.json $DEPLOYPATH
  - /bin/cp tweets22023.json $DEPLOYPATH
