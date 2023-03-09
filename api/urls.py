@@ -25,6 +25,6 @@ urlpatterns = [
     path('DailyTrendSearch/result/', DailyCountryTrendSearchResultView, name= 'DailyCountryTrendSearchResult'),
     path('YearlyTopCharts/', yearlyTopChartsView, name= 'YearlyTopCharts'),
     path('YearlyTopCharts/result/', yearlyTopChartsResultsView, name= 'YearlyTopChartsResult'),
-    # path('KeywordResearch/', KeywordResearchView, name= 'KeywordResearch'),   
-    # path('KeywordResearch/result/', KeywordResearchResultView, name= 'KeywordResearchResult'),   
+    path('KeywordResearch/', KeywordResearchView, name= 'KeywordResearch'),   
+    path('KeywordResearch/result/', KeywordResearchResultView, name= 'KeywordResearchResult'),   
 ]
