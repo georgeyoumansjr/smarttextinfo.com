@@ -22,12 +22,12 @@
                             
                             <div class="form-group">
                                 <label class="sr-only">Keyword 1</label>
-                                <input type="text" class="form-control" name='keyword1' placeholder="Keyword 1">
+                                <input type="text" class="form-control" name='keyword1' placeholder="Keyword 1" required>
                             </div>
                             {% csrf_token %}
                             <div class="form-group">
                                 <label class="sr-only">Keyword 2</label>
-                                <input type="text" class="form-control" name='keyword2' placeholder="Keyword 2">
+                                <input type="text" class="form-control" name='keyword2' placeholder="Keyword 2" required>
                             </div>
                             <button type="submit" class="btn btn-primary btn-lg">Get Tweet analysis !</button>
                         </form>

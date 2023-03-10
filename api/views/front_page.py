@@ -63,10 +63,11 @@ def Index(request):
 
 
 def DataPage(request):
+    tweets = None
+    errors = None
+    users = None
     try:
-        tweets = None
-        errors = None
-        users = None
+        
         if request.method == 'POST':
             sort_by = request.POST.get('sort_by')
             tweets_Data = request.POST.get('tweets')
@@ -98,6 +99,8 @@ def DataPage(request):
                         print("Error : ", e.__str__())
                         if e.__str__() == 'data':
                             errors = "Access denied for Twitter API ! "
+                        else:
+                            errors = 'Unable to get tweets for current username, please check username !'
 
                         
             
@@ -117,7 +120,12 @@ def DataPage(request):
         return render(request, 'api/result.html', context)
     except Exception as e:
         print(e)
-        return render(request, 'api/result.html', context = {})
+        context = {
+            'errors' : e.__str__()
+
+        }
+        print("context : ", context)
+        return render(request, 'api/result.html', context)
 
 
 
@@ -132,6 +140,7 @@ def TweetCountMain(request):
 
 
 def TweetCountResult(request):
+    error = None
     try:
         if request.method == 'POST':
             keyword1 = request.POST.get('keyword1')
@@ -199,7 +208,7 @@ def TweetCountResult(request):
             return render(request, 'api/tweetCountResult.html', context)
     except Exception as e:
         print(e)        
-        return render(request, 'api/tweetCountResult.html', context ={})
+        return render(request, 'api/tweetCountResult.html', context ={'error' : e.__str__()})
 
 def HashtagResult(request):
     try:
