@@ -1,10 +1,20 @@
 {% extends "./navbar.html" %}
 {% load static %}
 {% block content %}
+{% if errors %}
+<div class="text-center">
+  <h1>No Trends found for the selected keyword !</h1>
+    <h3>{{errors}}</h3>
+</div>
+{%else%}
 <canvas id="myChart"></canvas>
 
 
-  <script>
+  
+{% endif %}
+
+<script>
+
 //    var x_axis = '{{ x_axis|safe  }}';
    var x_axis = '{{ x_axis|escapejs }}';
    var y_axis = '{{ y_axis|escapejs }}';

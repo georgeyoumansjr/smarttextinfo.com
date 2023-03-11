@@ -207,8 +207,9 @@ def TweetCountResult(request):
         }
             return render(request, 'api/tweetCountResult.html', context)
     except Exception as e:
-        print(e)        
-        return render(request, 'api/tweetCountResult.html', context ={'error' : e.__str__()})
+        print("Error : " , e)        
+        context ={'errors' : f"Please Enter correct keywords and try again !"}
+        return render(request, 'api/tweetCountResult.html', context)
 
 def HashtagResult(request):
     try:
@@ -257,17 +258,26 @@ def HashtagResult(request):
             else:
                 users = tweets['users']
                 tweets = tweets['tweets']
+        else:
+            errors = f'Unable to find data for # {hashtag}, please try again with a valid hashtag'
+        
         context = {
             'tweets': tweets,
             'errors' : errors,
             'users' : users,
             'hashtag' : hashtag
         }
+        print("context here : ", context)
 
         return render(request, 'api/hashtagResult.html', context)
     except Exception as e:
         print(e)
-        return render(request, 'api/hashtagResult.html', context={})
+        context = {
+            'errors' : e.__str__(),
+            
+        }
+
+        return render(request, 'api/hashtagResult.html', context)
 
 def KeywordResult(request):
     try:
@@ -316,6 +326,8 @@ def KeywordResult(request):
             else:
                 users = tweets['users']
                 tweets = tweets['tweets']
+        else:
+            errors = f"Unable to get data for keyword {keyword}, please try again with a correct keyword !"
         context = {
             'tweets': tweets,
             'errors' : errors,
@@ -346,8 +358,9 @@ def KeywordTrendResult(request):
             context = {'x_axis' : x_axis, 'y_axis' : y_axis, 'keyword' : keyword1}
             return render(request, 'api/KeywordTrendResult.html', context)
     except Exception as e:
-        print(e)
-        return render(request, 'api/KeywordTrendResult.html', context={})
+        print("Error : ",e)
+        context = {'errors' : f'Unable to get search Trends for keyword {keyword1}, please try again with a correct keyword !'}
+        return render(request, 'api/KeywordTrendResult.html', context)
     #     result = get_tweets_count_data(keyword1)
     #     keys = []
     #     for key in result:

@@ -84,8 +84,11 @@ def DailyCountryTrendSearchResultView(request):
             
             return render(request, 'api/DailyCountryTrendSearchResult.html', context=context)
         except Exception as e:
-            print(e)
-            return render(request, 'api/DailyCountryTrendSearchResult.html', context={})
+            print("Error :",e)
+            context = {
+                'errors' : f"Unable to find trends for {country_name}"
+            }
+            return render(request, 'api/DailyCountryTrendSearchResult.html', context)
 
 def KeywordResearchView(request): 
     countries_list = [

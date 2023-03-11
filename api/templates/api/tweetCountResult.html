@@ -1,8 +1,16 @@
 {% extends "./navbar.html" %}
 {% load static %}
 {% block content %}
-<canvas id="myChart"></canvas>
+{% if errors %}
+<div class="text-center">
+    <h1>Unable to display keywords comparison ! : </h1>
+    <h3>{{errors}}</h3>
+</div>
+{% endif %}
 {% if data1 and key1 and data2 and key2 %}
+<div class="chart-container">
+<canvas id="myChart"></canvas>
+</div>
 <div class="container text-center d-flex justify-content-center w-100">
     <div class="row">
         <div class="col">
@@ -39,7 +47,7 @@
 </div>
 
 {% endif%}
-{% if data1 and key1 %}
+<!-- {% if data1 and key1 %}
 <h1 class="w-100 text-center">Results for Keyword : {{ key1 }}</h1>
 <table class="table table-striped table-hover">
     <thead>
@@ -85,7 +93,7 @@
       {% endfor %}
     </tbody>
   </table>
-{% endif %}
+{% endif %} -->
 
   <script>
    var data1_obj = '{{ data1|escapejs }}';
@@ -159,9 +167,21 @@
             y: {
                 beginAtZero: true
             }
-        }
+        },
+    
     }
 });
 </script>
+<style>
+  .chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height : 70%;
+  width : 95%;
+  padding-left: 15%;
+}
+</style>
   
 {% endblock %}
