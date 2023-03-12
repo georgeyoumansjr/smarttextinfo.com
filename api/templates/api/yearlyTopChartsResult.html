@@ -2,11 +2,17 @@
 {% extends "./navbar.html" %}
 {% load static %}
 {% block content %}
-<div class="w-100 text-center">
-    <h1>Top Charts for year: <strong><u>{{year}}</u></strong></h1>
-</div>
 
+{% if errors %}
+<div class="text-center">
+  <h1>No data found for current selection !</h1>
+    <h3>{{errors}}</h3>
+</div>
+{% endif %}
 {% if data %}
+<div class="w-100 text-center">
+  <h1>Top Charts for year: <strong><u>{{year}}</u></strong></h1>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-sm-4">

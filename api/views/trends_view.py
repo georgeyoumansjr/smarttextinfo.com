@@ -57,11 +57,15 @@ def yearlyTopChartsResultsView(request):
                         data_arr.append({'category' : d['category'], 'keywords' : d['keywords']})
             
             context = {'data' : data_arr, 'year' : year}
-            
+            if len(data_arr) < 1:
+                context['errors'] = f'Unable to get data for Year : {year} and Country : {country}, Please try again for a different Year and Country !'
             return render(request, 'api/yearlyTopChartsResult.html', context = context)
         except Exception as e:
             print(e)
-            return render(request, 'api/yearlyTopChartsResult.html', context = {})
+            context = {
+                'errors' : f'Unable to get data for Year : {year} and Country : {country}, Please try again for a different Year and Country !'
+            }
+            return render(request, 'api/yearlyTopChartsResult.html', context)
 
 
 def DailyCountryTrendSearchResultView(request): 
@@ -113,10 +117,12 @@ def KeywordResearchResultView(request):
             related_topics = get_related_topics(keyword)
             # related_topics = get_related_topics(keyword_List=keyword , geo=country)
             # related_queries = get_related_queries(keyword , country)
-            print(related_topics)
-            
             context={'countries' :[]}
-            return render(request, 'api/KeywordResearchMain.html', context=context)
+            if len(related_topics) < 1:
+                context['errors'] = f'Unable to get related queries for Keyword : {keyword}, please try again with a different keyword'
+            context={'countries' :[]}
+            return render(request, 'api/KeywordResearchResult.html', context)
         except Exception as e:
             print(e)
-            return render(request, 'api/KeywordResearchMain.html', context={})
+            context={'errors' : f'Unable to get related queries for Keyword : {keyword}, please try again with a different keyword'}
+            return render(request, 'api/KeywordResearchResult.html', context)

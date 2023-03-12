@@ -77,6 +77,7 @@ def get_related_topics(*args):
     # return
     # kw_list = ["Blockchain"]
     pytrends.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='GLOBAL', gprop='')
+    # pytrends.build_payload(kw_list)
 
     interests =    pytrends.related_topics()
     rising_data = []
