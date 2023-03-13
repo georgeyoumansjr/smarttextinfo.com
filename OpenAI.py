@@ -25,16 +25,18 @@ def get_results( prompt = 'Say Working', max_tokens = 200, temperature = 0.5 ):
         ],
     n=3
     )
-def run():
-    print('Ctrl+C to quit.')
+def run(prompt):
+    # print('Ctrl+C to quit.')
     # while True:
-    prompt = input('Prompt: ')
-    result = get_results(prompt)
+    # prompt = input('Prompt: ')
+    prompt_str = f'Write twitter post for keyword : {prompt}'
+    result = get_results(prompt_str)
     # print(result)
     results_arr = []
     for choice in result['choices']:
         results_arr.append(choice['message']['content'])
-    print(results_arr)
+    return results_arr
 
-if __name__ == '__main__':
-    run()
+# if __name__ == '__main__':
+#     data = run()
+#     print(data)

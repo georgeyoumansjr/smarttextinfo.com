@@ -4,7 +4,7 @@ from .views import (UserID,UserTweets,Index,DataPage,HashtagMain,
                     TweetCountResult,KeywordTrendMain,KeywordTrendResult,
                     DailyCountryTrendSearchView,DailyCountryTrendSearchResultView,
                     yearlyTopChartsView,yearlyTopChartsResultsView,
-                    KeywordResearchView,KeywordResearchResultView)
+                    KeywordResearchView,KeywordResearchResultView,TweetSuggestionView, TweetSuggestionResultView)
 
 urlpatterns = [
     path('user-id/', UserID.as_view()),
@@ -27,4 +27,6 @@ urlpatterns = [
     path('YearlyTopCharts/result/', yearlyTopChartsResultsView, name= 'YearlyTopChartsResult'),
     path('KeywordResearch/', KeywordResearchView, name= 'KeywordResearch'),   
     path('KeywordResearch/result/', KeywordResearchResultView, name= 'KeywordResearchResult'),   
+    path('aiSuggestion/', TweetSuggestionView, name= 'AISuggestion'),   
+    path('aiSuggestion/result/', TweetSuggestionResultView, name= 'AISuggestionResult'),   
 ]
