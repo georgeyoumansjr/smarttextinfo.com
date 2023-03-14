@@ -9,7 +9,8 @@ def TweetSuggestionResultView(request):
     if request.method == 'POST':
         try:
             keyword = request.POST.get('keyword')
-            result = run(keyword)
+            emojiOption = request.POST.get('optradio')
+            result = run(keyword,emojiOption)
             context = {'data' : result, 'keyword' : keyword}
             return render(request, 'api/OpenAIResult.html', context)
         except Exception as e:

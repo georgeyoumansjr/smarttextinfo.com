@@ -25,11 +25,14 @@ def get_results( prompt = 'Say Working', max_tokens = 200, temperature = 0.5 ):
         ],
     n=3
     )
-def run(prompt):
+def run(prompt, emojiOption):
     # print('Ctrl+C to quit.')
     # while True:
     # prompt = input('Prompt: ')
-    prompt_str = f'Write twitter post for keyword : {prompt}'
+    if emojiOption == 'with-emojis':
+        prompt_str = f'Write twitter post for keyword : {prompt} with emojis'
+    else:
+        prompt_str = f'Write twitter post for keyword : {prompt} without emojis'
     result = get_results(prompt_str)
     # print(result)
     results_arr = []

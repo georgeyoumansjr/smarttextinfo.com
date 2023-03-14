@@ -11,7 +11,8 @@
 
 
 {% if data %}
-<h1 class=" text-center w-100" >Tweets suggestion for keyword  : {{ country_name }}</h1>
+<h1 class=" text-center w-100" >Tweets suggestion for keyword  : {{ keyword }}</h1>
+<div class="d-flex justify-content-center w-100">
 <table class="table table-striped table-hover text-center" style="width : 80%;">
     <thead>
       <tr>
@@ -28,5 +29,6 @@
       {% endfor %}
     </tbody>
   </table>
+</div>
 {% endif %}
 {% endblock %}
