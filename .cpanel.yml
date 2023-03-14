@@ -13,6 +13,7 @@ deployment:
  - /bin/cp myfile.json $DEPLOYPATH
  - /bin/cp myfileNew.json $DEPLOYPATH
  - /bin/cp myfileNew2023.json $DEPLOYPATH
+ - /bin/cp OpenAI.py $DEPLOYPATH
  - /bin/cp requirements.txt $DEPLOYPATH
  - /bin/cp Trends.py $DEPLOYPATH
  - /bin/cp tweets.json $DEPLOYPATH
