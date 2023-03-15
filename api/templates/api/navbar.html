@@ -1,25 +1,61 @@
 {% load static %}
+
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<link rel="shortcut icon" href="{% static 'new-logo.png' %}" type="image/x-icon">
-<!-- chart js CDN -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="{% static 'new-logo.png' %}" type="image/x-icon">
+  <!-- chart js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Smarttextinfo</title>
+  <style>
+    html,
+    body {
+      width: 100%;
+    }
+
+    .page-width {
+      width: 100%;
+      max-width: 1500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .dropdown-menu .nav-link {
+      color: rgb(0 0 0 / 50%) !important;
+    }
+    #copyright{
+      border-top: 1px solid rgba(255, 255, 255, 0.322);
+      font-weight: 500;
+    }
+    #copyright strong{
+      font-weight: 500;
+    }
+    #cover{
+      margin-bottom: 0 !important;
+    }
+  </style>
 </head>
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/63e7b5a5c2f1ac1e2032b8fc/1gp0hr3sf';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+  (function () {
+    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/63e7b5a5c2f1ac1e2032b8fc/1gp0hr3sf';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    s0.parentNode.insertBefore(s1, s0);
+  })();
 </script>
 <!--End of Tawk.to Script-->
 <!-- <nav class="navbar  sticky-top navbar-light bg-dark w-100" >
@@ -43,7 +79,7 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
     </div>
 </nav> -->
-<ul class="nav nav-pill bg-dark nav-fill">
+<!-- <ul class="nav nav-pill bg-dark nav-fill">
   <li class="nav-item">
     <a class="nav-link" href="{% url 'index' %}" style="color: white;">Home</a>
     
@@ -67,26 +103,81 @@ s0.parentNode.insertBefore(s1,s0);
   <li class="nav-item">
     <a class="nav-link" href="{% url 'YearlyTopCharts' %}" style="color: white;">Yearly Top charts</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'KeywordResearch' %}" style="color: white;">Keyword Research</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'AISuggestion' %}" style="color: white;">AI Suggestion</a>
-  </li>
 </ul>
-
-
-<style>
-    html, body{ 
-  width:100%;
-}
-</style>
-
+-->
+<header>
+  <div class="container-fluid bg-dark">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark py-lg-0">
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <img src="{% static 'new-logo.png' %}" alt="Smarttextinfo" width="80px">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                Search
+              </a>
+              <div class="dropdown-menu">
+                <a class="nav-link" href="{% url 'hashtag' %}">Search by hashtags</a>
+                <a class="nav-link" href="{% url 'keyword' %}">Search by Keywords</a>
+                <a class="nav-link" href="{% url 'keywordTrend' %}">Keyword Search Trend</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'tweetCount' %}">Tweet Keyword Comparison</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'DailyCountryTrendSearch' %}">Daily Country
+                Trends</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'YearlyTopCharts' %}">Yearly Top charts</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
 {% block content %}
 {% endblock %}
-
-<div class="h3 text-center d-flex justify-content-center align-items-center container shadow-lg  bg-white rounded" id="footer-id" style="background-color: #ccd4dd;position: relative;bottom: 0; margin-top : 9%" >
-    <span id="copyright" class="text-center pl-5" style="left:80;bottom: 0;">
-        &copy; &nbsp;  Powered by SEAnalytics &nbsp;<script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
-    </span>
-</div>
+<footer>
+  <div class="bg-dark py-4" id="footer-id">
+    <div class="container">
+      <div class="row">
+        <div class="col col-md-8">
+          <img src="{% static 'new-logo.png' %}" alt="Smarttextinfo" width="200px">
+        </div>
+        <div class="col col-md-4">
+          <h3 class="h3 text-light w-100">Links</h3>
+          <ul class="list-unstyled pl-0">
+            <li>
+              <a class="nav-link text-light pl-0" href="{% url 'tweetCount' %}">Tweet Keyword Comparison</a>
+            </li>
+            <li>
+              <a class="nav-link text-light pl-0" href="{% url 'DailyCountryTrendSearch' %}">Daily Country
+                Trends</a>
+            </li>
+            <li>
+              <a class="nav-link text-light pl-0" href="{% url 'YearlyTopCharts' %}">Yearly Top charts</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="copyright" class="text-center pt-3 text-light" style="left:80;bottom: 0;">
+      <strong>
+        &copy; &nbsp;Powered by SEAnalytics&nbsp;
+      </strong>
+      <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+    </div>
+  </div>
+</footer>
