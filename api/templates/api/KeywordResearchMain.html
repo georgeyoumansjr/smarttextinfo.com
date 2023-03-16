@@ -26,7 +26,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="sr-only">keyword research by country</label>
-                                <select name="country" style="width:80%;">
+                                <select name="country" style="width:80%;" class="form-control">
                                     {% for country in countries %}
                                     <option value="{{country.key}}">{{country.value}}</option>
                                     {% endfor %}

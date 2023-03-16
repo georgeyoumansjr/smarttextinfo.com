@@ -1,6 +1,10 @@
 {% load static %}
 
 <head>
+  <title>Smarttextinfo</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -15,7 +19,6 @@
   <link rel="shortcut icon" href="{% static 'new-logo.png' %}" type="image/x-icon">
   <!-- chart js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <title>Smarttextinfo</title>
   <style>
     html,
     body {
@@ -32,15 +35,29 @@
     .dropdown-menu .nav-link {
       color: rgb(0 0 0 / 50%) !important;
     }
-    #copyright{
+
+    #copyright {
       border-top: 1px solid rgba(255, 255, 255, 0.322);
       font-weight: 500;
     }
-    #copyright strong{
+
+    #copyright strong {
       font-weight: 500;
     }
-    #cover{
+
+    #cover {
       margin-bottom: 0 !important;
+    }
+
+    #footer-id a:hover {
+      text-decoration: underline;
+    }
+    .dropdown-menu{
+      min-width: 13rem;
+    }
+    .dropdown-menu a{
+      padding-left: 10px !important;
+      padding-right: 10px !important;
     }
   </style>
 </head>
@@ -74,8 +91,6 @@
                 <a class="navbar-brand" href="{% url 'tweetCount' %}" style="color: white;"><h1 >Tweet Keyword Comparison</h1></a>
             </div>
             </div>
-        
-        
         </div>
     </div>
 </nav> -->
@@ -106,7 +121,7 @@
 </ul>
 -->
 <header>
-  <div class="container-fluid bg-dark">
+  <div class="bg-dark">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-dark py-lg-0">
         <a class="navbar-brand" href="{% url 'index' %}">
@@ -156,10 +171,24 @@
   <div class="bg-dark py-4" id="footer-id">
     <div class="container">
       <div class="row">
-        <div class="col col-md-8">
+        <div class="col-12 text-center text-md-left col-md-4">
           <img src="{% static 'new-logo.png' %}" alt="Smarttextinfo" width="200px">
         </div>
-        <div class="col col-md-4">
+        <div class="col-12 text-center text-md-left col-md-4">
+          <h3 class="h3 text-light w-100">Search</h3>
+          <ul class="list-unstyled pl-0">
+            <li>
+              <a class="nav-link text-light pl-0" href="{% url 'hashtag' %}">Search by hashtags</a>
+            </li>
+            <li>
+              <a class="nav-link text-light pl-0" href="{% url 'keyword' %}">Search by Keywords</a>
+            </li>
+            <li>
+              <a class="nav-link text-light pl-0" href="{% url 'keywordTrend' %}">Keyword Search Trend</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 text-center text-md-left col-md-4">
           <h3 class="h3 text-light w-100">Links</h3>
           <ul class="list-unstyled pl-0">
             <li>
