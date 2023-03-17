@@ -21,5 +21,6 @@ from . import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('api.urls')),
+    path('oauth/', include('social_django.urls', namespace='social'))
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

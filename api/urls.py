@@ -4,9 +4,10 @@ from .views import (UserID,UserTweets,Index,DataPage,HashtagMain,
                     TweetCountResult,KeywordTrendMain,KeywordTrendResult,
                     DailyCountryTrendSearchView,DailyCountryTrendSearchResultView,
                     yearlyTopChartsView,yearlyTopChartsResultsView,
-                    KeywordResearchView,KeywordResearchResultView,TweetSuggestionView, TweetSuggestionResultView)
+                    KeywordResearchView,KeywordResearchResultView,TweetSuggestionView, TweetSuggestionResultView, Login)
 
 urlpatterns = [
+    path('login/', Index, name= 'index'),
     path('user-id/', UserID.as_view()),
     path('user-tweets/', UserTweets.as_view()),
     # path('test/', Test, name= 'test'),

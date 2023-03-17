@@ -37,6 +37,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'social_django', # google login
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -111,6 +112,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Login Backends
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2', # goole login we will use
+    'social_core.backends.google.GoogleOAuth', # not necessary right now but maybe in the future
+    'social_core.backends.twitter.TwitterOAuth', # same as above
+    'django.contrib.auth.backends.ModelBackend', # normal username and password login
+)
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
@@ -137,3 +147,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+SOCIAL_AUTH_JSONFIELD_ENABLED = True
