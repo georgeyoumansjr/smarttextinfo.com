@@ -32,10 +32,10 @@ SECRET_KEY = 'django-insecure-61vx9m-4+d^(1=cv28fb3nmwvfji!smqrfg0$8xrmpdlkd1(==
 DEBUG = True
 
 ALLOWED_HOSTS = [
-'www.smarttextinfo.com',
 'smarttextinfo.com',
-'127.0.0.1',
+'www.smarttextinfo.com',
 'localhost',
+'127.0.0.1',
 ]
 
 
@@ -124,8 +124,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2', # goole login we will use
-    'social_core.backends.google.GoogleOAuth', # not necessary right now but maybe in the future
-    'social_core.backends.twitter.TwitterOAuth', # same as above
     'django.contrib.auth.backends.ModelBackend', # normal username and password login
 )
 
@@ -134,6 +132,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv('GOOGLE_SECRET')
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '/'
+LOGIN_ERROR_URL = 'login'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
