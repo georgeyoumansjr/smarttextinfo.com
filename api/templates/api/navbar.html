@@ -150,15 +150,27 @@
               <a class="nav-link" href="{% url 'tweetCount' %}">Tweet Keyword Comparison</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'AISuggestion' %}">AI Suggestion</a>
+              <a class="nav-link" href="{% url 'YearlyTopCharts' %}">Yearly Top Charts</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'DailyCountryTrendSearch' %}">Daily Country
                 Trends</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'YearlyTopCharts' %}">Yearly Top charts</a>
+              <a class="nav-link" href="{% url 'AISuggestion' %}">AI Suggestion</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'researchTool' %}">Research Tool</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            {% endif %}
           </ul>
         </div>
       </nav>

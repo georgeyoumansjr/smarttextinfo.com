@@ -1,6 +1,4 @@
-from django.shortcuts import render
-from django.contrib.auth.models import User
+from django.shortcuts import render, HttpResponse
 
 def Login(request):
-        
-    return render(request, 'login.html',{})
+    return HttpResponse( render(request, 'api/login.html',{}))

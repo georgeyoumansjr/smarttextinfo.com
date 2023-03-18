@@ -4,10 +4,13 @@ from .views import (UserID,UserTweets,Index,DataPage,HashtagMain,
                     TweetCountResult,KeywordTrendMain,KeywordTrendResult,
                     DailyCountryTrendSearchView,DailyCountryTrendSearchResultView,
                     yearlyTopChartsView,yearlyTopChartsResultsView,
-                    KeywordResearchView,KeywordResearchResultView,TweetSuggestionView, TweetSuggestionResultView, Login)
+                    KeywordResearchView,KeywordResearchResultView,TweetSuggestionView, TweetSuggestionResultView, Login, ResearchTool)
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('login/', Index, name= 'index'),
+    path('login/', Login, name= 'login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='api/login.html'), name='logout'),
+    path('researchTool', ResearchTool, name='researchTool'),
     path('user-id/', UserID.as_view()),
     path('user-tweets/', UserTweets.as_view()),
     # path('test/', Test, name= 'test'),

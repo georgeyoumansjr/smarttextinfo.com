@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from util import get_user_id
+
 class UserID(APIView):
     def post(self, request):
         try:

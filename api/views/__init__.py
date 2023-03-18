@@ -3,3 +3,5 @@ from .user_tweets import UserTweets
 from .front_page import Index,DataPage,HashtagMain,HashtagResult,KeywordMain,KeywordResult,TweetCountMain,TweetCountResult,KeywordTrendMain,KeywordTrendResult
 from .trends_view import DailyCountryTrendSearchView,DailyCountryTrendSearchResultView,yearlyTopChartsView,yearlyTopChartsResultsView,KeywordResearchView,KeywordResearchResultView
 from .open_ai_views import TweetSuggestionView,TweetSuggestionResultView
+from .login import Login
+from .research_tool import ResearchTool

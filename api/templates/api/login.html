@@ -2,9 +2,24 @@
 {% load static %}
 {% block content %}
 
-<section>
-    <div>
-        <a href='{% url "social:begin" "google-oauth2" %}'>Login With Google</a>
+<section >
+    <div class="container">
+        <div class="jumbotron m-4">
+            <div class="col-md align-items-center align-content-center">
+                <div class="card text-center flex-column">
+                    <div class="card-header">
+                        <h2>
+                            Login
+                        </h2>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <a href='{% url "social:begin" "google-oauth2" %}'>Login With Google</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

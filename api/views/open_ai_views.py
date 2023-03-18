@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from OpenAI import run
 import pycountry
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def TweetSuggestionView(request): 
     return render(request, 'api/OpenAIMain.html')
 
+@login_required
 def TweetSuggestionResultView(request): 
     if request.method == 'POST':
         try:
