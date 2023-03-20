@@ -160,6 +160,9 @@
               <a class="nav-link" href="{% url 'AISuggestion' %}">AI Suggestion</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{% url 'AIThreadSuggestion' %}" style="color: white;">AI Thread Suggestion</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="{% url 'researchTool' %}">Research Tool</a>
             </li>
             {% if user.is_authenticated %}

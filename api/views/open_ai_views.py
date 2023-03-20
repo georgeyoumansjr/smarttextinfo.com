@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from OpenAI import run
+from OpenAI import run,runThreads
 import pycountry
 from django.contrib.auth.decorators import login_required
 
@@ -28,3 +28,23 @@ def TweetSuggestionResultView(request):
             context = {'errors' : f'Unable to generate tweets for keyword : {keyword}, please try again with a different keyword'}
             return render(request, 'api/OpenAIResult.html', context)
     return redirect(to='AISuggestion')
+
+@login_required
+def TweetThreadSuggestionView(request): 
+    return render(request, 'api/OpenAIThreadMain.html')
+
+
+@login_required
+def TweetThreadSuggestionResultView(request): 
+    if request.method == 'POST':
+        try:
+            keyword = request.POST.get('keyword')
+            emojiOption = request.POST.get('optradio')
+            description = request.POST.get('description')
+            result = runThreads(keyword,emojiOption, description)
+            context = {'data' : result, 'keyword' : keyword}
+            return render(request, 'api/OpenAIResult.html', context)
+        except Exception as e:
+            print("Error : ", e)
+            context = {'errors' : f'Unable to generate tweets for keyword : {keyword}, please try again with a different keyword'}
+            return render(request, 'api/OpenAIResult.html', context)

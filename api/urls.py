@@ -4,7 +4,7 @@ from .views import (UserID,UserTweets,Index,DataPage,HashtagMain,
                     TweetCountResult,KeywordTrendMain,KeywordTrendResult,
                     DailyCountryTrendSearchView,DailyCountryTrendSearchResultView,
                     yearlyTopChartsView,yearlyTopChartsResultsView,
-                    KeywordResearchView,KeywordResearchResultView,TweetSuggestionView, TweetSuggestionResultView, Login, ResearchTool)
+                    KeywordResearchView,KeywordResearchResultView,TweetSuggestionView, TweetSuggestionResultView, Login, ResearchTool,TweetThreadSuggestionView, TweetThreadSuggestionResultView)
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
@@ -33,4 +33,6 @@ urlpatterns = [
     path('KeywordResearch/result/', KeywordResearchResultView, name= 'KeywordResearchResult'),   
     path('aiSuggestion/', TweetSuggestionView, name= 'AISuggestion'),   
     path('aiSuggestion/result/', TweetSuggestionResultView, name= 'AISuggestionResult'),   
+     path('aiThreadSuggestion/', TweetThreadSuggestionView, name= 'AIThreadSuggestion'),   
+    path('aiThreadSuggestion/result/', TweetThreadSuggestionResultView, name= 'AIThreadSuggestionResult'),   
 ]

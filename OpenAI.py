@@ -39,7 +39,22 @@ def run(prompt, emojiOption):
     for choice in result['choices']:
         results_arr.append(choice['message']['content'])
     return results_arr
-
+def runThreads(prompt, emojiOption, description):
+    # print('Ctrl+C to quit.')
+    # while True:
+    # prompt = input('Prompt: ')
+    if emojiOption == 'with-emojis':
+        prompt_str = f'Write twitter thread for keyword : {prompt} with emojis'
+    else:
+        prompt_str = f'Write twitter thread for keyword : {prompt} without emojis'
+    if description != '' and description != None:
+        prompt_str += f" including {description}"
+    result = get_results(prompt_str)
+    # print(result)
+    results_arr = []
+    for choice in result['choices']:
+        results_arr.append(choice['message']['content'])
+    return results_arr
 # if __name__ == '__main__':
 #     data = run()
 #     print(data)
