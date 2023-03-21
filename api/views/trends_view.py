@@ -74,13 +74,15 @@ def DailyCountryTrendSearchResultView(request):
             country_name = request.POST.get('countryName')
             data = get_trending_searches(country_name)
         
-
             trends_data = []
             for key in data:
                 trends_data.append(get_daily_interest_over_time(key))
             todays_trend_data = []
             for data in trends_data:
-                todays_trend_data.append(data[1])
+                try:
+                    todays_trend_data.append(data[1])
+                except Exception as e:
+                    print(e)
             newlist = sorted(todays_trend_data, key=lambda d: d['value']) 
             newlist.reverse()
             context ={'trends' : newlist, 'country_name' : country_name}

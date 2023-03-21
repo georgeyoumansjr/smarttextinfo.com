@@ -11,7 +11,7 @@
       </div>
       <div class="col-md">
         <h2>Sort By : </h2> 
-        <form method="post" action="{% url 'index' %}">
+        <form method="post" action="{% url 'username' %}">
         <!-- <form id="my-form"> -->
             {% csrf_token %}
             <input type="radio" name="sort_by" value="Likes" id="sort_by_likes">

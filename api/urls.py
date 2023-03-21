@@ -1,5 +1,5 @@
 from django.urls import path,include
-from .views import (UserID,UserTweets,Index,DataPage,HashtagMain,
+from .views import (UserID,UserTweets,Index,UsernameMain,UsernameResult,HashtagMain,
                     HashtagResult,KeywordMain,KeywordResult,TweetCountMain,
                     TweetCountResult,KeywordTrendMain,KeywordTrendResult,
                     DailyCountryTrendSearchView,DailyCountryTrendSearchResultView,
@@ -8,14 +8,15 @@ from .views import (UserID,UserTweets,Index,DataPage,HashtagMain,
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    path('', Index, name= 'index'),
     path('login/', Login, name= 'login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='api/login.html'), name='logout'),
     path('researchTool', ResearchTool, name='researchTool'),
     path('user-id/', UserID.as_view()),
     path('user-tweets/', UserTweets.as_view()),
     # path('test/', Test, name= 'test'),
-    path('', Index, name= 'index'),
-    path('result/', DataPage, name= 'result'),
+    path('username/', UsernameMain, name= 'username'),
+    path('username/result/', UsernameResult, name= 'usernameResult'),
     path('hashtag/', HashtagMain, name= 'hashtag'),
     path('hashtag/result/', HashtagResult, name= 'hashtagResult'),
     path('keyword/', KeywordMain, name= 'keyword'),

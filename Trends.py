@@ -9,31 +9,12 @@ def get_interest_over_time(*args):
     kw_list = []
     for arg in args:
         kw_list.append(arg.capitalize())
-    # print(kw_list)
-    # return
-    # kw_list = ["Blockchain"]
-    # pytrends.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='', gprop='')
-    pytrends.build_payload(kw_list=kw_list, timeframe='today 5-y')
+
+    pytrends.build_payload(kw_list=kw_list)
 
     interests = pytrends.interest_over_time()
-    # print(interests)
-    data = []
+    return interests.index.strftime('%Y-%m-%d').tolist(), interests[kw_list[0]].tolist()
     
-    for keyword in kw_list:
-        data_temp = {}
-        for index, row in interests.iterrows():
-            try:
-                data_temp[index.date().strftime('%Y-%m-%d')] += row[keyword]
-            except:
-                data_temp[index.date().strftime('%Y-%m-%d')] = 0
-        for key, value in data_temp.items():
-            
-            data.append({'date' : key, 'value' :value, 'key' : key})
-            
-
-
-    return data
-
 def get_daily_interest_over_time(*args):
     pytrends = TrendReq(hl='en-US', tz=360)
     
@@ -49,6 +30,8 @@ def get_daily_interest_over_time(*args):
 
     interests = pytrends.interest_over_time()
     # print(interests)
+
+    
     data = []
     
     for keyword in kw_list:

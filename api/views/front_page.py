@@ -5,6 +5,10 @@ import ast
 from Trends import get_interest_over_time
 
 def Index(request):
+
+    return render(request, 'api/index.html')
+
+def UsernameMain(request):
     try:
         tweets = None
         errors = None
@@ -56,13 +60,13 @@ def Index(request):
             'users' : users
         }
 
-        return render(request, 'api/hello.html', context)
+        return render(request, 'api/UsernameMain.html', context)
     except Exception as e:
         print(e)
-        return render(request, 'api/hello.html', context={})
+        return render(request, 'api/UsernameMain.html', context={})
 
 
-def DataPage(request):
+def UsernameResult(request):
     tweets = None
     errors = None
     users = None
@@ -117,7 +121,7 @@ def DataPage(request):
             'users' : users
         }
 
-        return render(request, 'api/result.html', context)
+        return render(request, 'api/UsernameResult.html', context)
     except Exception as e:
         print(e)
         context = {
@@ -125,7 +129,7 @@ def DataPage(request):
 
         }
         print("context : ", context)
-        return render(request, 'api/result.html', context)
+        return render(request, 'api/UsernameResult.html', context)
 
 
 
@@ -348,12 +352,13 @@ def KeywordTrendResult(request):
     try:
         if request.method == 'POST':
             keyword1 = request.POST.get('keyword1')
-            result = get_interest_over_time(keyword1)
             x_axis = []
             y_axis = []
-            for data in result:
-                x_axis.append(data['date'])
-                y_axis.append(int(data['value']))
+            x_axis, y_axis = get_interest_over_time(keyword1)
+
+            #for data in result:
+            #    x_axis.append(data['date'])
+            #    y_axis.append(int(data['value']))
 
             context = {'x_axis' : x_axis, 'y_axis' : y_axis, 'keyword' : keyword1}
             return render(request, 'api/KeywordTrendResult.html', context)

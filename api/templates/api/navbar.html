@@ -133,9 +133,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'index' %}">Home</a>
-            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                 Search
@@ -143,6 +140,7 @@
               <div class="dropdown-menu">
                 <a class="nav-link" href="{% url 'hashtag' %}">Search by hashtags</a>
                 <a class="nav-link" href="{% url 'keyword' %}">Search by Keywords</a>
+                <a class="nav-link" href="{% url 'username' %}">Search by Username</a>
                 <a class="nav-link" href="{% url 'keywordTrend' %}">Keyword Search Trend</a>
               </div>
             </li>
@@ -156,11 +154,14 @@
               <a class="nav-link" href="{% url 'DailyCountryTrendSearch' %}">Daily Country
                 Trends</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'AISuggestion' %}">AI Suggestion</a>
-            </li>
-            <li class="nav-item">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                AI Tools
+              </a>
+              <div class="dropdown-menu">
+                <a class="nav-link" href="{% url 'AISuggestion' %}">AI Tweet Suggestion</a>
                 <a class="nav-link" href="{% url 'AIThreadSuggestion' %}" style="color: white;">AI Thread Suggestion</a>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'researchTool' %}">Research Tool</a>

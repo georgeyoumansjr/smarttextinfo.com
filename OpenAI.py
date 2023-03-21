@@ -13,14 +13,13 @@ open_ai_token = os.getenv("OPENAI_TOKEN")
 
 openai.api_key = open_ai_token
 
-def get_results( prompt = 'Say Working', max_tokens = 200, temperature = 0.5 ):
+def get_results( prompt = 'Say Working', max_tokens = 1000 ):
 
     return openai.ChatCompletion.create(
-    temperature=temperature,
     max_tokens=max_tokens,
     model="gpt-3.5-turbo",
     messages=[
-            {"role": "system", "content": "You are my assistant who writes youtube video descriptions."},
+            {"role": "system", "content": "You are my assistant who writes tweets."},
             {"role": "user", "content": prompt}
         ],
     n=3
