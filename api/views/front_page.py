@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template import loader
 from get_Tweets_for_user import fetch_user_Tweets_data,search_by_hashtag,get_tweets_count_data
 import ast
@@ -67,12 +67,12 @@ def UsernameMain(request):
 
 
 def UsernameResult(request):
-    tweets = None
-    errors = None
-    users = None
-    try:
+    if request.method == 'POST':
+        tweets = None
+        errors = None
+        users = None
+        try:
         
-        if request.method == 'POST':
             sort_by = request.POST.get('sort_by')
             tweets_Data = request.POST.get('tweets')
             users_data = request.POST.get('users')
@@ -106,30 +106,31 @@ def UsernameResult(request):
                         else:
                             errors = 'Unable to get tweets for current username, please check username !'
 
-                        
-            
-        if tweets != None:
-            if len(tweets) < 1:
-                errors = "No Tweets available ! "
-            else:
-                users = tweets['users']
-                tweets = tweets['tweets']
+                            
                 
-        context = {
-            'tweets': tweets,
-            'errors' : errors,
-            'users' : users
-        }
+            if tweets != None:
+                if len(tweets) < 1:
+                    errors = "No Tweets available ! "
+                else:
+                    users = tweets['users']
+                    tweets = tweets['tweets']
+                    
+            context = {
+                'tweets': tweets,
+                'errors' : errors,
+                'users' : users
+            }
 
-        return render(request, 'api/UsernameResult.html', context)
-    except Exception as e:
-        print(e)
-        context = {
-            'errors' : e.__str__()
+            return render(request, 'api/UsernameResult.html', context)
+        except Exception as e:
+            print(e)
+            context = {
+                'errors' : e.__str__()
 
-        }
-        print("context : ", context)
-        return render(request, 'api/UsernameResult.html', context)
+            }
+            print("context : ", context)
+            return render(request, 'api/UsernameResult.html', context)
+    return redirect(to='username')
 
 
 
@@ -144,6 +145,8 @@ def TweetCountMain(request):
 
 
 def TweetCountResult(request):
+    if request.method == 'GET':
+        return redirect(to='tweetCount')
     error = None
     try:
         if request.method == 'POST':
@@ -216,6 +219,8 @@ def TweetCountResult(request):
         return render(request, 'api/tweetCountResult.html', context)
 
 def HashtagResult(request):
+    if request.method == 'GET':
+        return redirect(to='hashtag')
     try:
         tweets = None
         errors = None
@@ -271,7 +276,6 @@ def HashtagResult(request):
             'users' : users,
             'hashtag' : hashtag
         }
-        print("context here : ", context)
 
         return render(request, 'api/hashtagResult.html', context)
     except Exception as e:
@@ -284,6 +288,8 @@ def HashtagResult(request):
         return render(request, 'api/hashtagResult.html', context)
 
 def KeywordResult(request):
+    if request.method == 'GET':
+        return redirect(to='keyword')
     try:
         tweets = None
         errors = None
@@ -349,6 +355,8 @@ def KeywordTrendMain(request):
     return render(request, 'api/KeywordSearchTrendMain.html')
 
 def KeywordTrendResult(request):
+    if request.method == 'GET':
+        return redirect(to='keywordTrend')
     try:
         if request.method == 'POST':
             keyword1 = request.POST.get('keyword1')

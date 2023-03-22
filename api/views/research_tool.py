@@ -46,7 +46,7 @@ def ResearchTool(request):
                     user.active_job_count += 1
                     user.save()
                     print(f'{user.email} has {user.active_job_count} job(s)')
-
+                    context['success'] = f'Updates about {username} will be sent to {email}'
                 except Exception as e:
                     print("Error : ", e.__str__())
                     if e.__str__() == 'data':

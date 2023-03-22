@@ -25,7 +25,6 @@ urlpatterns = [
     path('tweetCount/result/', TweetCountResult, name= 'tweetCountResult'),
     path('KeywordTrend/', KeywordTrendMain, name= 'keywordTrend'),
     path('KeywordTrend/result/', KeywordTrendResult, name= 'keywordTrendResult'),
-    path('KeywordTrend/result/', KeywordTrendResult, name= 'keywordTrendResult'),
     path('DailyTrendSearch/', DailyCountryTrendSearchView, name= 'DailyCountryTrendSearch'),
     path('DailyTrendSearch/result/', DailyCountryTrendSearchResultView, name= 'DailyCountryTrendSearchResult'),
     path('YearlyTopCharts/', yearlyTopChartsView, name= 'YearlyTopCharts'),
@@ -34,6 +33,6 @@ urlpatterns = [
     path('KeywordResearch/result/', KeywordResearchResultView, name= 'KeywordResearchResult'),   
     path('aiSuggestion/', TweetSuggestionView, name= 'AISuggestion'),   
     path('aiSuggestion/result/', TweetSuggestionResultView, name= 'AISuggestionResult'),   
-     path('aiThreadSuggestion/', TweetThreadSuggestionView, name= 'AIThreadSuggestion'),   
+    path('aiThreadSuggestion/', TweetThreadSuggestionView, name= 'AIThreadSuggestion'),   
     path('aiThreadSuggestion/result/', TweetThreadSuggestionResultView, name= 'AIThreadSuggestionResult'),   
 ]

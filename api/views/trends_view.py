@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from Trends import get_trending_searches,get_daily_interest_over_time, get_yearly_top_charts_for_all_categories,get_related_topics,get_related_queries
 import pycountry
 
@@ -66,6 +66,7 @@ def yearlyTopChartsResultsView(request):
                 'errors' : f'Unable to get data for Year : {year} and Country : {country}, Please try again for a different Year and Country !'
             }
             return render(request, 'api/yearlyTopChartsResult.html', context)
+    return redirect(to='YearlyTopCharts')
 
 
 def DailyCountryTrendSearchResultView(request): 
@@ -95,6 +96,7 @@ def DailyCountryTrendSearchResultView(request):
                 'errors' : f"Unable to find trends for {country_name}"
             }
             return render(request, 'api/DailyCountryTrendSearchResult.html', context)
+    return redirect(to='DailyCountryTrendSearch')
 
 def KeywordResearchView(request): 
     countries_list = [
@@ -128,3 +130,4 @@ def KeywordResearchResultView(request):
             print(e)
             context={'errors' : f'Unable to get related queries for Keyword : {keyword}, please try again with a different keyword'}
             return render(request, 'api/KeywordResearchResult.html', context)
+    return redirect(to='KeywordResearch')
