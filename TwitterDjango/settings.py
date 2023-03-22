@@ -161,6 +161,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'api.CustomUser'
 SOCIAL_AUTH_JSONFIELD_ENABLED = True
+SESSION_COOKIE_AGE = 3600 # in seconds: 600 = 10min, 3600 = 1hr 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com' # or your preferred email provider
