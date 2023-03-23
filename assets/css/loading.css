@@ -1,0 +1,62 @@
+#loading, #info-text {
+    display: none;
+  }
+  @keyframes fade-in {
+  0% { opacity: 0.2; }
+100% { opacity: 1; }
+}
+
+[class^=dot-] {
+animation: 500ms ease-in fade-in infinite alternate;
+}
+.dot-1 { animation-delay: 0s; }
+.dot-2 { animation-delay: 125ms; }
+.dot-3 { animation-delay: 250ms; }
+.dot-4 { animation-delay: 375ms; }
+.dot-5 { animation-delay: 500ms; }
+.dot-6 { animation-delay: 625ms; }
+.dot-7 { animation-delay: 750ms; }
+.dot-8 { animation-delay: 875ms; }
+
+
+.dots {
+margin: 20px auto;
+width: 100px;
+height: 100px;
+position: relative;
+}
+
+[class^=dot-] {
+position: absolute;
+left: calc(50% - 10px);
+top: calc(50% - 10px);
+width: 20px;
+height: 20px;
+border-radius: 10px;
+background: black;
+transform-origin: -30px 10px;
+}
+.dot-1 {
+transform: translateX(40px) rotate(0deg);
+}
+.dot-2 {
+transform: translateX(40px) rotate(45deg);
+}
+.dot-3 {
+transform: translateX(40px) rotate(90deg);
+}
+.dot-4 {
+transform: translateX(40px) rotate(135deg);
+}
+.dot-5 {
+transform: translateX(40px) rotate(180deg);
+}
+.dot-6 {
+transform: translateX(40px) rotate(225deg);
+}
+.dot-7 {
+transform: translateX(40px) rotate(270deg);
+}
+.dot-8 {
+transform: translateX(40px) rotate(315deg);
+}

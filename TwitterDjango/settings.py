@@ -164,7 +164,7 @@ SOCIAL_AUTH_JSONFIELD_ENABLED = True
 SESSION_COOKIE_AGE = 3600 # in seconds: 600 = 10min, 3600 = 1hr 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com' # or your preferred email provider
+EMAIL_HOST = 'smtp.gmail.com' 
 EMAIL_PORT = 587 # or the appropriate port for your email provider
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv('EMAIL')
