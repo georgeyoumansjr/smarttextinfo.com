@@ -1,0 +1,27 @@
+{% extends "./navbar.html" %}
+{% load static %}
+{% block content %}
+<h1 class=" text-center w-100" >News</h1>
+<table class="table table-striped table-hover text-center" style="width : 80%;">
+    <thead>
+      <tr>
+        <th scope="col">Channel</th>
+        <th scope="col">Tweet</th>
+        <th scope="col">Likes</th>
+        <th scope="col">Retweets</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for tweet in data %}
+      <tr>
+        <th scope="row">{{ tweet.channel_name }} <br> <img src="{{ tweet.profile_picture_url }}" alt=""> </th>
+        <td>{{tweet.tweet}}</td>
+        <td> <i class="fa-solid fa-heart" style="color: #e60a0a;"></i> {{tweet.likes}} </td>
+        <td> <i class="fa-solid fa-retweet" style="color: #5b6371;"></i> {{tweet.retweets}}</td>
+        <td>{{tweet.created_at}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

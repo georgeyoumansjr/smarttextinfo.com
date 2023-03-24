@@ -39,7 +39,6 @@ def connect_to_endpoint():
     if start_date != None and end_date != None:
        url+= f'&start_time={start_date}&end_time={end_date}' 
 
-
     response = requests.request("GET", url, auth=bearer_oauth,)
 
     if response.status_code != 200:
