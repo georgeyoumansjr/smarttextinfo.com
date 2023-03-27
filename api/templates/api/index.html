@@ -2,47 +2,58 @@
 {% load static %}
 {% block content %}
 
-<div class="container">
-    <div class="jumbotron mt-5 mb-5">
-        <div class="text-center">
-            <h1>Boost Your Tweets With Smartly Designed Algorithms and AI Powered Tools</h1>
+<main id="banner" style="background-image: url({% static 'img/smarttextinfo-banner.jpg' %});">
+    <div class="container">
+        <div class="banner-content">
+            <h1>Tweets With Smartly</h1>
+            <p>Boost Your Tweets With Smartly Designed Algorithms and AI Powered Tools</p>
         </div>
-        
+        <a href="#trends" class="banner-arrow">&#10095;</a>
     </div>
-    <div class="jumbotron">
-        <div>
-            <section class="p-3 mx-3">
-                <ul>
-                    <li>
+</main>
+<section class="p-3 mx-3 trends-section" id="trends">
+    <div class="container">
+        <div class="jumbotron">
+            <h2 class="text-center mb-3 font-weight-bold">Trends and Suggestions</h2>
+            <ul>
+                <li>
+                    <div class="list-box">
                         <h3> Monitor Global/Country Specific Trends </h3>
-                        <h6 class="text-secondary"> Trending in United Kingdom : Tesla, Football... </h6>
-                    </li>
-                    <li>
+                        <p class="text-secondary"> Trending in United Kingdom : Tesla, Football... </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-box">
                         <h3> Search for top trending tweets related to a hashtag, keyword or user. </h3>
-                        <h6 class="text-secondary"> kyliejenner : make-up, tv... </h6>
-                    </li>
-                    <li>
+                        <p class="text-secondary"> kyliejenner : make-up, tv... </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-box">
                         <h3> User our AI Tool to get tweet or tweet thread suggestions. </h3>
-                        <h6 class="text-secondary"> Write a tweet about Real Madrid vs Barcelona : ... </h6>
-                    </li>
-                    <li>
+                        <p class="text-secondary"> Write a tweet about Real Madrid vs Barcelona : ... </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-box">
                         <h3> Get email when someone writes a tweet about you. </h3>
-                        <h6 class="text-secondary"> New tweet : I think @you are... </h6>
-                    </li>
-                </ul>
-                <div>
-                    <br><br>
-                    <h2>Start with searching username <a href="{% url 'username' %}"> Here!</a> </h2>
-                    <h4> Or check out the top for other interesting tools. </h4>
-                </div>
-            </section>
-            
+                        <p class="text-secondary"> New tweet : I think @you are... </p>
+                    </div>
+                </li>
+            </ul>
+            <div class="search-box">
+                <h2>Start with searching username</h2>
+                <a href="{% url 'username' %}">Start!</a>
+                <h4> Or check out the top for other interesting tools. </h4>
+            </div>
         </div>
     </div>
+</section>
+<div class="container">
     <div class="jumbotron">
-        <div class="text-lg-center align-bottom pt-5">
+        <div class="text-lg-center align-bottom">
             <h2>Have fun!</h2>
-            <h4 class="text-secondary">Contact Us : contact@smartdevweb.com</h4>
+            <h4 class="text-secondary">Contact Us : <a href="mailto:contact@smartdevweb.com">contact@smartdevweb.com</a></h4>
         </div>
     </div>
 </div>
