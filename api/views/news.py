@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse
 from datetime import datetime, timedelta
 from get_Tweets_for_user import bearer_token
 import requests
-
+from api.models import News
 channels_and_ids_list = [
     {'name': 'CNN',  'id': '428333'},
     {'name': 'FOX',  'id': '1367531'},
@@ -19,39 +19,26 @@ channels_list = [
     '742143',
 ]
 
-def News(request):
+def NewsView(request):
     context = {}
-    tweet_data = []
+    news = News.objects.all().order_by('-created_at')
+    context['data'] = news[:100]
 
-    for id in channels_list:
-        try:
-            response = connect_to_endpoint(id)
-        except Exception as e:
-            print(e)
-            print(id)
+    if request.method == 'POST':
+        keyword = request.POST.get('keyword')
+        if keyword:
+            keyword_related_news = news.filter(tweet__icontains=keyword)
+            if keyword_related_news:
+                try:
+                    context['data']    = keyword_related_news[:100]
+                except:
+                    context['data']    = keyword_related_news
+                context['keyword'] = keyword
+            else:
+                context['errors'] = f'No results found for {keyword}' 
 
-        profile_picture_url = response['includes']['users'][0]['profile_image_url']
-        channel_name =        response['includes']['users'][0]['name']
-
-        for data in response['data']:
-            created_at = data['created_at']
-            created_at = created_at.replace('T', " ")
-            created_at = created_at.replace('.000Z', "")
-            tweet_data.append({
-                'tweet' : data['text'],
-                'likes' : data['public_metrics']['like_count'],
-                'retweets' : data['public_metrics']['retweet_count'],
-                'created_at' : created_at,
-                'channel_name' : channel_name,
-                'profile_picture_url' : profile_picture_url,
-
-            })
-    tweet_data = sorted(tweet_data, key=lambda x: datetime.strptime(x['created_at'], '%Y-%m-%d %H:%M:%S'), reverse=True)
-    for data in tweet_data:
-        print('ind data : ')
-        print(data)
-
-    context['data'] = tweet_data
+        else:
+            context['errors'] = 'Invalid Keyword!'
 
 
     return HttpResponse( render(request, 'api/News.html', context) )

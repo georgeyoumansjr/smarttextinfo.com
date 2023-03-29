@@ -6,9 +6,26 @@ import asyncio
 from dateutil.parser import parse
 from django.core.mail import send_mail
 from datetime import datetime, timedelta
+from .models import News
 
 from dotenv import load_dotenv
 load_dotenv()
+
+channels_and_ids_list = [
+    {'name': 'CNN',  'id': '428333'},
+    {'name': 'FOX',  'id': '1367531'},
+    {'name': 'BBC',  'id': '742143'},
+]
+channels_dict = {
+    'CNN':'428333',
+    'FOX':'1367531',
+    'BBC':'742143',
+}
+channels_list = [
+    '428333',
+    '1367531',
+    '742143',
+]
 
 bearer_token = os.getenv("BEARER_TOKEN")
 
@@ -56,9 +73,7 @@ def job_func( user_id = None, email=None, end_date=None, User=None ):
 
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
-
     response, status = loop.run_until_complete(api_call(url))
-
     loop.close()
 
     if now > end_date:
@@ -109,3 +124,134 @@ def send_email(email, response):
     print(f'Email Sent to : {email}')
     pass
 
+
+def get_news():
+    
+    now = datetime.now()
+    fifteen_minutes_ago = now - timedelta(minutes=15)
+    fifteen_minutes_ago = fifteen_minutes_ago.isoformat()[:-3] + 'Z'
+
+
+    for id in channels_list:
+        url =f'https://api.twitter.com/2/users/{id}/tweets?expansions=attachments.poll_ids,attachments.media_keys,author_id,entities.mentions.username,geo.place_id,in_reply_to_user_id,referenced_tweets.id,referenced_tweets.id.author_id&tweet.fields=attachments,author_id,context_annotations,conversation_id,created_at,entities,geo,id,in_reply_to_user_id,lang,possibly_sensitive,public_metrics,referenced_tweets,reply_settings,source,text,withheld&user.fields=created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,public_metrics,url,username,verified,withheld&place.fields=contained_within,country,country_code,full_name,geo,id,name,place_type&poll.fields=duration_minutes,end_datetime,id,options,voting_status&media.fields=duration_ms,height,media_key,preview_image_url,type,url,width,public_metrics,non_public_metrics,organic_metrics,promoted_metrics&max_results=100'
+        url+= f'&start_time={fifteen_minutes_ago}'
+    
+        try:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            response, status = loop.run_until_complete(api_call(url))
+            loop.close()
+
+            if status != 200:
+                for err in response['errors']:
+                    print(err)
+                raise Exception(
+                    "Request returned an error: {}".format(
+                        status)
+                )
+
+            if response['meta']['result_count'] == 0:
+                print(f"News Channel {id} : No New Tweets")
+                continue
+
+            profile_picture_url = response['includes']['users'][0]['profile_image_url']
+            channel_name        = response['includes']['users'][0]['name']
+
+            for data in response['data']:
+                created_at = data['created_at']
+                created_at = created_at.replace('T', " ")
+                created_at = created_at.replace('.000Z', "")
+                db_entry = News(
+                    tweet = data['text'],
+                    likes = data['public_metrics']['like_count'],
+                    retweets = data['public_metrics']['retweet_count'],
+                    created_at = created_at,
+                    channel_name = channel_name,
+                    profile_picture_url = profile_picture_url,
+                )
+                db_entry.save()
+                print('News saved to database')
+        except Exception as e:
+            print(e)
+            print(id)
+
+def refill_news():
+
+    
+    for id in channels_list:
+        url =f'https://api.twitter.com/2/users/{id}/tweets?expansions=attachments.poll_ids,attachments.media_keys,author_id,entities.mentions.username,geo.place_id,in_reply_to_user_id,referenced_tweets.id,referenced_tweets.id.author_id&tweet.fields=attachments,author_id,context_annotations,conversation_id,created_at,entities,geo,id,in_reply_to_user_id,lang,possibly_sensitive,public_metrics,referenced_tweets,reply_settings,source,text,withheld&user.fields=created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,public_metrics,url,username,verified,withheld&place.fields=contained_within,country,country_code,full_name,geo,id,name,place_type&poll.fields=duration_minutes,end_datetime,id,options,voting_status&media.fields=duration_ms,height,media_key,preview_image_url,type,url,width,public_metrics,non_public_metrics,organic_metrics,promoted_metrics&max_results=100'
+    
+        try:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            response, status = loop.run_until_complete(api_call(url))
+            loop.close()
+
+            if status != 200:
+                for err in response['errors']:
+                    print(err)
+                raise Exception(
+                    "Request returned an error: {}".format(
+                        status)
+                )
+
+            if response['meta']['result_count'] == 0:
+                print(f"News Channel {id} : No New Tweets")
+                continue
+
+            profile_picture_url = response['includes']['users'][0]['profile_image_url']
+            channel_name        = response['includes']['users'][0]['name']
+
+            for data in response['data']:
+                created_at = data['created_at']
+                created_at = created_at.replace('T', " ")
+                created_at = created_at.replace('.000Z', "")
+                db_entry = News(
+                    tweet = data['text'],
+                    likes = data['public_metrics']['like_count'],
+                    retweets = data['public_metrics']['retweet_count'],
+                    created_at = created_at,
+                    channel_name = channel_name,
+                    profile_picture_url = profile_picture_url,
+                )
+                db_entry.save()
+            print('News saved to database')
+            for i in range(30):
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                response, status = loop.run_until_complete(api_call(url+'&pagination_token='+response['meta']['next_token']))
+                loop.close()
+
+                if status != 200:
+                    for err in response['errors']:
+                        print(err)
+                    raise Exception(
+                        "Request returned an error: {}".format(
+                            status)
+                    )
+
+                if response['meta']['result_count'] == 0:
+                    print(f"News Channel {id} : No New Tweets")
+                    continue
+
+                profile_picture_url = response['includes']['users'][0]['profile_image_url']
+                channel_name        = response['includes']['users'][0]['name']
+
+                for data in response['data']:
+                    created_at = data['created_at']
+                    created_at = created_at.replace('T', " ")
+                    created_at = created_at.replace('.000Z', "")
+                    db_entry = News(
+                        tweet = data['text'],
+                        likes = data['public_metrics']['like_count'],
+                        retweets = data['public_metrics']['retweet_count'],
+                        created_at = created_at,
+                        channel_name = channel_name,
+                        profile_picture_url = profile_picture_url,
+                    )
+                    db_entry.save()
+                print('News Saved To Database!')
+            
+        except Exception as e:
+            print(e)
+            print(id)

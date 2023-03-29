@@ -1,8 +1,22 @@
 {% extends "./navbar.html" %}
 {% load static %}
 {% block content %}
+<div class="container">
 <h1 class=" text-center w-100" >News</h1>
-<table class="table table-striped table-hover text-center" style="width : 80%;">
+<div class="text-center">
+  <form method="post">
+    {% csrf_token %}
+    <input class="rounded-left" type="text" name="keyword" id="keyword" placeholder="Search">
+    <button class="rounded-right btn-primary" type="submit">Search</button>
+  </form>
+</div>
+<table class="table table-striped table-hover text-center"> 
+  <h4 id="errors">{{errors}}</h4>
+  {% if keyword %}
+  <h3> News about {{keyword}} </h3>
+  {% else %}
+  <h3> Latest News </h3>
+  {% endif %}
     <thead>
       <tr>
         <th scope="col">Channel</th>
@@ -24,4 +38,5 @@
       {% endfor %}
     </tbody>
   </table>
+</div>
 {% endblock %}

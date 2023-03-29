@@ -5,4 +5,4 @@ from .trends_view import DailyCountryTrendSearchView,DailyCountryTrendSearchResu
 from .open_ai_views import TweetSuggestionView,TweetSuggestionResultView,TweetThreadSuggestionView,TweetThreadSuggestionResultView
 from .login import Login
 from .research_tool import ResearchTool
-from .news import News
+from .news import NewsView

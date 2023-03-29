@@ -3,6 +3,8 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime, timedelta
 from api.utils import * # noqa
 from django.contrib.auth import get_user_model
+from api.utils import get_news
+
 
 from django.contrib.auth.decorators import login_required
 
@@ -16,6 +18,7 @@ for user in users:
 
 scheduler = BackgroundScheduler()
 scheduler.start()
+scheduler.add_job( get_news, 'interval', minutes = 15)
 
 @login_required
 def ResearchTool(request):
