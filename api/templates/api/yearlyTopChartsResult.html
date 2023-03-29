@@ -3,13 +3,13 @@
 {% block content %}
 
 {% if errors %}
-<div class="text-center">
+<div class="text-center py-4">
   <h1>No data found for current selection !</h1>
   <h3>{{errors}}</h3>
 </div>
 {% endif %}
 {% if data %}
-<div class="w-100 text-center">
+<div class="w-100 text-center pt-4">
   <h1>Top Charts for year: <strong><u>{{year}}</u></strong></h1>
 </div>
 <div class="container py-4">
@@ -24,8 +24,8 @@
 <div class="container">
   <div class="row">
     {% for obj in data %}
-    <div class="col-sm-4" id="{{obj.category}}">
-      <h1>{{obj.category}}</h1>
+    <div class="col-sm-6 col-md-4" id="{{obj.category}}">
+      <h2 class="table-title">{{obj.category}}</h2>
       <table class="table table-striped table-hover text-center table-sm" style="width : 80%;">
         <thead>
           <tr>
@@ -40,7 +40,6 @@
             <td>{{trend_obj}}</td>
           </tr>
           {% endfor %}
-          <hr />
         </tbody>
       </table>
     </div>
