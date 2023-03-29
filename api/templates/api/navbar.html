@@ -19,6 +19,7 @@
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
      crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="shortcut icon" href="{% static 'new-logo.png' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <!-- chart js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
@@ -77,51 +78,6 @@
   })();
 </script>
 <!--End of Tawk.to Script-->
-<!-- <nav class="navbar  sticky-top navbar-light bg-dark w-100" >
-    <div class="container w-100" >
-        <div class="row  w-100" >
-            <div class="column text-left pl-2 pr-2">
-                <a class="navbar-brand" href="{% url 'index' %}" style="color: white;"><h1 >Home</h1></a>
-            </div>
-            <div class="column text-center  pl-2 pr-2">
-                <a class="navbar-brand" href="{% url 'hashtag' %}" style="color: white;"><h1 >Search by hashtags</h1></a>
-            </div>
-            <div class="column  text-right  pl-2 pr-2">
-                <a class="navbar-brand" href="{% url 'keyword' %}" style="color: white;"><h1 >Search by Keywords</h1></a>
-            </div>
-            <div class="column  text-right  pl-2 pr-2">
-                <a class="navbar-brand" href="{% url 'tweetCount' %}" style="color: white;"><h1 >Tweet Keyword Comparison</h1></a>
-            </div>
-            </div>
-        </div>
-    </div>
-</nav> -->
-<!-- <ul class="nav nav-pill bg-dark nav-fill">
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'index' %}" style="color: white;">Home</a>
-    
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'hashtag' %}" style="color: white;">Search by hashtags</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'keyword' %}" style="color: white;">Search by Keywords</a>
-
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'tweetCount' %}" style="color: white;">Tweet Keyword Comparison</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'keywordTrend' %}" style="color: white;">Keyword Search Trend</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'DailyCountryTrendSearch' %}" style="color: white;">Daily Country Trends</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'YearlyTopCharts' %}" style="color: white;">Yearly Top charts</a>
-  </li>
-</ul>
--->
 <header>
   <div class="bg-dark">
     <div class="container">
