@@ -1,27 +1,14 @@
 from django.shortcuts import render, redirect
 from Trends import get_trending_searches,get_daily_interest_over_time, get_yearly_top_charts_for_all_categories,get_related_topics,get_related_queries
-import pycountry
+
+# google trends only provide data for these countries
+country_list = ['Argentina', 'Australia', 'Austria', 'Belgium', 'Brazil', 'Canada', 'Chile', 'Colombia', 'Czechia', 'Denmark', 'Egypt', 'Finland', 'France', 'Germany', 'Greece', 'Hong Kong', 'Hungary', 'India', 'Indonesia', 'Ireland', 'Israel', 'Italy', 'Japan', 'Kenya', 'Malaysia', 'Mexico', 'Netherlands', 'New Zealand', 'Nigeria', 'Norway', 'Peru', 'Philippines', 'Portugal', 'Romania', 'Russia', 'Saudi Arabia', 'Singapore', 'South africa', 'South Korea', 'Spain', 'Sweden', 'Switzerland', 'Taiwan', 'Thailand', 'Turkey', 'Ukraine', 'United Kingdom', 'United States']
+
 
 def DailyCountryTrendSearchView(request): 
-    try:
-        countries_list = list(pycountry.countries)
-        country_names = []
-        for country in countries_list:
-            country_names.append(country.name)
-            
-        # data = get_trending_searches('United States')
-        context = {'countries' : country_names}
+    context = {'countries' : country_list}
+    return render(request, 'api/DailyCountryTrendSearchMain.html', context=context)
 
-
-        # for key in data:
-        #     print(get_daily_interest_over_time(key))
-        #     print()
-        #     print('..........................................')
-
-        return render(request, 'api/DailyCountryTrendSearchMain.html', context=context)
-    except Exception as e:
-        print(e)
-        return render(request, 'api/DailyCountryTrendSearchMain.html', context={})
 def yearlyTopChartsView(request): 
     countries_list = [
         {'key' : 'GLOBAL' , 'value' : 'Global'},
