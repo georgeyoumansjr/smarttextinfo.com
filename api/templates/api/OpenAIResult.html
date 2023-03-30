@@ -3,7 +3,7 @@
 {% block content %}
 
 {% if errors %}
-<div class="text-center">
+<div class="text-center py-4">
   <h1>No AI suggestions for the selected keyword !</h1>
     <h3>{{errors}}</h3>
     <p style="padding:4rem 12rem;">{{quota_error}}</p>
@@ -12,9 +12,9 @@
 
 
 {% if data %}
-<h1 class=" text-center w-100" >Tweets suggestion for keyword  : {{ keyword }}</h1>
-<div class="d-flex justify-content-center w-100">
-<table class="table table-striped table-hover text-center" style="width : 80%;">
+<h1 class=" text-center w-100 pt-4" >Tweets suggestion for keyword  : {{ keyword }}</h1>
+<div class="container d-flex justify-content-center w-100 py-4">
+<table class="table table-striped table-hover text-center">
     <thead>
       <tr>
         <th scope="col">sr #</th>
