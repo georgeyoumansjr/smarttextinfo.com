@@ -1,9 +1,7 @@
 from django.shortcuts import render, HttpResponse
-from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime, timedelta
 from api.utils import * # noqa
 from django.contrib.auth import get_user_model
-from api.utils import get_news
 
 
 from django.contrib.auth.decorators import login_required
@@ -16,9 +14,23 @@ for user in users:
     user.active_job_count = 0
     user.save()
 
-scheduler = BackgroundScheduler()
+from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
+from api.utils import get_news
+from datetime import datetime, timedelta
+from django.conf import settings
+
+# Set up the SQLAlchemy database URL using the SQLite engine
+
+# Create an SQLAlchemy job store using the database URL
+jobstore = SQLAlchemyJobStore(url='sqlite:///jobs.sqlite')
+
+scheduler = BackgroundScheduler(jobstores={'default': jobstore})
+
 scheduler.start()
-scheduler.add_job( get_news, 'interval', minutes = 15)
+scheduler.add_job( get_news, 'interval', minutes = 15, next_run_time=datetime.now()+timedelta(minutes=15))
+print('Jobs initialized!')
+
 
 @login_required
 def ResearchTool(request):

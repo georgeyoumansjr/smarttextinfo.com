@@ -7,7 +7,6 @@ deployment:
  - /bin/cp -R PyTrendsLocal $DEPLOYPATH
  - /bin/cp -R static $DEPLOYPATH
  - /bin/cp -R TwitterDjango $DEPLOYPATH
- - /bin/cp db.sqlite3 $DEPLOYPATH
  - /bin/cp get_Tweets_for_user.py $DEPLOYPATH
  - /bin/cp hashtagSearch.json $DEPLOYPATH
  - /bin/cp manage.py $DEPLOYPATH
