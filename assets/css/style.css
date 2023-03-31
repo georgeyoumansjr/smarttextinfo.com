@@ -134,7 +134,7 @@ h6 {
     list-style: none;
 }
 
-.result-category a {
+.result-category a,.universal-btn {
     display: inline-block;
     color: var(--white-color);
     background-color: var(--dark-color);
@@ -143,7 +143,7 @@ h6 {
     border: 1px solid var(--dark-color);
 }
 
-.result-category a:hover {
+.result-category a:hover,.universal-btn:hover {
     text-decoration: none;
     color: var(--dark-color);
     background-color: transparent;
