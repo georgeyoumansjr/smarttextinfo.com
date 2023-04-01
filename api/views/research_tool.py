@@ -26,9 +26,10 @@ from django.conf import settings
 jobstore = SQLAlchemyJobStore(url='sqlite:///jobs.sqlite')
 
 scheduler = BackgroundScheduler(jobstores={'default': jobstore})
+if not scheduler.get_job('get_news'):
+    scheduler.add_job( get_news, 'interval', id='get_news', minutes = 15, next_run_time=datetime.now()+timedelta(minutes=15))
 
 scheduler.start()
-scheduler.add_job( get_news, 'interval', minutes = 15, next_run_time=datetime.now()+timedelta(minutes=15))
 print('Jobs initialized!')
 
 
