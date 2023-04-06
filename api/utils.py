@@ -103,19 +103,15 @@ def send_email(email, response):
     text = response['data'][0]['text']
     new_tweet_count = response['meta']['result_count']
     message = f'Your twitter account has {new_tweet_count} new mention(s). \n' + text
-
+    
     send_mail(
         'New Tweet About You!',
         message,
-        'coboaccess@gmail.com',
         [email],
         fail_silently=False,
     )
-
-
-
+    
     print(f'Email Sent to : {email}')
-    pass
 
 
 def get_news():
@@ -216,7 +212,7 @@ def get_news_with_keyword(keyword, job=False):
                 profile_picture_url = profile_picture_url,
             )
             db_entry.save()
-            print('News saved to database')
+        print('News saved to database')
     except Exception as e:
         print(e)
         print(id)

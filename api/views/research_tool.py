@@ -1,5 +1,4 @@
 from django.shortcuts import render, HttpResponse
-from datetime import datetime, timedelta
 from api.utils import * # noqa
 from django.contrib.auth import get_user_model
 
@@ -34,6 +33,14 @@ print('Jobs :')
 for job in jobs:
     print(job)
 
+#print('Clearing duplicates from db')
+#from api.models import News
+#from django.db.models import Count, Min
+
+#duplicate_objects = News.objects.values('created_at').annotate(Count('id'),id_min=Min('id')).filter(id__count__gt=1)
+
+#for duplicate in duplicate_objects:
+#    News.objects.filter(created_at=duplicate['created_at']).exclude(id=duplicate['id_min']).delete()
 
 @login_required
 def ResearchTool(request):
@@ -52,14 +59,14 @@ def ResearchTool(request):
                 username = username.replace('@','')
             if username != None:
 
-                today = datetime.now()
-                five_hours_later = today + timedelta(hours=5)
+                now = datetime.now()
+                five_hours_later = now + timedelta(hours=5)
                 last_run_date = five_hours_later - timedelta(minutes=15)
 
                 try:
                     user = User.objects.get(email=email)
                     user_id = get_user_id(username)[0]['id']
-                    scheduler.add_job( job_func, 'interval', minutes = 15, args=[user_id, email, last_run_date, user], end_date = five_hours_later)
+                    scheduler.add_job( job_func, 'interval', minutes = 15, next_run_time=now+timedelta(minutes=15), args=[user_id, email, last_run_date, user], end_date = five_hours_later)
                     print(f'New Job Added : {username} > {email}')
                     user.active_job_count += 1
                     user.save()
