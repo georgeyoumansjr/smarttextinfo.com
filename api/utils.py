@@ -168,6 +168,59 @@ def get_news():
             print(e)
             print(id)
 
+def get_news_with_keyword(keyword, job=False):
+    print('Get News With Keyword')
+    now = datetime.now()
+    fifteen_minutes_ago = now - timedelta(minutes=15)
+    fifteen_minutes_ago = fifteen_minutes_ago.isoformat()[:-3] + 'Z'
+    print(now)
+
+    url = f'https://api.twitter.com/2/tweets/search/recent?query={keyword}\
+    &tweet.fields=attachments,author_id,context_annotations,created_at,geo,id,lang,public_metrics,referenced_tweets,source,text,withheld \
+    &user.fields=created_at,description,entities,id,name,profile_image_url,public_metrics,url,username,verified,withheld \
+    &max_results=100'
+
+    if not job:
+        url+= f'&start_time={fifteen_minutes_ago}'
+
+    try:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        response, status = loop.run_until_complete(api_call(url))
+        loop.close()
+
+        if status != 200:
+            for err in response['errors']:
+                print(err)
+            raise Exception(
+                "Request returned an error: {}".format(
+                    status)
+            )
+
+        if response['meta']['result_count'] == 0:
+            print(f"Keyword {keyword} : No New Tweets")
+
+        profile_picture_url = response['includes']['users'][0]['profile_image_url']
+        channel_name        = response['includes']['users'][0]['name']
+
+        for data in response['data']:
+            created_at = data['created_at']
+            created_at = created_at.replace('T', " ")
+            created_at = created_at.replace('.000Z', "")
+            db_entry = News(
+                tweet = data['text'],
+                likes = data['public_metrics']['like_count'],
+                retweets = data['public_metrics']['retweet_count'],
+                created_at = created_at,
+                channel_name = channel_name,
+                profile_picture_url = profile_picture_url,
+            )
+            db_entry.save()
+            print('News saved to database')
+    except Exception as e:
+        print(e)
+        print(id)
+
 def refill_news():
     print('News Lookup.')
     

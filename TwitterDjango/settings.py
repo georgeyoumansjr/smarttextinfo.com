@@ -32,8 +32,10 @@ SECRET_KEY = 'django-insecure-61vx9m-4+d^(1=cv28fb3nmwvfji!smqrfg0$8xrmpdlkd1(==
 DEBUG = True
 
 ALLOWED_HOSTS = [
-'smarttextinfo.com',
+'www.smarttextinfo.com.tnh-labs.com',
+'smarttextinfo.com.tnh-labs.com',
 'www.smarttextinfo.com',
+'smarttextinfo.com',
 'localhost',
 '127.0.0.1',
 ]

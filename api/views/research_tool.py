@@ -18,7 +18,6 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
 from api.utils import get_news
 from datetime import datetime, timedelta
-from django.conf import settings
 
 # Set up the SQLAlchemy database URL using the SQLite engine
 
@@ -26,11 +25,14 @@ from django.conf import settings
 jobstore = SQLAlchemyJobStore(url='sqlite:///jobs.sqlite')
 
 scheduler = BackgroundScheduler(jobstores={'default': jobstore})
+scheduler.start()
+# scheduler.remove_all_jobs()
 if not scheduler.get_job('get_news'):
     scheduler.add_job( get_news, 'interval', id='get_news', minutes = 15, next_run_time=datetime.now()+timedelta(minutes=15))
-
-scheduler.start()
-print('Jobs initialized!')
+jobs = scheduler.get_jobs()
+print('Jobs :')
+for job in jobs:
+    print(job)
 
 
 @login_required
