@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-ENV = os.getenv('ENV')
-if ENV != 'PROD':
+PROD = os.getenv('ENV')
+if not PROD:
     from dotenv import load_dotenv
     load_dotenv()
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
@@ -30,6 +30,8 @@ SECRET_KEY = 'django-insecure-61vx9m-4+d^(1=cv28fb3nmwvfji!smqrfg0$8xrmpdlkd1(==
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+if PROD:
+    DEBUG = False
 
 ALLOWED_HOSTS = [
 'www.smarttextinfo.com.tnh-labs.com',
@@ -166,8 +168,11 @@ SOCIAL_AUTH_JSONFIELD_ENABLED = True
 SESSION_COOKIE_AGE = 3600 # in seconds: 600 = 10min, 3600 = 1hr 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com' 
-EMAIL_PORT = 587 # or the appropriate port for your email provider
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.getenv('EMAIL')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASS') # the password for the email account
+EMAIL_HOST = os.getenv('EMAIL_HOST','smtp.gmail.com') 
+EMAIL_PORT = int(os.getenv('EMAIL_PORT', '587'))
+if EMAIL_PORT == 587:
+    EMAIL_USE_TLS = True
+else:
+    EMAIL_USE_SSL = True
+EMAIL_HOST_USER = os.getenv('EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD') # the password for the email account
