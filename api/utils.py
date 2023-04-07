@@ -107,10 +107,10 @@ def send_email(email, response):
     send_mail(
         'New Tweet About You!',
         message,
-        [email],
+        recipient_list=[email],
         fail_silently=False,
     )
-    
+
     print(f'Email Sent to : {email}')
 
 
@@ -159,7 +159,7 @@ def get_news():
                     profile_picture_url = profile_picture_url,
                 )
                 db_entry.save()
-                print('News saved to database')
+            print('News saved to database')
         except Exception as e:
             print(e)
             print(id)
