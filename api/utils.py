@@ -107,6 +107,7 @@ def send_email(email, response):
     send_mail(
         'New Tweet About You!',
         message,
+        from_email=None,
         recipient_list=[email],
         fail_silently=False,
     )
