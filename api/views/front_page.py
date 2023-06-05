@@ -3,7 +3,7 @@ from django.template import loader
 from get_Tweets_for_user import fetch_user_Tweets_data,search_by_hashtag,get_tweets_count_data
 import ast
 from Trends import get_interest_over_time
-
+from api.tasks import main
 def Index(request):
 
     return render(request, 'api/index.html')
@@ -131,6 +131,27 @@ def UsernameResult(request):
             print("context : ", context)
             return render(request, 'api/UsernameResult.html', context)
     return redirect(to='username')
+
+def TweetLikesScrapeView(request):
+    if request.method == 'POST':
+        
+        try:
+        
+            tweet_id = request.POST.get('tweet_id')
+            
+            main.delay(tweet_id)
+            print("tweet ID : " , tweet_id)
+            context = {'tweet_id' : tweet_id}
+            return render(request, 'api/TweetScrapeResult.html', context)
+        except Exception as e:
+            print(e)
+            context = {
+                'errors' : e.__str__()
+
+            }
+            print("context : ", context)
+            return render(request, 'api/UsernameResult.html', context)
+    
 
 
 

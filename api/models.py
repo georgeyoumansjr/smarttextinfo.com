@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
+def get_file_path(self, filename):
+    return f'{filename}'
+    # return f'documents/tweets/{filename}'
 # Create your models here.
 
 class CustomUser(AbstractUser):
@@ -18,3 +21,8 @@ class News(models.Model):
     retweets = models.IntegerField(default=0)
 
 
+
+class TweetLikes(models.Model):
+    tweet_id                = models.CharField(max_length = 100, default = '')
+    file                    = models.FileField(upload_to='files/')
+    uploaded_at             = models.DateTimeField(auto_now_add=True)

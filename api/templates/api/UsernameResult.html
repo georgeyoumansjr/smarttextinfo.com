@@ -1,5 +1,3 @@
-
-
 {% extends "./navbar.html" %}
 {% load static %}
 {% block content %}
@@ -51,6 +49,11 @@
                 </li>
                 
             </ul>
+            <form method="POST" action="{% url 'tweetLikerViewMain' %}">
+                {% csrf_token %}
+                <input type="hidden" name="tweet_id" value="{{ tweet.id }}">
+                <button type="submit">Scrape likers to CSV</button>
+            </form>
         </li>
     
             

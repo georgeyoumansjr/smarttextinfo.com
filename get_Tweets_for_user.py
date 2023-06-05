@@ -308,6 +308,7 @@ def fetch_user_Tweets_data(username, tweet_count, tweet_start_date = None, tweet
         tweet_data['tweets'].append({
             'tweet' : data['text'],
             'created_at' : created_at,
+            'id' : data['id'],
             'likes' : data['public_metrics']['like_count'],
             'retweets' : data['public_metrics']['retweet_count'],
             'reply' : data['public_metrics']['reply_count'],

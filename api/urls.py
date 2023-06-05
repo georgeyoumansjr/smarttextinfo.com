@@ -5,7 +5,7 @@ from .views import (UserID,UserTweets,Index,UsernameMain,UsernameResult,HashtagM
                     DailyCountryTrendSearchView,DailyCountryTrendSearchResultView,
                     yearlyTopChartsView,yearlyTopChartsResultsView,
                     KeywordResearchView,KeywordResearchResultView,TweetSuggestionView, TweetSuggestionResultView, Login,
-                    ResearchTool,TweetThreadSuggestionView, TweetThreadSuggestionResultView,
+                    ResearchTool,TweetThreadSuggestionView, TweetThreadSuggestionResultView,TweetLikesScrapeView,
                     NewsView)
 from django.contrib.auth import views as auth_views
 
@@ -20,6 +20,7 @@ urlpatterns = [
     # path('test/', Test, name= 'test'),
     path('username/', UsernameMain, name= 'username'),
     path('username/result/', UsernameResult, name= 'usernameResult'),
+    path('username/likes/main', TweetLikesScrapeView, name= 'tweetLikerViewMain'),
     path('hashtag/', HashtagMain, name= 'hashtag'),
     path('hashtag/result/', HashtagResult, name= 'hashtagResult'),
     path('keyword/', KeywordMain, name= 'keyword'),

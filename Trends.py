@@ -258,4 +258,5 @@ def get_yearly_top_charts_for_all_categories(year, geo='GLOBAL'):
     
     
     return pytrends.top_charts(year, geo = geo)
-    
+
+

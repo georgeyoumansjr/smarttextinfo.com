@@ -74,6 +74,19 @@ TEMPLATE_DIRS = (
     BASE_DIR / 'templates',
 )
 
+
+# Celery Configuration
+# CELERY_BROKER_URL = 'redis://localhost:6377/0'
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+# CELERY_BROKER_URL = 'redis://localhost:6377/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+# CELERY_RESULT_BACKEND = 'redis://localhost:6377/0'
+# CELERY_RESULT_BACKEND = 'redis://localhost:6377/0'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_IMPORTS = ('api.tasks',)
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -158,6 +171,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "assets"),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

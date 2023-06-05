@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import News
+from .models import News,TweetLikes
 from .utils import refill_news
 # Register your models here.
 
@@ -13,3 +13,5 @@ class MyModelAdmin(admin.ModelAdmin):
         refill_news()
         self.message_user(request, "News are updated successfuly.")
     refill_news.short_description = "Clear and Refill News"
+
+admin.site.register(TweetLikes)
