@@ -139,7 +139,8 @@ def TweetLikesScrapeView(request):
         
             tweet_id = request.POST.get('tweet_id')
             
-            main.delay(tweet_id)
+            # main.delay(tweet_id)
+            main.apply_async(args=[tweet_id])
             print("tweet ID : " , tweet_id)
             context = {'tweet_id' : tweet_id}
             return render(request, 'api/TweetScrapeResult.html', context)
