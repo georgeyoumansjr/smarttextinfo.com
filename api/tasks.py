@@ -76,6 +76,7 @@ def connect_to_endpoint(url, user_fields):
 @shared_task
 def main(tweet_id):
     # import json
+    print("Inside main")
     result_array = []
     
     try:
