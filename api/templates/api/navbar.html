@@ -127,6 +127,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'researchTool' %}">Research Tool</a>
             </li>
+            <li>
+              <a class="nav-link text-light pl-0" href="{% url 'tweetsLikeDOwnloadMain' %}">Tweet likes download</a>
+            </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'logout' %}">Logout</a>
@@ -167,7 +170,7 @@
         </div>
         <div class="col-12 text-center text-md-left col-md-4">
           <h3 class="h3 text-light w-100">Links</h3>
-          <ul class="list-unstyled pl-0">
+          <ul class="list-unstyled   pl-0">
             <li>
               <a class="nav-link text-light pl-0" href="{% url 'tweetCount' %}">Tweet Keyword Comparison</a>
             </li>
@@ -177,6 +180,9 @@
             </li>
             <li>
               <a class="nav-link text-light pl-0" href="{% url 'YearlyTopCharts' %}">Yearly Top charts</a>
+            </li>
+            <li>
+              <a class="nav-link text-light pl-0" href="{% url 'tweetsLikeDOwnloadMain' %}">Tweet likes download</a>
             </li>
           </ul>
         </div>

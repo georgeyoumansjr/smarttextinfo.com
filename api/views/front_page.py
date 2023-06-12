@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
 from django.template import loader
+from django.http import HttpResponse
 from get_Tweets_for_user import fetch_user_Tweets_data,search_by_hashtag,get_tweets_count_data
 import ast
 from Trends import get_interest_over_time
 from api.tasks import main
+from api.models import TweetLikes
+from wsgiref.util import FileWrapper
 def Index(request):
 
     return render(request, 'api/index.html')
@@ -163,6 +166,32 @@ def KeywordMain(request):
 
 def TweetCountMain(request): 
     return render(request, 'api/TweetCountMain.html')
+
+def TweetLikersDownloadMain(request): 
+    return render(request, 'api/DownloadLikesMain.html')
+
+def TweetLikersDownloadResult(request): 
+    
+    tweetID = request.POST.get('tweetID')
+    tweet_Objs = TweetLikes.objects.filter(tweet_id = tweetID)
+    if tweet_Objs.exists():
+        selected_tweet_obj = tweet_Objs.order_by("id").last()
+        
+    
+        # Open the file using Django's FileWrapper
+        file_wrapper = FileWrapper(selected_tweet_obj.file)
+        
+        # Build the response
+        response = HttpResponse(file_wrapper, content_type='application/octet-stream')
+        response['Content-Disposition'] = 'attachment; filename=' + selected_tweet_obj.file.name
+        
+        return response
+    else:
+        print("no file found")
+        context = {
+            'document_not_found': True
+        }
+        return render(request, 'api/DownloadLikesMain.html', context)
 
 
 def TweetCountResult(request):
